@@ -2,6 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 //components
+import Searchbar from "./SearchBar";
 import Auth from "./Auth";
 
 const Header = () => {
@@ -11,11 +12,20 @@ const Header = () => {
                 Milestones
                 <i className="icon angle double up"/>
             </Link>
-            <Link to="/search" className="item">
-                    (Searchbar)
-                </Link>
+            <div className="ui item">
+                <Searchbar placeholder="Suche Bäume..."/>
+            </div>
+            <div className="ui item">
+                Kategorien
+            </div>
+            <div className="ui item">
+                Statistiken
+            </div>
+
             <div className="right menu">
-                <Auth />
+                <div className="item">
+                    <Auth />
+                </div>
             </div>
         </div>
     )
