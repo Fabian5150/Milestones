@@ -17,10 +17,10 @@ const Navbar = () => {
                 <Searchbar placeholder="Suche Bäume..."/>
             </div>
 
-            <div class="ui simple dropdown item">
+            <div className="ui simple dropdown item">
                 Kategorien
-                <i class="dropdown icon"></i>
-                <div class="menu">
+                <i className="dropdown icon"></i>
+                <div className="menu">
                     <Link to="/search/category/Lorem" className="item">Lorem</Link>
                     <Link to="/search/category/Ipsum" className="item">Ipsum</Link>
                     <Link to="/search/category/dolor" className="item">dolor</Link>

@@ -1,12 +1,15 @@
 //packages
 import React, { useState } from "react";
+//components
+import history from "../history";
 
 const Searchbar = ({ placeholder }) => {
     const [term, setTerm] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log(term)
+        history.push(`/search/term/${term}`)
+        setTerm('');
     }
 
     return (
