@@ -3,9 +3,10 @@ import React from "react";
 import { Router, Route } from 'react-router-dom';
 //components
 import Home from "./Home";
-import Header from "./Header";
+import Navbar from "./Navbar";
 import Tree from "./trees/Tree";
 import TreeList from "./trees/TreeList";
+import Statistics from "./Statistics";
 import history from '../history';
 
 const App = () => {
@@ -13,10 +14,11 @@ const App = () => {
         <div className="ui container">
             <Router history={history}>
                 <div>
-                    <Header />
+                    <Navbar />
                     <Route path="/" exact component={Home}/>
                     <Route path="/tree/:id" exact component={Tree}/>
-                    <Route path="/search" exact component={TreeList}/>
+                    <Route path="/search/:searchBy/:key" exact component={TreeList}/>
+                    <Route path="/statistics" exact component={Statistics}/>
                 </div>
             </Router>
         </div>
