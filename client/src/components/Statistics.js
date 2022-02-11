@@ -8,7 +8,8 @@ const Statistics = () => {
         <div>
             Statistiken
             <Modal 
-                title="Titel"
+                show={false}
+                header="Titel"
                 content={"hui"}
                 actions={"yae"}
                 onDismiss={() => console.log(":(")}

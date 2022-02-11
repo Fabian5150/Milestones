@@ -1,4 +1,4 @@
-//Grider, streams/client/index.js
+//Quelle: Grider, streams/client/index.js
 
 import React from "react";
 import ReactDOM from "react-dom";
