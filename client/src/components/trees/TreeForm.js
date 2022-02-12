@@ -32,15 +32,18 @@ const TreeForm = (props) => {
     //TODO: fetch user's categories from API
     {
         label: 'Musik',
-        value: 'Musik'
+        value: 'Musik',
+        icon: 'music'
     },
     {
         label: 'Sport',
-        value: 'Sport'
+        value: 'Sport',
+        icon: 'futbol'
     },
     {
         label: 'Programmieren',
-        value: 'Programmieren'
+        value: 'Programmieren',
+        icon: 'coffee'
     }
   ];
 
