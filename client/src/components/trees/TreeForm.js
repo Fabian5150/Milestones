@@ -29,7 +29,7 @@ const TreeForm = (props) => {
   };
  
   const options = [
-    //TODO: fetch users categories drom API
+    //TODO: fetch user's categories from API
     {
         label: 'Musik',
         value: 'Musik'
@@ -45,14 +45,18 @@ const TreeForm = (props) => {
   ];
 
   const [selected, setSelected] = useState(options[0])
+  const [disabled, setDisabled] = useState(false)
+
   const renderCategory = ({label}) => {
     return (
-      <Dropdown
-        label={label}
-        options={options}
-        selected={selected}
-        onSelectedChange={setSelected}
-      />
+      <div className={`field ${disabled ? "disabled" : ""}`}>
+        <Dropdown
+          label={label}
+          options={options}
+          selected={selected}
+          onSelectedChange={setSelected}
+        />
+      </div>
     )
   }
 
@@ -62,6 +66,7 @@ const TreeForm = (props) => {
   };
  
   return (
+    //Quelle: Grider, streams/components/streams/StreamForm (modifiziert)
     <Form
       initialValues={props.initialValues}
       onSubmit={onSubmit}
@@ -76,6 +81,12 @@ const TreeForm = (props) => {
           errors.description = "Beschreibung kann nicht leer sein.";
         }
  
+        if(formValues.newCategory){
+          setDisabled(true)
+        } else{
+          setDisabled(false)
+        }
+
         return errors;
       }}
 
@@ -84,14 +95,15 @@ const TreeForm = (props) => {
           <div className="ui two column very realxed grid">
             <div className="column">
               <Field name="title" component={renderInput} label="Baumname:" />
-                <Field
-                  name="description"
-                  component={renderInput}
-                  label="Beschreibung:"
-                />
+              <Field
+                name="description"
+                component={renderInput}
+                label="Beschreibung:"
+              />
             </div>
             <div className="column">
               <Field name="category" component={renderCategory} label="Kategorie: "/>
+              <Field name="newCategory" component={renderInput} label="Oder erstelle neue Kategorie:"/>
               <button className="ui button primary">{props.submitBtn}</button>
             </div>
           </div>
