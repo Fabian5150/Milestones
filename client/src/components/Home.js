@@ -9,7 +9,18 @@ const Home = () => {
 
   const modalContent = () => {
     return (
-      <TreeForm onSubmit={() => console.log("yaay")} submitBtn="Baum erstellen"/>
+      <TreeForm onSubmit={() => console.log("yaay")} />
+    )
+  }
+
+  const modalActions = () => {
+    return (
+      <>
+        <button type="submit" form="treeForm" className="ui positive button"> 
+          Baum erstellen
+        </button>
+        <button onClick={() => {setShow(!show)}} className="ui negative button">Abbrechen</button>
+      </>
     )
   }
 
@@ -24,7 +35,7 @@ const Home = () => {
         show={show}
         header="Neuen Baum erstellen"
         content={modalContent()}
-        actions={<></>}
+        actions={modalActions()}
         onDismiss={() => setShow(!show)}
       />
     </div>

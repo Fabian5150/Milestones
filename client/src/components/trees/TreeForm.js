@@ -92,7 +92,7 @@ const TreeForm = (props) => {
       }}
 
       render={({ handleSubmit }) => (
-        <form onSubmit={handleSubmit} className="ui form error">
+        <form id="treeForm" onSubmit={handleSubmit} className="ui form error">
           <div className="ui two column grid">
             <div className="column">
               <Field name="title" component={renderInput} label="Baumname:" />
@@ -112,7 +112,6 @@ const TreeForm = (props) => {
                   <Field name="newCategoryIcon" component={renderIconDropdown} />
                 </div>
               </div>
-              <button className="ui button primary">{props.submitBtn}</button>
             </div>
           </div>
         </form>
