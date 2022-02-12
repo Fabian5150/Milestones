@@ -3,8 +3,9 @@ import React, { useState } from "react";
 import { Form, Field } from "react-final-form";
 //components
 import Dropdown from "../Dropdown"; 
-//temporary data
-import options from "../../categories";
+//data
+import icons from "../../categoryIcons";
+import categories from "../../categories";
 
 const TreeForm = (props) => {
   const renderError = ({ error, touched }) => {
@@ -30,19 +31,32 @@ const TreeForm = (props) => {
     );
   };
 
-  const [selected, setSelected] = useState(options[0])
+  const [selectedCategory, setSelectedCategory] = useState(categories[0])
   const [disabled, setDisabled] = useState(false)
-
-  const renderCategory = ({label}) => {
+  const renderCategoryDropdown = () => {
     return (
       <div className={`field ${disabled ? "disabled" : ""}`}>
         <Dropdown
-          label={label}
-          options={options}
-          selected={selected}
-          onSelectedChange={setSelected}
+          label="Kategorie: "
+          options={categories}
+          selected={selectedCategory}
+          onSelectedChange={setSelectedCategory}
         />
       </div>
+    )
+  }
+
+
+  const [selectedIcon, setSelectedIcon] = useState(icons[0])
+  const renderIconDropdown = () => {
+
+    return (
+      <Dropdown 
+        label="Icon: "
+        options={icons}
+        selected={selectedIcon}
+        onSelectedChange={setSelectedIcon}
+      />
     )
   }
 
@@ -50,7 +64,7 @@ const TreeForm = (props) => {
     //Quelle: Grider, streams/components/streams/StreamForm
     props.onSubmit(formValues);
   };
- 
+
   return (
     //Quelle: Grider, streams/components/streams/StreamForm (modifiziert)
     <Form
@@ -88,8 +102,15 @@ const TreeForm = (props) => {
               />
             </div>
             <div className="column">
-              <Field name="category" component={renderCategory} label="Kategorie: "/>
-              <Field name="newCategory" component={renderInput} label="Oder erstelle neue Kategorie:"/>
+              <Field name="category" component={renderCategoryDropdown}/>
+              <div className="ui two column very realxed grid">
+                <div className="column">
+                  <Field name="newCategory" component={renderInput} label="Oder erstelle neue Kategorie:" />
+                </div>
+                <div className="column">
+                  <Field name="newCategoryIcon" component={renderIconDropdown} />
+                </div>
+              </div>
               <button className="ui button primary">{props.submitBtn}</button>
             </div>
           </div>

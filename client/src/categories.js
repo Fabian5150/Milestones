@@ -1,6 +1,6 @@
 //temporary file
 
-const options = [
+const categories = [
   //TODO: fetch user's categories from API
   {
     label: 'Musik',
@@ -19,4 +19,4 @@ const options = [
   }
 ];
 
-export default options;
+export default categories;

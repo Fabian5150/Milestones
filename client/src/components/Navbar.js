@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 import Searchbar from "./SearchBar";
 import Auth from "./Auth";
 //temporary data
-import options from "../categories";
+import categories from "../categories";
 
 const renderCategories = () => {
-  return options.map(option => {
+  return categories.map(category => {
     return(
-      <Link to={`/search/category/${option.value}`} className="item">
-        <i className={`icon ${option.icon}`}/>
-        {option.value}
+      <Link to={`/search/category/${category.value}`} className="item" key={category.value}>
+        <i className={`icon ${category.icon}`}/>
+        {category.value}
       </Link>
     )
   })
