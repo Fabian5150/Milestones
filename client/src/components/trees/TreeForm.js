@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { Form, Field } from "react-final-form";
 //components
 import Dropdown from "../Dropdown"; 
+//temporary data
+import options from "../../categories";
 
 const TreeForm = (props) => {
   const renderError = ({ error, touched }) => {
@@ -27,25 +29,6 @@ const TreeForm = (props) => {
       </div>
     );
   };
- 
-  const options = [
-    //TODO: fetch user's categories from API
-    {
-        label: 'Musik',
-        value: 'Musik',
-        icon: 'music'
-    },
-    {
-        label: 'Sport',
-        value: 'Sport',
-        icon: 'futbol'
-    },
-    {
-        label: 'Programmieren',
-        value: 'Programmieren',
-        icon: 'coffee'
-    }
-  ];
 
   const [selected, setSelected] = useState(options[0])
   const [disabled, setDisabled] = useState(false)
