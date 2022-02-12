@@ -5,9 +5,13 @@ import Modal from "../Modal";
 import TreeForm from "./TreeForm";
 
 const TreeCreate = ({ show, setShow }) => {
+  const onSubmit = formValues => {
+    console.log(formValues)
+  }
+
   const modalContent = () => {
     return (
-      <TreeForm onSubmit={() => console.log("yaay")} />
+      <TreeForm onSubmit={onSubmit} />
     )
   }
 

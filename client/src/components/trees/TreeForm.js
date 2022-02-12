@@ -33,6 +33,7 @@ const TreeForm = (props) => {
 
   const [selectedCategory, setSelectedCategory] = useState(categories[0])
   const [disabled, setDisabled] = useState(false)
+
   const renderCategoryDropdown = () => {
     return (
       <div className={`field ${disabled ? "disabled" : ""}`}>
@@ -48,6 +49,7 @@ const TreeForm = (props) => {
 
 
   const [selectedIcon, setSelectedIcon] = useState(icons[0])
+  
   const renderIconDropdown = () => {
     return (
       <div className={`field ${!disabled ? "disabled" : ""}`}>
@@ -81,7 +83,7 @@ const TreeForm = (props) => {
         if (!formValues.description) {
           errors.description = "Beschreibung kann nicht leer sein.";
         }
- 
+
         if(formValues.newCategory){
           setDisabled(true)
         } else{
@@ -96,11 +98,7 @@ const TreeForm = (props) => {
           <div className="ui two column grid">
             <div className="column">
               <Field name="title" component={renderInput} label="Baumname:" />
-              <Field
-                name="description"
-                component={renderInput}
-                label="Beschreibung:"
-              />
+              <Field name="description" component={renderInput} label="Beschreibung:" />
             </div>
             <div className="column">
               <Field name="category" component={renderCategoryDropdown}/>
