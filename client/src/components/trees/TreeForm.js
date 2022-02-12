@@ -49,14 +49,15 @@ const TreeForm = (props) => {
 
   const [selectedIcon, setSelectedIcon] = useState(icons[0])
   const renderIconDropdown = () => {
-
     return (
-      <Dropdown 
-        label="Icon: "
-        options={icons}
-        selected={selectedIcon}
-        onSelectedChange={setSelectedIcon}
-      />
+      <div className={`field ${!disabled ? "disabled" : ""}`}>
+        <Dropdown 
+          label="Icon: "
+          options={icons}
+          selected={selectedIcon}
+          onSelectedChange={setSelectedIcon}
+        />
+      </div>
     )
   }
 
@@ -92,7 +93,7 @@ const TreeForm = (props) => {
 
       render={({ handleSubmit }) => (
         <form onSubmit={handleSubmit} className="ui form error">
-          <div className="ui two column very realxed grid">
+          <div className="ui two column grid">
             <div className="column">
               <Field name="title" component={renderInput} label="Baumname:" />
               <Field
@@ -103,7 +104,7 @@ const TreeForm = (props) => {
             </div>
             <div className="column">
               <Field name="category" component={renderCategoryDropdown}/>
-              <div className="ui two column very realxed grid">
+              <div className="ui two column grid">
                 <div className="column">
                   <Field name="newCategory" component={renderInput} label="Oder erstelle neue Kategorie:" />
                 </div>

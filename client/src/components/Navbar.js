@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 //components
 import Searchbar from "./SearchBar";
 import Auth from "./Auth";
-//temporary data
+//data
 import categories from "../categories";
 
 const renderCategories = () => {
