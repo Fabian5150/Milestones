@@ -1,5 +1,6 @@
+//Quelle: Grider, streams/components/streams/StreamForm (modifiziert)
 //packages
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Form, Field } from "react-final-form";
 //components
 import Dropdown from "../Dropdown"; 
@@ -9,7 +10,6 @@ import categories from "../../categories";
 
 const TreeForm = (props) => {
   const renderError = ({ error, touched }) => {
-    //Quelle: Grider, streams/components/streams/StreamForm
     if (touched && error) {
       return (
         <div className="ui error message">
@@ -20,7 +20,6 @@ const TreeForm = (props) => {
   };
  
   const renderInput = ({ input, label, meta }) => {
-    //Quelle: Grider, streams/components/streams/StreamForm
     const className = `field ${meta.error && meta.touched ? "error" : ""}`;
     return (
       <div className={className}>
@@ -64,28 +63,29 @@ const TreeForm = (props) => {
   }
 
   const onSubmit = (formValues) => {
-    //Quelle: Grider, streams/components/streams/StreamForm
+    formValues.category = selectedCategory
+    formValues.newCategoryIcon = selectedIcon
     props.onSubmit(formValues);
   };
 
   return (
-    //Quelle: Grider, streams/components/streams/StreamForm (modifiziert)
     <Form
       initialValues={props.initialValues}
       onSubmit={onSubmit}
       validate={(formValues) => {
         const errors = {};
- 
+
         if (!formValues.title) {
           errors.title = "Name kann nicht leer sein.";
-        }
- 
-        if (!formValues.description) {
-          errors.description = "Beschreibung kann nicht leer sein.";
+        } else if(formValues.title.length > 20){
+          errors.title = "Titel darf nicht länger als 20 Zeichen sein."
         }
 
         if(formValues.newCategory){
-          setDisabled(true)
+          setDisabled(true) 
+          if(formValues.newCategory.length > 20){
+            errors.newCategory = "Kategorie darf nicht länger als 20 Zeichen sein."
+          }
         } else{
           setDisabled(false)
         }
@@ -101,7 +101,10 @@ const TreeForm = (props) => {
               <Field name="description" component={renderInput} label="Beschreibung:" />
             </div>
             <div className="column">
-              <Field name="category" component={renderCategoryDropdown}/>
+              <Field 
+                name="category" 
+                component={renderCategoryDropdown}
+              />
               <div className="ui two column grid">
                 <div className="column">
                   <Field name="newCategory" component={renderInput} label="Oder erstelle neue Kategorie:" />
