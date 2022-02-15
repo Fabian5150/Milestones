@@ -1,6 +1,6 @@
 //Quelle: Grider, streams/components/streams/StreamForm (modifiziert)
 //packages
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Form, Field } from "react-final-form";
 //components
 import Dropdown from "../Dropdown"; 
@@ -30,7 +30,7 @@ const TreeForm = (props) => {
     );
   };
 
-  const [selectedCategory, setSelectedCategory] = useState(categories[0])
+  const [selectedCategory, setSelectedCategory] = useState("")
   const [disabled, setDisabled] = useState(false)
 
   const renderCategoryDropdown = () => {
@@ -47,7 +47,7 @@ const TreeForm = (props) => {
   }
 
 
-  const [selectedIcon, setSelectedIcon] = useState(icons[0])
+  const [selectedIcon, setSelectedIcon] = useState("")
   
   const renderIconDropdown = () => {
     return (
@@ -83,10 +83,12 @@ const TreeForm = (props) => {
 
         if(formValues.newCategory){
           setDisabled(true) 
+          setSelectedCategory("")
           if(formValues.newCategory.length > 20){
             errors.newCategory = "Kategorie darf nicht länger als 20 Zeichen sein."
           }
         } else{
+          setSelectedIcon("")
           setDisabled(false)
         }
 
@@ -101,10 +103,7 @@ const TreeForm = (props) => {
               <Field name="description" component={renderInput} label="Beschreibung:" />
             </div>
             <div className="column">
-              <Field 
-                name="category" 
-                component={renderCategoryDropdown}
-              />
+              <Field name="category" component={renderCategoryDropdown} />
               <div className="ui two column grid">
                 <div className="column">
                   <Field name="newCategory" component={renderInput} label="Oder erstelle neue Kategorie:" />
