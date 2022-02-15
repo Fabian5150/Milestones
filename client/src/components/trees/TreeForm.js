@@ -63,8 +63,8 @@ const TreeForm = (props) => {
   }
 
   const onSubmit = (formValues) => {
-    formValues.category = selectedCategory
-    formValues.newCategoryIcon = selectedIcon
+    if(selectedCategory != "") formValues.category = selectedCategory.value
+    if(selectedIcon != "") formValues.newCategoryIcon = selectedIcon.value
     props.onSubmit(formValues);
   };
 
