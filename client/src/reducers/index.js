@@ -1,13 +1,8 @@
 //packages
 import { combineReducers } from "redux";
-
-const platzhalterReducer = () => {
-  return [
-    { title: 'Lorem', id: 'ipsum' },
-    { title: 'dolor', id: 'sit' },
-  ]
-}
+//reducers
+import treeReducer from "./treeReducer";
 
 export default combineReducers({
-  platzhalter: platzhalterReducer
+  trees: treeReducer
 })

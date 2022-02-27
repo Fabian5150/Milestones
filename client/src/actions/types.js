@@ -1,1 +1,1 @@
-export const CREATE_STREAM = "CREATE_STREAM"
+export const CREATE_TREE = "CREATE_TREE"

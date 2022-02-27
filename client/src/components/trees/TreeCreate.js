@@ -3,6 +3,7 @@ import React from "react";
 //components
 import Modal from "../Modal";
 import TreeForm from "./TreeForm";
+import { createTree } from "../../actions";
 
 const TreeCreate = ({ show, setShow }) => {
   const onSubmit = formValues => {
@@ -37,4 +38,4 @@ const TreeCreate = ({ show, setShow }) => {
   )
 }
 
-export default TreeCreate;
+export default TreeCreate
