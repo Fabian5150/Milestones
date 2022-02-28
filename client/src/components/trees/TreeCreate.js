@@ -1,16 +1,13 @@
 //packages
 import React from "react";
-import { useDispatch } from 'react-redux'
 //components
 import Modal from "../Modal";
 import TreeForm from "./TreeForm";
 import { createTree } from "../../actions";
 
 const TreeCreate = ({ show, setShow }) => {
-  const dispatch = useDispatch()
-
   const onSubmit = async formValues => {
-    createTree(formValues, dispatch)
+    createTree(formValues)
   }
 
   const modalContent = () => {

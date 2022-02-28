@@ -1,4 +1,4 @@
-//Quelle: Grider, streams/client/index.js
+//Quelle: Grider, streams/client/index.js (modifiziert)
 
 import React from "react";
 import ReactDOM from "react-dom";
@@ -14,6 +14,8 @@ const store = createStore(
     reducers,
     composeEnhancers(applyMiddleware(reduxThunk))
   )
+
+export default store;
 
 ReactDOM.render(
   <Provider store={store}>

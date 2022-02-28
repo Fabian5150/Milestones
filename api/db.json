@@ -1,5 +1,16 @@
 {
   "categories": [],
-  "treePreviews": [],
+  "treePreviews": [
+    {
+      "title": "asd",
+      "description": "asd",
+      "id": 1
+    },
+    {
+      "title": "asd",
+      "description": "asd",
+      "id": 2
+    }
+  ],
   "trees": []
 }
