@@ -1,5 +1,5 @@
-//redux store access
-import store from "../index"
+//redux store
+import store from "../store"
 //api connection
 import trees from '../apis/trees'
 //action types
@@ -17,5 +17,5 @@ export const createTree = async (formValues) => {
 }
 
 export const fetchCategories = async dispatch => {
-
+  
 }
