@@ -1,21 +1,16 @@
 //packages
 import React from "react";
-import { useDispatch, connect } from 'react-redux'
+import { useDispatch } from 'react-redux'
 //components
 import Modal from "../Modal";
 import TreeForm from "./TreeForm";
 import { createTree } from "../../actions";
-//api connection
-import trees from '../../apis/trees'
 
 const TreeCreate = ({ show, setShow }) => {
   const dispatch = useDispatch()
 
   const onSubmit = async formValues => {
-    const res = await trees.post('/treePreviews', formValues)
-    console.log(res.data)
-    dispatch({ type: "CREATE_TREE", payload: res.data })
-    //createTree(formValues)
+    createTree(formValues, dispatch)
   }
 
   const modalContent = () => {
@@ -46,5 +41,4 @@ const TreeCreate = ({ show, setShow }) => {
   )
 }
 
-export default connect(null, { createTree })(TreeCreate);
-//export default TreeCreate
+export default TreeCreate
