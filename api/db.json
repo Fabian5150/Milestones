@@ -1,5 +1,30 @@
 {
   "categories": [],
-  "treePreviews": [],
+  "treePreviews": [
+    {
+      "title": "asd",
+      "description": "asd",
+      "id": 1
+    },
+    {
+      "title": "asd",
+      "description": "asd",
+      "category": "Sport",
+      "id": 2
+    },
+    {
+      "title": "asd",
+      "description": "asd",
+      "newCategory": "aa",
+      "newCategoryIcon": "book",
+      "id": 3
+    },
+    {
+      "title": "asd",
+      "description": "asd",
+      "category": "Sport",
+      "id": 4
+    }
+  ],
   "trees": []
 }

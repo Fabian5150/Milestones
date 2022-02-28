@@ -6,7 +6,7 @@ import {
 export default (state = {}, action) => {
   switch(action.type){
     case CREATE_TREE:
-      return Object.assign(state, action.payload.formValues)
+      return Object.assign(state, action.payload)
 
     default: return state
   }
