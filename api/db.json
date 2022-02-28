@@ -1,44 +1,24 @@
 {
   "categories": [
     {
-      "label": "meine neue Kategorie",
-      "value": "meine neue Kategorie",
-      "icon": "graduation cap",
-      "id": 1
-    }
-  ],
-  "treePreviews": [
-    {
-      "title": "Ich hoffe das geht",
-      "description": "wäre ziemlich cool mann",
-      "category": "meine neue Kategorie",
+      "label": "Musik",
+      "value": "Musik",
+      "icon": "music",
       "id": 1
     },
     {
-      "title": "Ich hoffe das geht",
-      "description": "wäre ziemlich cool mann",
-      "category": "meine neue Kategorie",
+      "label": "Sport",
+      "value": "Sport",
+      "icon": "basketball ball",
       "id": 2
     },
     {
-      "title": "curioso",
-      "description": "hmmmmmmm curioso",
-      "category": "Sport",
+      "label": "Kram",
+      "value": "Kram",
+      "icon": "book",
       "id": 3
     }
   ],
-  "trees": [
-    {
-      "data": null,
-      "id": 1
-    },
-    {
-      "data": null,
-      "id": 2
-    },
-    {
-      "data": null,
-      "id": 3
-    }
-  ]
+  "treePreviews": [],
+  "trees": []
 }

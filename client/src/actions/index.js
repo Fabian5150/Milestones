@@ -5,9 +5,10 @@ import trees from '../apis/trees'
 //action types
 import {
   CREATE_TREE,
-  CREATE_CATEGORY,
   FETCH_CATEGORIES
 } from './types'
+//components
+import history from '../history'
 
 const dispatch = store.dispatch
 
@@ -28,6 +29,7 @@ export const createTree = async formValues => {
   const res = await trees.post('/treePreviews', formValues)
   await trees.post('/trees', {data: null})
   console.log(res.data)
-  return dispatch({ type: CREATE_TREE, payload: res.data })
+  dispatch({ type: CREATE_TREE, payload: res.data })
+  history.push(`/tree/${res.data.id}`)
 }
 
