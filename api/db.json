@@ -25,6 +25,12 @@
       "description": "Mein erster Baum, ich bin so aufgeregt :o",
       "category": "Musik",
       "id": 1
+    },
+    {
+      "title": "Mein zweiter Baum",
+      "description": "ich bin so happy ;)",
+      "category": "Musik",
+      "id": 2
     }
   ],
   "trees": [
@@ -34,6 +40,50 @@
         "root": true
       },
       "id": 1
+    },
+    {
+      "data": {
+        "name": "CEO",
+        "children": [
+          {
+            "name": "Manager",
+            "attributes": {
+              "done": true,
+              "department": "Production"
+            },
+            "children": [
+              {
+                "name": "Foreman",
+                "attributes": {
+                  "done": true,
+                  "department": "Fabrication"
+                },
+                "children": [
+                  {
+                    "name": "Worker",
+                    "attributes": {
+                      "done": false
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "Foreman",
+                "attributes": {
+                  "department": "Assembly",
+                  "done": false
+                },
+                "children": [
+                  {
+                    "name": "Worker"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "id": 2
     }
   ]
 }

@@ -1,55 +1,15 @@
 //packages
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Tree from 'react-d3-tree';
 //componets
 import { fetchTree } from "../../actions";
 
-const orgChart = {
-  name: 'CEO',
-  children: [
-    {
-      name: 'Manager',
-      attributes: {
-        done: true,
-        department: 'Production',
-      },
-      children: [
-        {
-          name: 'Foreman',
-          attributes: {
-            done: true,
-            department: 'Fabrication',
-          },
-          children: [
-            {
-              name: 'Worker',
-              attributes: {
-                done: false
-              }
-            },
-          ],
-        },
-        {
-          name: 'Foreman',
-          attributes: {
-            department: 'Assembly',
-            done: false
-          },
-          children: [
-            {
-              name: 'Worker',
-            },
-          ],
-        },
-      ],
-    },
-  ],
-};
+const TreePage = ({ match: { params } }) => {
+  const [treeData, setTreeData] = useState() 
 
-const TreePage = ({match:{params}}) => {
   useEffect(() => {
     fetchTree(params.id)
-    .then(({ payload }) => console.log(payload))
+    .then(({ payload }) => setTreeData(payload.data))
   }, [])
 
   const myCustomNode = ({ nodeDatum, toggleNode }) => (
@@ -76,18 +36,22 @@ const TreePage = ({match:{params}}) => {
     </g>
   );
   
-  return (
-    <div id="treeWrapper" style={{ width: "100vw", height: "100vh" }}>
-      <Tree 
-        data={orgChart} 
-        collapsible={false} 
-        zoomable={false}
-        orientation='vertical' 
-        translate={{ x: window.innerWidth / 2, y: window.innerHeight / 2 }}
-        renderCustomNodeElement={myCustomNode}          
-        />
-    </div>
-  );
+  if(!treeData){
+    return <div>Loading...</div>
+  } else {
+    return (
+      <div id="treeWrapper" style={{ width: "100vw", height: "100vh" }}>
+        <Tree 
+          data={treeData} 
+          collapsible={false} 
+          zoomable={false}
+          orientation='vertical' 
+          translate={{ x: window.innerWidth / 2, y: window.innerHeight / 2 }}
+          renderCustomNodeElement={myCustomNode}          
+          />
+      </div>
+    )
+  }  
 }
 
 export default TreePage;
