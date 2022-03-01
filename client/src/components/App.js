@@ -4,7 +4,7 @@ import { Router, Route } from 'react-router-dom';
 //components
 import Home from "./Home";
 import Navbar from "./Navbar";
-import Tree from "./trees/Tree";
+import TreePage from "./trees/TreePage";
 import TreeList from "./trees/TreeList";
 import Statistics from "./Statistics";
 import history from '../history';
@@ -16,7 +16,7 @@ const App = () => {
         <div>
           <Navbar />
           <Route path="/" exact component={Home}/>
-          <Route path="/tree/:id" exact component={Tree}/>
+          <Route path="/tree/:id" exact component={TreePage}/>
           <Route path="/search/:searchBy/:key" exact component={TreeList}/>
           <Route path="/statistics" exact component={Statistics}/>
         </div>

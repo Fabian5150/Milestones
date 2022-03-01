@@ -45,7 +45,7 @@ const orgChart = {
   ],
 };
 
-const App = () => {
+const TreePage = () => {
   const renderRectSvgNode = ({ nodeDatum, toggleNode }) => (
     <g>
       <circle 
@@ -84,4 +84,4 @@ const App = () => {
   );
 }
 
-export default App;
+export default TreePage;

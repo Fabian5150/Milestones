@@ -27,7 +27,7 @@ export const createTree = async formValues => {
   }
 
   const res = await trees.post('/treePreviews', formValues)
-  await trees.post('/trees', {data: null})
+  await trees.post('/trees', {data: {name: formValues.title}})
   console.log(res.data)
   dispatch({ type: CREATE_TREE, payload: res.data })
   history.push(`/tree/${res.data.id}`)
