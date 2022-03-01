@@ -49,6 +49,7 @@ const orgChart = {
 const TreePage = ({match:{params}}) => {
   useEffect(() => {
     fetchTree(params.id)
+    .then(({ payload }) => console.log(payload))
   }, [])
 
   const myCustomNode = ({ nodeDatum, toggleNode }) => (
