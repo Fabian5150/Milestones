@@ -35,10 +35,10 @@ export const createTree = async formValues => {
   history.push(`/tree/${res.data.id}`)
 }
 
-export const fetchCategories = () => async (dispatch) => {
+export const fetchCategories = async () => {
   const res = await trees.get('/categories')
 
-  dispatch({ type: FETCH_CATEGORIES, payload: res.data })
+  return dispatch({ type: FETCH_CATEGORIES, payload: res.data })
 }
 
 export const fetchTree = async id => {

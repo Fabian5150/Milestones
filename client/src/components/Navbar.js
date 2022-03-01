@@ -1,13 +1,10 @@
 //packages
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from 'react-redux';
 //components
 import Searchbar from "./SearchBar";
 import Auth from "./Auth";
 import { fetchCategories } from "../actions";
-
-import trees from "../apis/trees";
 
 const Navbar = () => {
   const [categories, setCategories] = useState([{
@@ -16,12 +13,10 @@ const Navbar = () => {
   }])
 
   useEffect(() => {
-    const fetchCategories = async () => {
-      const res = await trees.get('/categories')
-      setCategories(res.data)
-    }
-  
     fetchCategories()
+    .then(({ payload }) => {
+      setCategories(payload)
+    })
   }, [])
 
   const renderCategories = () => {
