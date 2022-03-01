@@ -1,24 +1,40 @@
 //packages
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from 'react-redux';
 //components
 import Searchbar from "./SearchBar";
 import Auth from "./Auth";
-//data
-import categories from "../categories";
+import { fetchCategories } from "../actions";
 
-const renderCategories = () => {
-  return categories.map(category => {
-    return(
-      <Link to={`/search/category/${category.value}`} className="item" key={category.value}>
-        <i className={`icon ${category.icon}`}/>
-        {category.value}
-      </Link>
-    )
-  })
-}
+import trees from "../apis/trees";
 
 const Navbar = () => {
+  const [categories, setCategories] = useState([{
+    "value": "loading...",
+    "icon": "music"
+  }])
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      const res = await trees.get('/categories')
+      setCategories(res.data)
+    }
+  
+    fetchCategories()
+  }, [])
+
+  const renderCategories = () => {
+    return categories.map(category => {
+      return(
+        <Link to={`/search/category/${category.value}`} className="item" key={category.value}>
+          <i className={`icon ${category.icon}`}/>
+          {category.value}
+        </Link>
+      )
+    })   
+  }
+
   return (
     <div className="ui borderless menu">
       <Link to="/" className="header item">

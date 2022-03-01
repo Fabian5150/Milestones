@@ -6,7 +6,7 @@ import TreeForm from "./TreeForm";
 import { createTree } from "../../actions";
 
 const TreeCreate = ({ show, setShow }) => {
-  const onSubmit = async formValues => {
+  const onSubmit = formValues => {
     createTree(formValues)
   }
 

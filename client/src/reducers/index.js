@@ -2,7 +2,9 @@
 import { combineReducers } from "redux";
 //reducers
 import treeReducer from "./treeReducer";
+import categoryReducer from "./categoryReducer";
 
 export default combineReducers({
-  trees: treeReducer
+  trees: treeReducer,
+  categories: categoryReducer
 })
