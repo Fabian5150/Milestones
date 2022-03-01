@@ -20,14 +20,20 @@ const Navbar = () => {
     if(!categories){
       return <div>Loading...</div>
     } else {
-      return categories.map(category => {
-        return(
-          <Link to={`/search/category/${category.value}`} className="item" key={category.value}>
-            <i className={`icon ${category.icon}`}/>
-            {category.value}
-          </Link>
-        )
-      })
+      return <>
+        <div className="item" onClick={() => console.log("hallo")}>
+          <i className="add icon circular"/>
+          Kategorie hinzufügen
+        </div>
+        {categories.map(category => {
+          return(
+            <Link to={`/search/category/${category.value}`} className="item" key={category.value}>
+              <i className={`icon ${category.icon}`}/>
+              {category.value}
+            </Link>
+          )
+        })}
+      </> 
     }   
   }
 
