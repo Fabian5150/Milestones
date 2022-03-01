@@ -5,7 +5,8 @@ import trees from '../apis/trees'
 //action types
 import {
   CREATE_TREE,
-  FETCH_CATEGORIES
+  FETCH_CATEGORIES,
+  FETCH_TREE
 } from './types'
 //components
 import history from '../history'
@@ -27,14 +28,22 @@ export const createTree = async formValues => {
   }
 
   const res = await trees.post('/treePreviews', formValues)
-  await trees.post('/trees', {data: {name: formValues.title}})
+  await trees.post('/trees', {data: {name: formValues.title, root: true}})
   console.log(res.data)
+  
   dispatch({ type: CREATE_TREE, payload: res.data })
   history.push(`/tree/${res.data.id}`)
 }
 
 export const fetchCategories = () => async (dispatch) => {
   const res = await trees.get('/categories')
+
   dispatch({ type: FETCH_CATEGORIES, payload: res.data })
 }
 
+export const fetchTree = async id => {
+  const res1 = await trees.get(`/treePreviews/${id}`)
+  const res2 = await trees.get(`/trees/${id}`)
+
+  return dispatch({ type: FETCH_TREE, payload: Object.assign(res1.data, res2.data)})
+}

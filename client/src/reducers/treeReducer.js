@@ -9,7 +9,7 @@ export default (state = {}, action) => {
     case CREATE_TREE:
       return Object.assign(state, action.payload)
     case FETCH_TREE:
-      return Object.assign(state, action.payload)
+      return Object.assign(state, {tree: action.payload})
 
     default: return state
   }

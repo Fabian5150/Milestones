@@ -1,8 +1,9 @@
-import React from "react";
+//packages
+import React, { useEffect } from "react";
 import Tree from 'react-d3-tree';
+//componets
+import { fetchTree } from "../../actions";
 
-// This is a simplified example of an org chart with a depth of 2.
-// Note how deeper levels are defined recursively via the `children` property.
 const orgChart = {
   name: 'CEO',
   children: [
@@ -45,8 +46,12 @@ const orgChart = {
   ],
 };
 
-const TreePage = () => {
-  const renderRectSvgNode = ({ nodeDatum, toggleNode }) => (
+const TreePage = ({match:{params}}) => {
+  useEffect(() => {
+    fetchTree(params.id)
+  }, [])
+
+  const myCustomNode = ({ nodeDatum, toggleNode }) => (
     <g>
       <circle 
         r={20} 
@@ -78,7 +83,7 @@ const TreePage = () => {
         zoomable={false}
         orientation='vertical' 
         translate={{ x: window.innerWidth / 2, y: window.innerHeight / 2 }}
-        renderCustomNodeElement={renderRectSvgNode}          
+        renderCustomNodeElement={myCustomNode}          
         />
     </div>
   );

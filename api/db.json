@@ -21,8 +21,8 @@
   ],
   "treePreviews": [
     {
-      "title": "Mein erster Baum",
-      "description": "Ich bin so aufgeregt",
+      "title": "Mein wirklich Erster",
+      "description": "Mein erster Baum, ich bin so aufgeregt :o",
       "category": "Musik",
       "id": 1
     }
@@ -30,7 +30,8 @@
   "trees": [
     {
       "data": {
-        "name": "Mein erster Baum"
+        "name": "Mein wirklich Erster",
+        "root": true
       },
       "id": 1
     }
