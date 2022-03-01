@@ -1,14 +1,23 @@
 //Quelle: Grider, streams/components/streams/StreamForm (modifiziert)
 //packages
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Form, Field } from "react-final-form";
 //components
 import Dropdown from "../Dropdown"; 
+import { fetchCategories } from "../../actions";
 //data
 import icons from "../../categoryIcons";
-import categories from "../../categories";
 
 const TreeForm = (props) => {
+  const [categories, setCategories] = useState()
+
+  useEffect(() => {
+    fetchCategories()
+    .then(({ payload }) => {
+      setCategories(payload)
+    })
+  }, [])
+
   const renderError = ({ error, touched }) => {
     if (touched && error) {
       return (
@@ -34,16 +43,20 @@ const TreeForm = (props) => {
   const [disabled, setDisabled] = useState(false)
 
   const renderCategoryDropdown = () => {
-    return (
-      <div className={`field ${disabled ? "disabled" : ""}`}>
-        <Dropdown
-          label="Kategorie: "
-          options={categories}
-          selected={selectedCategory}
-          onSelectedChange={setSelectedCategory}
-        />
-      </div>
-    )
+    if(!categories){
+      return <div>Loading...</div>
+    } else {
+      return (
+        <div className={`field ${disabled ? "disabled" : ""}`}>
+          <Dropdown
+            label="Kategorie: "
+            options={categories}
+            selected={selectedCategory}
+            onSelectedChange={setSelectedCategory}
+          />
+        </div>
+      )
+    }   
   }
 
 

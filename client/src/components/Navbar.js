@@ -7,10 +7,7 @@ import Auth from "./Auth";
 import { fetchCategories } from "../actions";
 
 const Navbar = () => {
-  const [categories, setCategories] = useState([{
-    "value": "loading...",
-    "icon": "music"
-  }])
+  const [categories, setCategories] = useState()
 
   useEffect(() => {
     fetchCategories()
@@ -20,14 +17,18 @@ const Navbar = () => {
   }, [])
 
   const renderCategories = () => {
-    return categories.map(category => {
-      return(
-        <Link to={`/search/category/${category.value}`} className="item" key={category.value}>
-          <i className={`icon ${category.icon}`}/>
-          {category.value}
-        </Link>
-      )
-    })   
+    if(!categories){
+      return <div>Loading...</div>
+    } else {
+      return categories.map(category => {
+        return(
+          <Link to={`/search/category/${category.value}`} className="item" key={category.value}>
+            <i className={`icon ${category.icon}`}/>
+            {category.value}
+          </Link>
+        )
+      })
+    }   
   }
 
   return (

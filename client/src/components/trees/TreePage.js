@@ -48,7 +48,7 @@ const TreePage = ({ match: { params } }) => {
           orientation='vertical' 
           translate={{ x: window.innerWidth / 2, y: window.innerHeight / 2 }}
           renderCustomNodeElement={myCustomNode}          
-          />
+        />
       </div>
     )
   }  
