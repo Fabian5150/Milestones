@@ -4,12 +4,12 @@ import {
   CREATE_CATEGORY
 } from '../actions/types'
 
-export default (state = {}, action) => {
-  switch(action.type){
+export default (state = {}, { type, payload }) => {
+  switch(type){
     case FETCH_CATEGORIES:
-      return Object.assign(state, {categories: action.payload})
+      return {...state, categories: payload}
     case CREATE_CATEGORY:
-      return Object.assign(state, {category: action.payload})
+      return {...state, categories: payload}
 
     default: return state
   }
