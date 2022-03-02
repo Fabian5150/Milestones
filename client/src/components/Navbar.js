@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 //components
 import Searchbar from "./SearchBar";
 import Auth from "./Auth";
+import CategoryForm from "./categories/CategoryForm";
 import { fetchCategories } from "../actions";
 
 const Navbar = () => {
@@ -21,7 +22,12 @@ const Navbar = () => {
       return <div>Loading...</div>
     } else {
       return <>
-        <div className="item" onClick={() => console.log("hallo")}>
+        <div className="ui left pointing dropdown link item">
+            <div className="ui attached stackable menu">
+              <div className="ui segment">
+                <CategoryForm />
+              </div>
+            </div>
           <i className="add icon circular"/>
           Kategorie hinzufügen
         </div>
