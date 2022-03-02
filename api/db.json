@@ -17,6 +17,12 @@
       "value": "Kram",
       "icon": "book",
       "id": 3
+    },
+    {
+      "icon": "circle",
+      "label": "tolle Kategorie",
+      "value": "tolle Kategorie",
+      "id": 4
     }
   ],
   "treePreviews": [

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 //components
 import Searchbar from "./SearchBar";
 import Auth from "./Auth";
-import CategoryForm from "./categories/CategoryForm";
+import CategoryCreate from "./categories/CategoryCreate";
 import { fetchCategories } from "../actions";
 
 const Navbar = () => {
@@ -17,17 +17,13 @@ const Navbar = () => {
     })
   }, [])
 
+  const [show, setShow] = useState(false)
   const renderCategories = () => {
     if(!categories){
       return <div>Loading...</div>
     } else {
       return <>
-        <div className="ui left pointing dropdown link item">
-            <div className="ui attached stackable menu">
-              <div className="ui segment">
-                <CategoryForm />
-              </div>
-            </div>
+        <div className="item" onClick={() => setShow(true)}>
           <i className="add icon circular"/>
           Kategorie hinzufügen
         </div>
@@ -81,6 +77,7 @@ const Navbar = () => {
           <Auth />
         </div>
       </div>
+      <CategoryCreate setShow={setShow} show={show}/>
     </div>
   )
 }

@@ -47,7 +47,7 @@ const Dropdown = ({ label, options, selected, onSelectedChange }) => {
         <label className="label">{label}</label>
         <div
           onClick={() => setOpen(!open)}
-          className={`ui selection dropdown ${open ? "visible active" : ""}`}
+          className={`ui compact selection dropdown ${open ? "visible active" : ""}`}
         >
           <i className="dropdown icon"></i>
           <div className="text"><i className={`icon ${selected.icon}`}/>{selected.label}</div>

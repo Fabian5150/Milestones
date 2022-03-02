@@ -45,7 +45,7 @@ const CategoryForm = (props) => {
   }
 
   const onSubmit = (formValues) => {
-    if(selectedIcon != "") formValues.categoryIcon = selectedIcon.value
+    if(selectedIcon != "") formValues.icon = selectedIcon.value
     props.onSubmit(formValues);
   };
 
@@ -68,8 +68,7 @@ const CategoryForm = (props) => {
       render={({ handleSubmit }) => (
         <form id="categoryForm" onSubmit={handleSubmit} className="ui form error">
           <Field name="title" component={renderInput} label="Kategoriename:"/>
-          <Field name="categoryIcon" component={renderIconDropdown}/>
-          <button className="ui button">Drück mich ;)</button>
+          <Field name="icon" component={renderIconDropdown}/>
         </form>
       )}
     />

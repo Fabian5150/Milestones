@@ -6,7 +6,8 @@ import trees from '../apis/trees'
 import {
   CREATE_TREE,
   FETCH_CATEGORIES,
-  FETCH_TREE
+  FETCH_TREE,
+  CREATE_CATEGORY
 } from './types'
 //components
 import history from '../history'
@@ -46,4 +47,16 @@ export const fetchTree = async id => {
   const res2 = await trees.get(`/trees/${id}`)
 
   return dispatch({ type: FETCH_TREE, payload: Object.assign(res1.data, res2.data)})
+}
+
+export const createCategory = async formValues => {
+  const data = {
+    icon: formValues.icon,
+    label: formValues.title,
+    value: formValues.title
+  }
+  const res = await trees.post('/categories', data)
+
+  history.push(`/search/category/${data.value}`)
+  return dispatch({ type: CREATE_CATEGORY, payload: res.data })
 }
