@@ -26,21 +26,21 @@ const TreePage = ({ match: { params } }) => {
     } else return <></>
   }
 
-  const myCustomNode = ({ nodeDatum, toggleNode }) => (
+  const myCustomNode = ({ nodeDatum }) => (
     <g>
       <circle 
         r={20} 
         onClick={() => {
-          setCurrentNodeId(nodeDatum.name)
+          setCurrentNodeId(nodeDatum.__rd3t.id)
           setShowNodeActions(!showNodeActions)
-          console.log(nodeDatum)
+          console.log(nodeDatum.__rd3t.id)
         }} 
         fill={`${nodeDatum.attributes?.done ? "green" : "red"}`} 
         onMouseOver={() => {}}
         onMouseOut={() => {}}
       />
       
-      <MyForeignObject id={ nodeDatum.name }/>
+      <MyForeignObject id={ nodeDatum.__rd3t.id }/>
       
       <text fill={`${nodeDatum.name === "CEO" ? "red" : "black"}`} stroke={`${nodeDatum.name === "CEO" ? "red" : "black"}`} strokeWidth="0.3" x="25">
         {nodeDatum.name}
