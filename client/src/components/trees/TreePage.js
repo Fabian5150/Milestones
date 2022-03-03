@@ -6,24 +6,41 @@ import { fetchTree } from "../../actions";
 
 const TreePage = ({ match: { params } }) => {
   const [treeData, setTreeData] = useState() 
+  const [showNodeActions, setShowNodeActions] = useState(false)
+  const [currentNodeId, setCurrentNodeId] = useState ()
 
   useEffect(() => {
     fetchTree(params.id)
     .then(({ payload }) => setTreeData(payload.data))
   }, [])
 
+  const MyForeignObject = ({id}) => {
+    if(showNodeActions && id === currentNodeId){
+      return (
+        <foreignObject x="-25" y="0" width="50" height="50">
+          <button className="mini ui circular icon button" onClick={() => console.log("Holá!")}>
+            <i className="add icon"></i>
+          </button>
+        </foreignObject>
+      )
+    } else return <></>
+  }
+
   const myCustomNode = ({ nodeDatum, toggleNode }) => (
     <g>
       <circle 
         r={20} 
-        onClick={() => console.log(nodeDatum)} 
+        onClick={() => {
+          setCurrentNodeId(nodeDatum.name)
+          setShowNodeActions(!showNodeActions)
+          console.log(nodeDatum)
+        }} 
         fill={`${nodeDatum.attributes?.done ? "green" : "red"}`} 
+        onMouseOver={() => {}}
+        onMouseOut={() => {}}
       />
-      <foreignObject x="-25" y="0" width="50" height="50">
-        <button className="mini ui circular icon button" onClick={() => console.log("Holá!")}>
-          <i className="add icon"></i>
-        </button>
-      </foreignObject>
+      
+      <MyForeignObject id={ nodeDatum.name }/>
       
       <text fill={`${nodeDatum.name === "CEO" ? "red" : "black"}`} stroke={`${nodeDatum.name === "CEO" ? "red" : "black"}`} strokeWidth="0.3" x="25">
         {nodeDatum.name}
