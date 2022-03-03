@@ -6,8 +6,8 @@ import { fetchTree } from "../../actions";
 
 const TreePage = ({ match: { params } }) => {
   const [treeData, setTreeData] = useState() 
-  const [showNodeActions, setShowNodeActions] = useState(false)
-  const [SelectedNodeId, setSelectedNodeId] = useState ()
+
+  const [selectedNodeId, setSelectedNodeId] = useState ()
 
   useEffect(() => {
     fetchTree(params.id)
@@ -15,7 +15,7 @@ const TreePage = ({ match: { params } }) => {
   }, [])
 
   const MyForeignObject = ({id}) => {
-    if(showNodeActions && id === SelectedNodeId){
+    if(id === selectedNodeId){
       return (
         <foreignObject x="-25" y="0" width="50" height="50">
           <button className="mini ui circular icon button" onClick={() => console.log("Holá!")}>
@@ -32,8 +32,6 @@ const TreePage = ({ match: { params } }) => {
         r={20} 
         onClick={() => {
           setSelectedNodeId(nodeDatum.__rd3t.id)
-          setShowNodeActions(!showNodeActions)
-          //console.log(nodeDatum.__rd3t.id)
         }} 
         fill={`${nodeDatum.attributes?.done ? "green" : "red"}`} 
       />
