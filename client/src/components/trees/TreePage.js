@@ -6,7 +6,6 @@ import { fetchTree } from "../../actions";
 
 const TreePage = ({ match: { params } }) => {
   const [treeData, setTreeData] = useState() 
-
   const [selectedNodeId, setSelectedNodeId] = useState ()
 
   useEffect(() => {
@@ -17,11 +16,23 @@ const TreePage = ({ match: { params } }) => {
   const MyForeignObject = ({id}) => {
     if(id === selectedNodeId){
       return (
-        <foreignObject x="-25" y="0" width="50" height="50">
-          <button className="mini ui circular icon button" onClick={() => console.log("Holá!")}>
-            <i className="add icon"></i>
-          </button>
-        </foreignObject>
+        <>
+          <foreignObject x="-35" y="-42.5" width="50" height="50">
+            <button className="small ui circular icon button" onClick={() => console.log("Holá!")}>
+              <i className="edit icon"></i>
+            </button>
+          </foreignObject>
+          <foreignObject x="-35" y="-15" width="50" height="50">
+            <button className="small ui circular icon button" onClick={() => console.log("Holá!")}>
+              <i className="trash icon"></i>
+            </button>
+          </foreignObject>
+          <foreignObject x="-35" y="12.5" width="50" height="50">
+            <button className="small ui circular icon button" onClick={() => console.log("Holá!")}>
+              <i className="add icon"></i>
+            </button>
+          </foreignObject>
+        </>        
       )
     } else return <></>
   }
