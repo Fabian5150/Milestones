@@ -37,24 +37,25 @@
     },
     {
       "data": {
-        "name": "CEO",
+        "name": "Mein zweiter Baum",
+        "attributes": {
+          "node_id": 0
+        },
         "children": [
           {
-            "name": "Manager",
+            "name": "Lorem",
             "attributes": {
-              "done": true,
-              "department": "Production"
+              "done": true
             },
             "children": [
               {
-                "name": "Foreman",
+                "name": "Ipsum",
                 "attributes": {
-                  "done": true,
-                  "department": "Fabrication"
+                  "done": true
                 },
                 "children": [
                   {
-                    "name": "Worker",
+                    "name": "Dolor",
                     "attributes": {
                       "done": false
                     }
@@ -62,14 +63,13 @@
                 ]
               },
               {
-                "name": "Foreman",
+                "name": "Sit",
                 "attributes": {
-                  "department": "Assembly",
                   "done": false
                 },
                 "children": [
                   {
-                    "name": "Worker"
+                    "name": "Anet"
                   }
                 ]
               }

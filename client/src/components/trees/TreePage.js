@@ -49,12 +49,12 @@ const TreePage = ({ match: { params } }) => {
       
       <MyForeignObject id={ nodeDatum.__rd3t.id }/>
       
-      <text fill={`${nodeDatum.name === "CEO" ? "red" : "black"}`} stroke={`${nodeDatum.name === "CEO" ? "red" : "black"}`} strokeWidth="0.3" x="25">
+      <text fill={`${nodeDatum.attributes?.node_id === 0 ? "red" : "black"}`} stroke={`${nodeDatum.attributes?.node_id === 0 ? "red" : "black"}`} strokeWidth="0.3" x="25">
         {nodeDatum.name}
       </text>
-      {nodeDatum.attributes?.department && (
+      {nodeDatum.attributes?.node_id !== 0 && (
         <text fill="black" x="25" y="25" strokeWidth="0.3">
-          Department: {nodeDatum.attributes?.department}
+          Erledigt: {`${nodeDatum.attributes?.done ? "ja" : "nein"}`}
         </text>
       )}
     </g>
