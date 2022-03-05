@@ -14,6 +14,10 @@ const TreePage = ({ match: { params } }) => {
     .then(({ payload }) => setTreeData(payload.data))
   }, [])
 
+  const addNode = () => {
+
+  }
+
   const MyForeignObject = ({node_id}) => {
     if(node_id === selectedNodeId){
       if(node_id !== "0"){
@@ -64,7 +68,7 @@ const TreePage = ({ match: { params } }) => {
       <text fill={`${nodeDatum.attributes?.node_id === 0 ? "red" : "black"}`} stroke={`${nodeDatum.attributes?.node_id === 0 ? "red" : "black"}`} strokeWidth="0.3" x="25">
         {nodeDatum.name}
       </text>
-      {nodeDatum.attributes?.node_id !== 0 && (
+      {nodeDatum.attributes?.node_id !== "0" && (
         <text fill="black" x="25" y="25" strokeWidth="0.3">
           Erledigt: {`${nodeDatum.attributes?.done ? "ja" : "nein"}`}
         </text>

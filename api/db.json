@@ -47,21 +47,21 @@
           {
             "name": "Lorem",
             "attributes": {
-              "node_id": "0.1",
+              "node_id": "0.0",
               "done": true
             },
             "children": [
               {
                 "name": "Ipsum",
                 "attributes": {
-                  "node_id": "0.1.1",
+                  "node_id": "0.0.0",
                   "done": true
                 },
                 "children": [
                   {
                     "name": "Dolor",
                     "attributes": {
-                      "node_id": "0.1.1.1",
+                      "node_id": "0.0.0.0",
                       "done": false
                     }
                   }
@@ -70,14 +70,14 @@
               {
                 "name": "Sit",
                 "attributes": {
-                  "node_id": "0.1.2",
+                  "node_id": "0.0.1",
                   "done": false
                 },
                 "children": [
                   {
                     "name": "Anet",
                     "attributes": {
-                      "node_id": "0.1.2.1"
+                      "node_id": "0.0.1.0"
                     }
                   }
                 ]
