@@ -7,7 +7,8 @@ import {
   CREATE_TREE,
   FETCH_CATEGORIES,
   FETCH_TREE,
-  CREATE_CATEGORY
+  CREATE_CATEGORY,
+  EDIT_TREE
 } from './types'
 //components
 import history from '../history'
@@ -61,4 +62,8 @@ export const createCategory = async formValues => {
 
   history.push(`/search/category/${data.value}`)
   return dispatch({ type: CREATE_CATEGORY, payload: res.data })
+}
+
+export const editTree = async node => {
+  
 }
