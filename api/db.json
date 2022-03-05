@@ -79,6 +79,30 @@
                     "attributes": {
                       "node_id": "0.0.1.0"
                     }
+                  },
+                  {
+                    "name": "Hoffe das geht",
+                    "attributes": {
+                      "node_id": 1646522835028,
+                      "type": {
+                        "label": "Checkbox",
+                        "value": "Checkbox",
+                        "icon": "check square"
+                      },
+                      "description": "Wäre halt ziemlich cool",
+                      "done": false
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "Das ist voll cool",
+                    "attributes": {
+                      "node_id": 1646523119266,
+                      "type": "Checkbox",
+                      "description": "liebe es ngl",
+                      "done": false
+                    },
+                    "children": []
                   }
                 ]
               }

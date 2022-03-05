@@ -4,8 +4,11 @@ import Tree from 'react-d3-tree';
 import _ from "lodash";
 //functions
 import { fetchTree, createNote } from "../../actions";
+//components
+import NodeCreate from "./nodes/NodeCreate";
 
 const TreePage = ({ match: { params } }) => {
+  const [show, setShow] = useState(false)
   const [treeData, setTreeData] = useState() 
   const [selectedNodeId, setSelectedNodeId] = useState ("0")
 
@@ -14,14 +17,8 @@ const TreePage = ({ match: { params } }) => {
     .then(({ payload }) => setTreeData(payload.data))
   }, [])
 
-  const addNode = (node_id) => {
-    createNote(node_id, treeData, params.id, { 
-      name: "Neuer Boy", 
-      attributes: { 
-        done: false, node_id: "super fresh", 
-        children: [] 
-      } 
-    })
+  const addNode = () => {
+    setShow(true)
   }
 
   const MyForeignObject = ({node_id}) => {
@@ -40,7 +37,7 @@ const TreePage = ({ match: { params } }) => {
               </button>
             </foreignObject>
             <foreignObject x="-35" y="12.5" width="50" height="50">
-              <button className="small ui circular icon button" onClick={() => addNode(node_id)}>
+              <button className="small ui circular icon button" onClick={() => addNode()}>
                 <i className="add icon"></i>
               </button>
             </foreignObject>
@@ -49,7 +46,7 @@ const TreePage = ({ match: { params } }) => {
       } else{
         return (
           <foreignObject x="-25" y="0" width="50" height="50">
-            <button className="mini ui circular icon button" onClick={() => addNode(node_id)}>
+            <button className="mini ui circular icon button" onClick={() => addNode()}>
               <i className="add icon"></i>
             </button>
           </foreignObject>
@@ -94,6 +91,13 @@ const TreePage = ({ match: { params } }) => {
           orientation='vertical' 
           translate={{ x: window.innerWidth / 2, y: window.innerHeight / 2 }}
           renderCustomNodeElement={myCustomNode}          
+        />
+        <NodeCreate 
+          setShow={setShow} 
+          show={show} 
+          parentId={selectedNodeId} 
+          treeData={treeData}
+          treeId={params.id}  
         />
       </div>
     )
