@@ -1,3 +1,5 @@
+//packages
+import _ from "lodash"
 //redux store
 import store from "../store"
 //api connection
@@ -10,7 +12,8 @@ import {
   CREATE_CATEGORY,
   EDIT_TREE
 } from './types'
-//components
+//functions
+import { nestedObjPath } from "../functions"
 import history from '../history'
 
 const dispatch = store.dispatch
@@ -64,6 +67,15 @@ export const createCategory = async formValues => {
   return dispatch({ type: CREATE_CATEGORY, payload: res.data })
 }
 
-export const editTree = async node => {
-  
+export const createNote = async (parentId, treeData, treeId, newChild) => {
+  let newTree = treeData
+  const nodePath = nestedObjPath(treeData, parentId)
+  const currentNode = _.get(treeData, nodePath)
+  const newCurrent = currentNode
+
+  newCurrent.children = _.concat(currentNode.children, newChild)
+  _.set(newTree, nodePath, newCurrent)
+
+  const res = await trees.patch(`/trees/${treeId}`, {data: newTree})
+  return dispatch({ type: EDIT_TREE, payload: res.data })
 }

@@ -4,7 +4,7 @@ import Tree from 'react-d3-tree';
 import _ from "lodash";
 //functions
 import { nestedObjPath } from "../../functions";
-import { fetchTree } from "../../actions";
+import { fetchTree, createNote } from "../../actions";
 import trees from "../../apis/trees";
 
 const TreePage = ({ match: { params } }) => {
@@ -17,16 +17,13 @@ const TreePage = ({ match: { params } }) => {
   }, [])
 
   const addNode = (node_id) => {
-    let tree = treeData
-    const nodePath = nestedObjPath(treeData, node_id)
-    const currentNode = _.get(treeData, nodePath)
-    const newCurrent = currentNode
-    const newChild = {name: "New", attributes: { done: true , node_id: "unique stuff here"}, children: []}
-    
-    newCurrent.children= _.concat(currentNode.children, newChild)
-    _.set(tree, nodePath, newCurrent)
-
-    trees.patch(`/trees/${params.id}`, {data: tree})
+    createNote(node_id, treeData, params.id, { 
+      name: "Neuer Boy", 
+      attributes: { 
+        done: false, node_id: "super fresh", 
+        children: [] 
+      } 
+    })
   }
 
   const MyForeignObject = ({node_id}) => {
