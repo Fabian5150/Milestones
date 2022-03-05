@@ -18,10 +18,10 @@ const findNestedObjById = (tree, id) => {
 
 export const nestedObjPath = (tree, id) => {
   const indices = findNestedObjById(tree, id)
-  let path = "data"
+  let path = ""
   indices.forEach(index => {
     path = path + `.children[${index}]`
   })
 
-  return path
+  return path.substring(1)
 }
