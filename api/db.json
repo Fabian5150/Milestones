@@ -66,6 +66,14 @@
                       "done": false
                     },
                     "children": []
+                  },
+                  {
+                    "name": "New",
+                    "attributes": {
+                      "done": true,
+                      "node_id": "unique stuff here"
+                    },
+                    "children": []
                   }
                 ]
               },
@@ -84,6 +92,14 @@
                     "children": []
                   }
                 ]
+              },
+              {
+                "name": "New",
+                "attributes": {
+                  "done": true,
+                  "node_id": "unique stuff here"
+                },
+                "children": []
               }
             ]
           }

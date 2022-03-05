@@ -5,6 +5,7 @@ import _ from "lodash";
 //functions
 import { nestedObjPath } from "../../functions";
 import { fetchTree } from "../../actions";
+import trees from "../../apis/trees";
 
 const TreePage = ({ match: { params } }) => {
   const [treeData, setTreeData] = useState() 
@@ -23,9 +24,9 @@ const TreePage = ({ match: { params } }) => {
     const newChild = {name: "New", attributes: { done: true , node_id: "unique stuff here"}, children: []}
     
     newCurrent.children= _.concat(currentNode.children, newChild)
-    console.log(tree)
     _.set(tree, nodePath, newCurrent)
-    console.log(tree)
+
+    trees.patch(`/trees/${params.id}`, {data: tree})
   }
 
   const MyForeignObject = ({node_id}) => {
