@@ -1,6 +1,7 @@
 //packages
 import React, { useState, useEffect } from "react";
 import Tree from 'react-d3-tree';
+import _ from "lodash";
 //functions
 import { nestedObjPath } from "../../functions";
 import { fetchTree } from "../../actions";
@@ -14,8 +15,17 @@ const TreePage = ({ match: { params } }) => {
     .then(({ payload }) => setTreeData(payload.data))
   }, [])
 
-  const addNode = () => {
-
+  const addNode = (node_id) => {
+    let tree = treeData
+    const nodePath = nestedObjPath(treeData, node_id)
+    const currentNode = _.get(treeData, nodePath)
+    const newCurrent = currentNode
+    const newChild = {name: "New", attributes: { done: true , node_id: "unique stuff here"}, children: []}
+    
+    newCurrent.children= _.concat(currentNode.children, newChild)
+    console.log(tree)
+    _.set(tree, nodePath, newCurrent)
+    console.log(tree)
   }
 
   const MyForeignObject = ({node_id}) => {
@@ -43,7 +53,7 @@ const TreePage = ({ match: { params } }) => {
       } else{
         return (
           <foreignObject x="-25" y="0" width="50" height="50">
-            <button className="mini ui circular icon button" onClick={() => console.log("Holá!")}>
+            <button className="mini ui circular icon button" onClick={() => addNode(node_id)}>
               <i className="add icon"></i>
             </button>
           </foreignObject>
