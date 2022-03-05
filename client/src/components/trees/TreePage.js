@@ -13,12 +13,12 @@ const TreePage = ({ match: { params } }) => {
     .then(({ payload }) => setTreeData(payload.data))
   }, [])
 
-  const MyForeignObject = ({id}) => {
-    if(id === selectedNodeId){
+  const MyForeignObject = ({id, node_id}) => {
+    if(node_id === selectedNodeId){
       return (
         <>
           <foreignObject x="-35" y="-42.5" width="50" height="50">
-            <button className="small ui circular icon button" onClick={() => console.log("Holá!")}>
+            <button className="small ui circular icon button" onClick={() => console.log(node_id)}>
               <i className="edit icon"></i>
             </button>
           </foreignObject>
@@ -42,12 +42,12 @@ const TreePage = ({ match: { params } }) => {
       <circle 
         r={20} 
         onClick={() => {
-          setSelectedNodeId(nodeDatum.__rd3t.id)
+          setSelectedNodeId(nodeDatum.attributes?.node_id)
         }} 
         fill={`${nodeDatum.attributes?.done ? "green" : "red"}`} 
       />
       
-      <MyForeignObject id={ nodeDatum.__rd3t.id }/>
+      <MyForeignObject id={ nodeDatum.__rd3t.id } node_id={nodeDatum.attributes?.node_id}/>
       
       <text fill={`${nodeDatum.attributes?.node_id === 0 ? "red" : "black"}`} stroke={`${nodeDatum.attributes?.node_id === 0 ? "red" : "black"}`} strokeWidth="0.3" x="25">
         {nodeDatum.name}
