@@ -31,7 +31,9 @@
     {
       "data": {
         "name": "Mein wirklich Erster",
-        "node_id": "0"
+        "attributes": {
+          "node_id": "0"
+        }
       },
       "id": 1
     },

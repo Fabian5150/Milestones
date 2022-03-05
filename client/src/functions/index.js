@@ -25,4 +25,3 @@ export const nestedObjPath = (tree, id) => {
 
   return path
 }
-

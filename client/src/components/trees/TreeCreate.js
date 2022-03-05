@@ -3,6 +3,7 @@ import React from "react";
 //components
 import Modal from "../Modal";
 import TreeForm from "./TreeForm";
+//functions
 import { createTree } from "../../actions";
 
 const TreeCreate = ({ show, setShow }) => {

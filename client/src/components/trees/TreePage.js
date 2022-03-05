@@ -1,7 +1,8 @@
 //packages
 import React, { useState, useEffect } from "react";
 import Tree from 'react-d3-tree';
-//componets
+//functions
+import { nestedObjPath } from "../../functions";
 import { fetchTree } from "../../actions";
 
 const TreePage = ({ match: { params } }) => {
