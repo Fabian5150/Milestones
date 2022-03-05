@@ -23,7 +23,7 @@ const TreePage = ({ match: { params } }) => {
 
   const MyForeignObject = ({node_id}) => {
     if(node_id === selectedNodeId){
-      if(node_id !== "0"){
+      if(node_id !== 0){
         return (
           <>
             <foreignObject x="-35" y="-42.5" width="50" height="50">
@@ -68,10 +68,10 @@ const TreePage = ({ match: { params } }) => {
       
       <MyForeignObject node_id={nodeDatum.attributes?.node_id}/>
       
-      <text fill={`${nodeDatum.attributes?.node_id === 0 ? "red" : "black"}`} stroke={`${nodeDatum.attributes?.node_id === 0 ? "red" : "black"}`} strokeWidth="0.3" x="25">
+      <text fill={`${nodeDatum.attributes?.node_id === 0 ? "blue" : "black"}`} stroke={`${nodeDatum.attributes?.node_id === 0 ? "blue" : "black"}`} strokeWidth="0.3" x="25">
         {nodeDatum.name}
       </text>
-      {nodeDatum.attributes?.node_id !== "0" && (
+      {nodeDatum.attributes?.node_id !== 0 && (
         <text fill="black" x="25" y="25" strokeWidth="0.3">
           Erledigt: {`${nodeDatum.attributes?.done ? "ja" : "nein"}`}
         </text>

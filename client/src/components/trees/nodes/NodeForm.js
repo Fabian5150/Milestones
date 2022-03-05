@@ -45,7 +45,7 @@ const NodeForm = (props) => {
   const [disabled, setDisabled] = useState(true)
 
   useEffect(() => {
-    if(selectedType === "Counter"){
+    if(selectedType.value === "Counter"){
       setDisabled(false)
     } else setDisabled(true)
   }, [selectedType])
@@ -81,9 +81,9 @@ const NodeForm = (props) => {
           errors.title = "Titel darf nicht länger als 25 Zeichen sein."
         }
 
-        /* if(!formValues.steps.isInteger){
+        if(formValues.steps && !formValues.steps.isInteger){
           errors.steps = "Gebe eine Zahl ein."
-        } */    
+        } 
 
         return errors;
       }}
