@@ -3,9 +3,7 @@ import React, { useState, useEffect } from "react";
 import Tree from 'react-d3-tree';
 import _ from "lodash";
 //functions
-import { nestedObjPath } from "../../functions";
 import { fetchTree, createNote } from "../../actions";
-import trees from "../../apis/trees";
 
 const TreePage = ({ match: { params } }) => {
   const [treeData, setTreeData] = useState() 
