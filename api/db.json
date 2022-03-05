@@ -33,7 +33,8 @@
         "name": "Mein wirklich Erster",
         "attributes": {
           "node_id": "0"
-        }
+        },
+        "children": []
       },
       "id": 1
     },
@@ -63,7 +64,8 @@
                     "attributes": {
                       "node_id": "0.0.0.0",
                       "done": false
-                    }
+                    },
+                    "children": []
                   }
                 ]
               },
@@ -78,7 +80,8 @@
                     "name": "Anet",
                     "attributes": {
                       "node_id": "0.0.1.0"
-                    }
+                    },
+                    "children": []
                   }
                 ]
               }

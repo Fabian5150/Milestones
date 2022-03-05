@@ -15,7 +15,7 @@ const TreePage = ({ match: { params } }) => {
   }, [])
 
   const addNode = () => {
-    
+
   }
 
   const MyForeignObject = ({node_id}) => {
@@ -34,7 +34,7 @@ const TreePage = ({ match: { params } }) => {
               </button>
             </foreignObject>
             <foreignObject x="-35" y="12.5" width="50" height="50">
-              <button className="small ui circular icon button" onClick={() => console.log("Holá!")}>
+              <button className="small ui circular icon button" onClick={() => addNode(node_id)}>
                 <i className="add icon"></i>
               </button>
             </foreignObject>
