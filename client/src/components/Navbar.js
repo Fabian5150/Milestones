@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Searchbar from "./SearchBar";
 import Auth from "./Auth";
 import CategoryCreate from "./categories/CategoryCreate";
+//functions
 import { fetchCategories } from "../actions";
 
 const Navbar = () => {

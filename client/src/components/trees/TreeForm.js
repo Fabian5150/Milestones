@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { Form, Field } from "react-final-form";
 //components
 import Dropdown from "../Dropdown"; 
+//functions
 import { fetchCategories } from "../../actions";
 //data
 import icons from "../../categoryIcons";

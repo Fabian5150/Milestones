@@ -31,7 +31,9 @@
     {
       "data": {
         "name": "Mein wirklich Erster",
-        "root": true
+        "attributes": {
+          "node_id": "0"
+        }
       },
       "id": 1
     },
@@ -39,24 +41,27 @@
       "data": {
         "name": "Mein zweiter Baum",
         "attributes": {
-          "node_id": 0
+          "node_id": "0"
         },
         "children": [
           {
             "name": "Lorem",
             "attributes": {
+              "node_id": "0.0",
               "done": true
             },
             "children": [
               {
                 "name": "Ipsum",
                 "attributes": {
+                  "node_id": "0.0.0",
                   "done": true
                 },
                 "children": [
                   {
                     "name": "Dolor",
                     "attributes": {
+                      "node_id": "0.0.0.0",
                       "done": false
                     }
                   }
@@ -65,11 +70,15 @@
               {
                 "name": "Sit",
                 "attributes": {
+                  "node_id": "0.0.1",
                   "done": false
                 },
                 "children": [
                   {
-                    "name": "Anet"
+                    "name": "Anet",
+                    "attributes": {
+                      "node_id": "0.0.1.0"
+                    }
                   }
                 ]
               }
