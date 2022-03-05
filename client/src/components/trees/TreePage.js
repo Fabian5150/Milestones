@@ -6,34 +6,45 @@ import { fetchTree } from "../../actions";
 
 const TreePage = ({ match: { params } }) => {
   const [treeData, setTreeData] = useState() 
-  const [selectedNodeId, setSelectedNodeId] = useState ()
+  const [selectedNodeId, setSelectedNodeId] = useState ("0")
 
   useEffect(() => {
     fetchTree(params.id)
     .then(({ payload }) => setTreeData(payload.data))
   }, [])
 
-  const MyForeignObject = ({id, node_id}) => {
+  const MyForeignObject = ({node_id}) => {
     if(node_id === selectedNodeId){
-      return (
-        <>
-          <foreignObject x="-35" y="-42.5" width="50" height="50">
-            <button className="small ui circular icon button" onClick={() => console.log(node_id)}>
-              <i className="edit icon"></i>
-            </button>
-          </foreignObject>
-          <foreignObject x="-35" y="-15" width="50" height="50">
-            <button className="small ui circular icon button" onClick={() => console.log("Holá!")}>
-              <i className="trash icon"></i>
-            </button>
-          </foreignObject>
-          <foreignObject x="-35" y="12.5" width="50" height="50">
-            <button className="small ui circular icon button" onClick={() => console.log("Holá!")}>
+      if(node_id !== "0"){
+        return (
+          <>
+            <foreignObject x="-35" y="-42.5" width="50" height="50">
+              <button className="small ui circular icon button" onClick={() => console.log(node_id)}>
+                <i className="edit icon"></i>
+              </button>
+            </foreignObject>
+            <foreignObject x="-35" y="-15" width="50" height="50">
+              <button className="small ui circular icon button" onClick={() => console.log("Holá!")}>
+                <i className="trash icon"></i>
+              </button>
+            </foreignObject>
+            <foreignObject x="-35" y="12.5" width="50" height="50">
+              <button className="small ui circular icon button" onClick={() => console.log("Holá!")}>
+                <i className="add icon"></i>
+              </button>
+            </foreignObject>
+          </>        
+        )
+      } else{
+        return (
+          <foreignObject x="-25" y="0" width="50" height="50">
+            <button className="mini ui circular icon button" onClick={() => console.log("Holá!")}>
               <i className="add icon"></i>
             </button>
           </foreignObject>
-        </>        
-      )
+        )
+      }
+      
     } else return <></>
   }
 
@@ -47,7 +58,7 @@ const TreePage = ({ match: { params } }) => {
         fill={`${nodeDatum.attributes?.done ? "green" : "red"}`} 
       />
       
-      <MyForeignObject id={ nodeDatum.__rd3t.id } node_id={nodeDatum.attributes?.node_id}/>
+      <MyForeignObject node_id={nodeDatum.attributes?.node_id}/>
       
       <text fill={`${nodeDatum.attributes?.node_id === 0 ? "red" : "black"}`} stroke={`${nodeDatum.attributes?.node_id === 0 ? "red" : "black"}`} strokeWidth="0.3" x="25">
         {nodeDatum.name}
