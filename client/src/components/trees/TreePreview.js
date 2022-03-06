@@ -1,5 +1,6 @@
 //packages
 import React from "react";
+import { Link } from "react-router-dom";
 
 const TreePreview = ({ treePreview }) => {
   return (
@@ -15,10 +16,10 @@ const TreePreview = ({ treePreview }) => {
           {treePreview.description}
         </div>
       </div>
-      <div className="ui bottom attached button">
+      <Link to={`/tree/${treePreview.id}`} className="ui bottom attached button">
         <i className="external icon"></i>
         Öffnen
-      </div>
+      </Link>
     </div>
   )
 }

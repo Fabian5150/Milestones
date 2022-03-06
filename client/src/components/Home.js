@@ -1,5 +1,7 @@
 //packages
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+//functions
+import { fetchTreePreviews } from "../actions";
 //components
 import TreeCreate from "./trees/TreeCreate";
 import TreePreview from "./trees/TreePreview";
@@ -13,6 +15,15 @@ const myTree = {
 
 const Home = () => {
   const [show, setShow] = useState(false)
+  const [treePreviews, setTreePreviews] = useState()
+
+  useEffect(() => {
+    fetchTreePreviews()
+    .then(({ payload }) => {
+      setTreePreviews(payload)
+      console.log(treePreviews)
+    })
+  }, [])
 
   return (
     <div>
