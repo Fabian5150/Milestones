@@ -120,9 +120,32 @@
                     "done": 0
                   }
                 },
-                "children": []
+                "children": [
+                  {
+                    "name": "geht?",
+                    "attributes": {
+                      "node_id": 1646525735222,
+                      "type": "Checkbox",
+                      "description": "hoffe mal",
+                      "done": false
+                    },
+                    "children": []
+                  }
+                ]
               }
             ]
+          },
+          {
+            "name": "Lorem2",
+            "attributes": {
+              "node_id": 1646525749134,
+              "type": "Counter",
+              "done": {
+                "steps": "123",
+                "done": 0
+              }
+            },
+            "children": []
           }
         ]
       },

@@ -4,7 +4,7 @@ import React from "react";
 import NodeForm from "./NodeForm";
 import Modal from "../../Modal";
 //functions
-import { createNote } from "../../../actions";
+import { createNode } from "../../../actions";
 
 const NodeCreate = ({ show, setShow, parentId, treeData, treeId }) => {
   const onSubmit = formValues => {
@@ -23,7 +23,7 @@ const NodeCreate = ({ show, setShow, parentId, treeData, treeId }) => {
       newChild.attributes.done = { steps: formValues.steps, done: 0 }
     }
 
-    createNote(parentId, treeData, treeId, newChild)
+    createNode(parentId, treeData, treeId, newChild)
     setShow(!show)
   }
 
