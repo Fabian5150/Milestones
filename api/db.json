@@ -11,6 +11,12 @@
       "value": "Sport",
       "icon": "basketball ball",
       "id": 2
+    },
+    {
+      "label": "Entspannung",
+      "value": "Entspannung",
+      "icon": "hand spock",
+      "id": 3
     }
   ],
   "treePreviews": [
@@ -25,6 +31,12 @@
       "description": "ich bin so happy ;)",
       "category": "Musik",
       "id": 2
+    },
+    {
+      "title": "Toller Baum",
+      "description": "Kann hier jetzt mal von Anfang an die Wundervollheit dieser App genießen ;,)",
+      "category": "Entspannung",
+      "id": 3
     }
   ],
   "trees": [
@@ -32,8 +44,51 @@
       "data": {
         "name": "Mein wirklich Erster",
         "attributes": {
-          "node_id": "0"
-        }
+          "type": "root",
+          "node_id": 0
+        },
+        "children": [
+          {
+            "name": "asd",
+            "attributes": {
+              "node_id": 1646525862162,
+              "type": "Checkbox",
+              "done": false
+            },
+            "children": [
+              {
+                "name": "asd",
+                "attributes": {
+                  "node_id": 1646526073009,
+                  "type": "Counter",
+                  "done": {
+                    "steps": "12",
+                    "done": 0
+                  }
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "asd",
+            "attributes": {
+              "node_id": 1646526077946,
+              "type": "Checkbox",
+              "done": false
+            },
+            "children": []
+          },
+          {
+            "name": "asd",
+            "attributes": {
+              "node_id": 1646526080056,
+              "type": "Checkbox",
+              "done": false
+            },
+            "children": []
+          }
+        ]
       },
       "id": 1
     },
@@ -41,12 +96,14 @@
       "data": {
         "name": "Mein zweiter Baum",
         "attributes": {
-          "node_id": "0"
+          "type": "root",
+          "node_id": 0
         },
         "children": [
           {
             "name": "Lorem",
             "attributes": {
+              "type": "Checkbox",
               "node_id": "0.0",
               "done": true
             },
@@ -54,6 +111,7 @@
               {
                 "name": "Ipsum",
                 "attributes": {
+                  "type": "Checkbox",
                   "node_id": "0.0.0",
                   "done": true
                 },
@@ -61,6 +119,7 @@
                   {
                     "name": "Dolor",
                     "attributes": {
+                      "type": "Checkbox",
                       "node_id": "0.0.0.0",
                       "done": false
                     }
@@ -70,6 +129,7 @@
               {
                 "name": "Sit",
                 "attributes": {
+                  "type": "Checkbox",
                   "node_id": "0.0.1",
                   "done": false
                 },
@@ -77,16 +137,147 @@
                   {
                     "name": "Anet",
                     "attributes": {
+                      "type": "Checkbox",
                       "node_id": "0.0.1.0"
                     }
+                  },
+                  {
+                    "name": "Hoffe das geht",
+                    "attributes": {
+                      "node_id": 1646522835028,
+                      "type": "Checkbox",
+                      "description": "Wäre halt ziemlich cool",
+                      "done": false
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "Das ist voll cool",
+                    "attributes": {
+                      "node_id": 1646523119266,
+                      "type": "Checkbox",
+                      "description": "liebe es ngl",
+                      "done": false
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "Zähler",
+                "attributes": {
+                  "node_id": 1646524437608,
+                  "type": "Counter",
+                  "description": "Kannst auf mich zählen ;)",
+                  "done": {
+                    "steps": "10",
+                    "done": 0
+                  }
+                },
+                "children": [
+                  {
+                    "name": "geht?",
+                    "attributes": {
+                      "node_id": 1646525735222,
+                      "type": "Checkbox",
+                      "description": "hoffe mal",
+                      "done": false
+                    },
+                    "children": []
                   }
                 ]
               }
             ]
+          },
+          {
+            "name": "Lorem2",
+            "attributes": {
+              "node_id": 1646525749134,
+              "type": "Counter",
+              "done": {
+                "steps": "123",
+                "done": 0
+              }
+            },
+            "children": []
           }
         ]
       },
       "id": 2
+    },
+    {
+      "data": {
+        "name": "Toller Baum",
+        "attributes": {
+          "node_id": 0,
+          "type": "root"
+        },
+        "children": [
+          {
+            "name": "dsf",
+            "attributes": {
+              "node_id": 1646525980657,
+              "type": "Checkbox",
+              "done": false
+            },
+            "children": [
+              {
+                "name": "ach wie schön",
+                "attributes": {
+                  "node_id": 1646525998218,
+                  "type": "Checkbox",
+                  "done": false
+                },
+                "children": [
+                  {
+                    "name": "dass niemand weiß",
+                    "attributes": {
+                      "node_id": 1646526011226,
+                      "type": "Counter",
+                      "done": {
+                        "steps": "123",
+                        "done": 0
+                      }
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "dass ich Rumpelstielzchen",
+                    "attributes": {
+                      "node_id": 1646526027071,
+                      "type": "Checkbox",
+                      "done": false
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "heiß",
+                    "attributes": {
+                      "node_id": 1646526031095,
+                      "type": "Checkbox",
+                      "done": false
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "ja",
+            "attributes": {
+              "node_id": 1646525987285,
+              "type": "Counter",
+              "done": {
+                "steps": "12",
+                "done": 0
+              }
+            },
+            "children": []
+          }
+        ]
+      },
+      "id": 3
     }
   ]
 }
