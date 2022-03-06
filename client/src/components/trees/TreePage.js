@@ -7,10 +7,12 @@ import { fetchTree, changeNode } from "../../actions";
 import { useIsMount } from "../customHooks";
 //components
 import NodeCreate from "./nodes/NodeCreate";
+import NodeEdit from "./nodes/NodeEdit";
 import TopMenu from "./TopMenu";
 
 const TreePage = ({ match: { params } }) => {
-  const [show, setShow] = useState(false)
+  const [showCreateModal, setShowCreateModal] = useState(false)
+  const [showEditModal, setShowEditModal] = useState(false)
   const [treeData, setTreeData] = useState() 
   const [treePreview, setTreePreview] = useState()
   const [selectedNodeId, setSelectedNodeId] = useState (0)
@@ -25,7 +27,11 @@ const TreePage = ({ match: { params } }) => {
   }, [])
 
   const addNode = () => {
-    setShow(true)
+    setShowCreateModal(true)
+  }
+
+  const editNode = () => {
+    setShowEditModal(true)
   }
 
   const RenderNodeActions = ({type, done, node_id}) => {
@@ -111,7 +117,7 @@ const TreePage = ({ match: { params } }) => {
         return (
           <>
             <foreignObject x="-35" y="-42.5" width="50" height="50">
-              <button className="small ui circular icon button" onClick={() => console.log(attributes.node_id)}>
+              <button className="small ui circular icon button" onClick={() => editNode()}>
                 <i className="edit icon"></i>
               </button>
             </foreignObject>
@@ -225,14 +231,21 @@ const TreePage = ({ match: { params } }) => {
             translate={{ x: window.innerWidth / 2, y: window.innerHeight / 2 }}
             renderCustomNodeElement={myCustomNode}          
           />
-          <NodeCreate 
-            setShow={setShow} 
-            show={show} 
-            parentId={selectedNodeId} 
-            treeData={treeData}
-            treeId={params.id}  
-          />
         </div>
+        <NodeCreate 
+          setShow={setShowCreateModal} 
+          show={showCreateModal} 
+          parentId={selectedNodeId} 
+          treeData={treeData}
+          treeId={params.id}  
+        />
+        <NodeEdit 
+          show={showEditModal}
+          setShow={setShowEditModal}
+          nodeId={selectedNodeId}
+          treeData={treeData}
+          treeId={params.id}
+        />
       </>
     )
   }  

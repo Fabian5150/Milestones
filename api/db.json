@@ -172,7 +172,7 @@
                   "description": "Kannst auf mich zählen ;)",
                   "done": {
                     "steps": 10,
-                    "done": 9
+                    "done": 10
                   }
                 },
                 "children": [
@@ -182,7 +182,7 @@
                       "node_id": 1646525735222,
                       "type": "Checkbox",
                       "description": "hoffe mal",
-                      "done": false
+                      "done": true
                     },
                     "children": [
                       {
@@ -207,7 +207,7 @@
               "type": "Counter",
               "done": {
                 "steps": 123,
-                "done": 13
+                "done": 14
               }
             },
             "children": []
