@@ -131,7 +131,7 @@
                 "attributes": {
                   "type": "Checkbox",
                   "node_id": "0.0.1",
-                  "done": false
+                  "done": true
                 },
                 "children": [
                   {
@@ -172,7 +172,7 @@
                   "description": "Kannst auf mich zählen ;)",
                   "done": {
                     "steps": 10,
-                    "done": "12"
+                    "done": 9
                   }
                 },
                 "children": [
