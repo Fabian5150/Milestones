@@ -6,7 +6,7 @@ import _ from "lodash";
 import { fetchTreePreviews } from "../actions";
 //components
 import TreeCreate from "./trees/TreeCreate";
-import TreePreview from "./trees/TreePreview";
+import TreePreviewCard from "./trees/TreePreviewCard";
 
 const Home = () => {
   const [show, setShow] = useState(false)
@@ -31,7 +31,7 @@ const Home = () => {
 
       return <>
         {first4.map(preview => {
-          return <TreePreview treePreview={preview} key={preview.id}/>
+          return <TreePreviewCard treePreview={preview} key={preview.id}/>
         })}
       </>
     }

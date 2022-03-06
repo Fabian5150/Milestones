@@ -2,7 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const TreePreview = ({ treePreview }) => {
+const TreePreviewCard = ({ treePreview }) => {
   return (
     <div className="card">
       <div className="content">
@@ -24,4 +24,4 @@ const TreePreview = ({ treePreview }) => {
   )
 }
 
-export default TreePreview
+export default TreePreviewCard
