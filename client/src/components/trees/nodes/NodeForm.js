@@ -17,14 +17,18 @@ const NodeForm = (props) => {
   };
  
   const renderInput = ({ input, label, meta }) => {
-    const className = `field ${meta.error && meta.touched ? "error" : ""} ${disabled && label === "steps" ? "disabled" : ""}`;
-    return (
-      <div className={className}>
-        <label>{label}</label>
-        <input {...input} autoComplete="off" />
-        {renderError(meta)}
-      </div>
-    );
+    if(disabled && label === "Anzahl Schritte: "){
+      return <></>
+    } else {
+      const className = `field ${meta.error && meta.touched ? "error" : ""}`;
+      return (
+        <div className={className}>
+          <label>{label}</label>
+          <input {...input} autoComplete="off"/>
+          {renderError(meta)}
+        </div>
+      );
+    }
   };
 
   const options = [
@@ -64,6 +68,7 @@ const NodeForm = (props) => {
   }
 
   const onSubmit = (formValues) => {
+    formValues.steps = parseInt(formValues.steps)
     formValues.type = selectedType
     props.onSubmit(formValues);
   };
@@ -81,8 +86,8 @@ const NodeForm = (props) => {
           errors.title = "Titel darf nicht länger als 25 Zeichen sein."
         }
 
-        if(formValues.steps && formValues.steps.isNaN){
-          errors.steps = "Gebe eine Zahl ein."
+        if(formValues.steps && !(formValues.steps).match(/^[0-9\b]+$/)){
+          errors.steps = "Gebe eine (natürliche) Zahl ein."
         } 
 
         return errors;

@@ -62,7 +62,7 @@
                   "node_id": 1646526073009,
                   "type": "Counter",
                   "done": {
-                    "steps": "12",
+                    "steps": 12,
                     "done": 0
                   }
                 },
@@ -131,14 +131,15 @@
                 "attributes": {
                   "type": "Checkbox",
                   "node_id": "0.0.1",
-                  "done": false
+                  "done": true
                 },
                 "children": [
                   {
                     "name": "Anet",
                     "attributes": {
                       "type": "Checkbox",
-                      "node_id": "0.0.1.0"
+                      "node_id": "0.0.1.0",
+                      "done": false
                     }
                   },
                   {
@@ -170,8 +171,8 @@
                   "type": "Counter",
                   "description": "Kannst auf mich zählen ;)",
                   "done": {
-                    "steps": "10",
-                    "done": 0
+                    "steps": 10,
+                    "done": 10
                   }
                 },
                 "children": [
@@ -181,9 +182,19 @@
                       "node_id": 1646525735222,
                       "type": "Checkbox",
                       "description": "hoffe mal",
-                      "done": false
+                      "done": true
                     },
-                    "children": []
+                    "children": [
+                      {
+                        "name": "neun",
+                        "attributes": {
+                          "node_id": 1646577771307,
+                          "type": "Checkbox",
+                          "done": false
+                        },
+                        "children": []
+                      }
+                    ]
                   }
                 ]
               }
@@ -195,8 +206,21 @@
               "node_id": 1646525749134,
               "type": "Counter",
               "done": {
-                "steps": "123",
-                "done": 0
+                "steps": 123,
+                "done": 14
+              }
+            },
+            "children": []
+          },
+          {
+            "name": "mal gucken",
+            "attributes": {
+              "node_id": 1646581983393,
+              "type": "Counter",
+              "description": "will einfach, dass hier n integer is man, das kann doch niocht so schwer sein :o",
+              "done": {
+                "steps": 12,
+                "done": 11
               }
             },
             "children": []
@@ -235,7 +259,7 @@
                       "node_id": 1646526011226,
                       "type": "Counter",
                       "done": {
-                        "steps": "123",
+                        "steps": 123,
                         "done": 0
                       }
                     },
@@ -269,7 +293,7 @@
               "node_id": 1646525987285,
               "type": "Counter",
               "done": {
-                "steps": "12",
+                "steps": 12,
                 "done": 0
               }
             },
