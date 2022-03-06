@@ -163,7 +163,9 @@ const TreePage = ({ match: { params } }) => {
     if(type === "root"){
       return "#64a9c4"
     } else if(type === "Counter"){
-      return "#ff8f00"
+      if(done.done / done.steps !== 1){
+        return "#ff8f00"
+      } else return "#009a40"
     } else {      
       if (done) return "#009a40"
       else return "#D80026"
