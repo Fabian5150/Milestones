@@ -8,7 +8,7 @@ const TopMenu = ({ title, description, category }) => {
         <h3 className="ui right floated header">
           <i className="sitemap icon"/>
         </h3>
-      <div className="ui clearing divider" />
+      <div className="ui clearing hidden divider" />
     </div>
   )
 }

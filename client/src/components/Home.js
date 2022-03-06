@@ -29,11 +29,15 @@ const Home = () => {
     if(!treePreviews){
       return <div>Loading...</div>
     } else {
+      if(treePreviews.length === 0){
+        return <div>Keine Bäume vorhanden</div>
+      }
+
       const first4 = _.take(treePreviews, 4)
 
       return <>
         {first4.map(preview => {
-          return (<TreePreview treePreview={preview} key={preview.id}/>)
+          return <TreePreview treePreview={preview} key={preview.id}/>
         })}
       </>
     }
