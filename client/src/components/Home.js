@@ -1,5 +1,6 @@
 //packages
 import React, { useEffect, useState } from "react";
+import _ from "lodash";
 //functions
 import { fetchTreePreviews } from "../actions";
 //components
@@ -21,9 +22,22 @@ const Home = () => {
     fetchTreePreviews()
     .then(({ payload }) => {
       setTreePreviews(payload)
-      console.log(treePreviews)
     })
   }, [])
+
+  const renderCards = () => {
+    if(!treePreviews){
+      return <div>Loading...</div>
+    } else {
+      const first4 = _.take(treePreviews, 4)
+
+      return <>
+        {first4.map(preview => {
+          return (<TreePreview treePreview={preview} key={preview.id}/>)
+        })}
+      </>
+    }
+  }
 
   return (
     <div>
@@ -43,10 +57,7 @@ const Home = () => {
 
         <div className="ui content">
           <div className="ui four cards">
-            <TreePreview treePreview={myTree}/>
-            <TreePreview treePreview={myTree}/>
-            <TreePreview treePreview={myTree}/>
-            <TreePreview treePreview={myTree}/>
+            {renderCards()}
           </div>
         </div>
         
