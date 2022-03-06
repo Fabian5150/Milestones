@@ -10,7 +10,7 @@ import NodeCreate from "./nodes/NodeCreate";
 const TreePage = ({ match: { params } }) => {
   const [show, setShow] = useState(false)
   const [treeData, setTreeData] = useState() 
-  const [selectedNodeId, setSelectedNodeId] = useState ("0")
+  const [selectedNodeId, setSelectedNodeId] = useState (0)
 
   useEffect(() => {
     fetchTree(params.id)
@@ -58,12 +58,12 @@ const TreePage = ({ match: { params } }) => {
 
   const nodeColor = (type, done) => {
     if(type === "root"){
-      return "blue"
+      return "#64a9c4"
     } else if(type === "Counter"){
-      return "orange"
+      return "#ff8f00"
     } else {      
-      if (done) return "green"
-      else return "red"
+      if (done) return "#009a40"
+      else return "#D80026"
     }
   }
 
@@ -88,7 +88,7 @@ const TreePage = ({ match: { params } }) => {
       
       <MyForeignObject node_id={attributes.node_id}/>
       
-      <text fill={`${attributes.node_id === 0 ? "blue" : "black"}`} stroke={`${attributes.node_id === 0 ? "blue" : "black"}`} strokeWidth="0.3" x="25">
+      <text fill={`${attributes.node_id === 0 ? "#64a9c4" : "black"}`} stroke={`${attributes.node_id === 0 ? "#64a9c4" : "black"}`} strokeWidth="0.3" x="25">
         {name}
       </text>
       {attributes.node_id !== 0 && (

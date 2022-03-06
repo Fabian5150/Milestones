@@ -11,6 +11,12 @@
       "value": "Sport",
       "icon": "basketball ball",
       "id": 2
+    },
+    {
+      "label": "Entspannung",
+      "value": "Entspannung",
+      "icon": "hand spock",
+      "id": 3
     }
   ],
   "treePreviews": [
@@ -25,6 +31,12 @@
       "description": "ich bin so happy ;)",
       "category": "Musik",
       "id": 2
+    },
+    {
+      "title": "Toller Baum",
+      "description": "Kann hier jetzt mal von Anfang an die Wundervollheit dieser App genießen ;,)",
+      "category": "Entspannung",
+      "id": 3
     }
   ],
   "trees": [
@@ -34,7 +46,49 @@
         "attributes": {
           "type": "root",
           "node_id": 0
-        }
+        },
+        "children": [
+          {
+            "name": "asd",
+            "attributes": {
+              "node_id": 1646525862162,
+              "type": "Checkbox",
+              "done": false
+            },
+            "children": [
+              {
+                "name": "asd",
+                "attributes": {
+                  "node_id": 1646526073009,
+                  "type": "Counter",
+                  "done": {
+                    "steps": "12",
+                    "done": 0
+                  }
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "asd",
+            "attributes": {
+              "node_id": 1646526077946,
+              "type": "Checkbox",
+              "done": false
+            },
+            "children": []
+          },
+          {
+            "name": "asd",
+            "attributes": {
+              "node_id": 1646526080056,
+              "type": "Checkbox",
+              "done": false
+            },
+            "children": []
+          }
+        ]
       },
       "id": 1
     },
@@ -150,6 +204,80 @@
         ]
       },
       "id": 2
+    },
+    {
+      "data": {
+        "name": "Toller Baum",
+        "attributes": {
+          "node_id": 0,
+          "type": "root"
+        },
+        "children": [
+          {
+            "name": "dsf",
+            "attributes": {
+              "node_id": 1646525980657,
+              "type": "Checkbox",
+              "done": false
+            },
+            "children": [
+              {
+                "name": "ach wie schön",
+                "attributes": {
+                  "node_id": 1646525998218,
+                  "type": "Checkbox",
+                  "done": false
+                },
+                "children": [
+                  {
+                    "name": "dass niemand weiß",
+                    "attributes": {
+                      "node_id": 1646526011226,
+                      "type": "Counter",
+                      "done": {
+                        "steps": "123",
+                        "done": 0
+                      }
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "dass ich Rumpelstielzchen",
+                    "attributes": {
+                      "node_id": 1646526027071,
+                      "type": "Checkbox",
+                      "done": false
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "heiß",
+                    "attributes": {
+                      "node_id": 1646526031095,
+                      "type": "Checkbox",
+                      "done": false
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "ja",
+            "attributes": {
+              "node_id": 1646525987285,
+              "type": "Counter",
+              "done": {
+                "steps": "12",
+                "done": 0
+              }
+            },
+            "children": []
+          }
+        ]
+      },
+      "id": 3
     }
   ]
 }
