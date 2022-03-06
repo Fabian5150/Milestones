@@ -68,6 +68,7 @@ const NodeForm = (props) => {
   }
 
   const onSubmit = (formValues) => {
+    formValues.steps = parseInt(formValues.steps)
     formValues.type = selectedType
     props.onSubmit(formValues);
   };
