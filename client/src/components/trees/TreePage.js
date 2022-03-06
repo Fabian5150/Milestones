@@ -32,6 +32,17 @@ const TreePage = ({ match: { params } }) => {
     const isMount = useIsMount()
     const [isChecked, setIsChecked] = useState(done)
     const [inputValue, setInputValue] = useState(done.done)
+    const [deboundcedInputVal, setDebouncedVal] = useState(inputValue)
+
+    useEffect(() => {
+      const timerId = setTimeout(() => {
+        setDebouncedVal(inputValue)
+      }, 1000)
+
+      return () => {
+        clearTimeout(timerId)
+      }
+    }, [inputValue])
 
     useEffect(() => {
       if(!isMount){
@@ -41,9 +52,9 @@ const TreePage = ({ match: { params } }) => {
 
     useEffect(() => {
       if(!isMount){
-        console.log(inputValue)
+        console.log(deboundcedInputVal)
       }      
-    }, [inputValue])
+    }, [deboundcedInputVal])
 
     if(type === "Checkbox"){
       return (
