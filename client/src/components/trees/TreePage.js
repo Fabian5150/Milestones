@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Tree from 'react-d3-tree';
 import _ from "lodash";
 //functions
-import { fetchTree, createNote } from "../../actions";
+import { fetchTree } from "../../actions";
 //components
 import NodeCreate from "./nodes/NodeCreate";
 
@@ -76,24 +76,24 @@ const TreePage = ({ match: { params } }) => {
     }
   }
 
-  const myCustomNode = ({ nodeDatum }) => (
+  const myCustomNode = ({ nodeDatum: {attributes, name} }) => (
     <g>
       <circle 
         r={20} 
         onClick={() => {
-          setSelectedNodeId(nodeDatum.attributes.node_id)
+          setSelectedNodeId(attributes.node_id)
         }} 
-        fill={nodeColor(nodeDatum.attributes.type, nodeDatum.attributes.done)} 
+        fill={nodeColor(attributes.type, attributes.done)} 
       />
       
-      <MyForeignObject node_id={nodeDatum.attributes.node_id}/>
+      <MyForeignObject node_id={attributes.node_id}/>
       
-      <text fill={`${nodeDatum.attributes.node_id === 0 ? "blue" : "black"}`} stroke={`${nodeDatum.attributes.node_id === 0 ? "blue" : "black"}`} strokeWidth="0.3" x="25">
-        {nodeDatum.name}
+      <text fill={`${attributes.node_id === 0 ? "blue" : "black"}`} stroke={`${attributes.node_id === 0 ? "blue" : "black"}`} strokeWidth="0.3" x="25">
+        {name}
       </text>
-      {nodeDatum.attributes.node_id !== 0 && (
+      {attributes.node_id !== 0 && (
         <text fill="black" x="25" y="25" strokeWidth="0.3">
-          Erledigt: {done(nodeDatum.attributes.type, nodeDatum.attributes.done)}
+          Erledigt: {done(attributes.type, attributes.done)}
         </text>
       )}
     </g>
