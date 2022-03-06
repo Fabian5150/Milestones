@@ -6,15 +6,21 @@ import _ from "lodash";
 import { fetchTree } from "../../actions";
 //components
 import NodeCreate from "./nodes/NodeCreate";
+import TopMenu from "./TopMenu";
 
 const TreePage = ({ match: { params } }) => {
   const [show, setShow] = useState(false)
   const [treeData, setTreeData] = useState() 
+  const [treePreview, setTreePreview] = useState()
   const [selectedNodeId, setSelectedNodeId] = useState (0)
 
   useEffect(() => {
     fetchTree(params.id)
-    .then(({ payload }) => setTreeData(payload.data))
+    .then(({ payload }) => {
+      setTreeData(payload.data)
+      setTreePreview(payload)
+    })
+
   }, [])
 
   const addNode = () => {
@@ -99,27 +105,34 @@ const TreePage = ({ match: { params } }) => {
     </g>
   );
   
-  if(!treeData){
+  if(!treeData || !treePreview){
     return <div>Loading...</div>
   } else {
     return (
-      <div id="treeWrapper" style={{ width: "100vw", height: "100vh" }}>
-        <Tree 
-          data={treeData} 
-          collapsible={false} 
-          zoomable={false}
-          orientation='vertical' 
-          translate={{ x: window.innerWidth / 2, y: window.innerHeight / 2 }}
-          renderCustomNodeElement={myCustomNode}          
+      <>
+        <TopMenu 
+          title={treePreview.title} 
+          description={treePreview.description} 
+          category={treePreview.category}  
         />
-        <NodeCreate 
-          setShow={setShow} 
-          show={show} 
-          parentId={selectedNodeId} 
-          treeData={treeData}
-          treeId={params.id}  
-        />
-      </div>
+        <div id="treeWrapper" style={{ width: "100vw", height: "100vh" }}>
+          <Tree 
+            data={treeData} 
+            collapsible={false} 
+            zoomable={false}
+            orientation='vertical' 
+            translate={{ x: window.innerWidth / 2, y: window.innerHeight / 2 }}
+            renderCustomNodeElement={myCustomNode}          
+          />
+          <NodeCreate 
+            setShow={setShow} 
+            show={show} 
+            parentId={selectedNodeId} 
+            treeData={treeData}
+            treeId={params.id}  
+          />
+        </div>
+      </>
     )
   }  
 }
