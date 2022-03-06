@@ -4,6 +4,7 @@ import Tree from 'react-d3-tree';
 import _ from "lodash";
 //functions
 import { fetchTree } from "../../actions";
+import { useIsMount } from "../customHooks";
 //components
 import NodeCreate from "./nodes/NodeCreate";
 import TopMenu from "./TopMenu";
@@ -27,13 +28,46 @@ const TreePage = ({ match: { params } }) => {
     setShow(true)
   }
 
-  const MyForeignObject = ({attributes, name}) => {
-    const [isChecked, setIsChecked] = useState(false)
+  const RenderNodeActions = ({type, done}) => {
+    const isMount = useIsMount()
+    const [isChecked, setIsChecked] = useState(done)
+    const [inputValue, setInputValue] = useState(done.done)
 
-    const handleChange = () => {
-      setIsChecked(!isChecked)
+    useEffect(() => {
+      if(!isMount){
+        console.log(isChecked)
+      }      
+    }, [isChecked])
+
+    useEffect(() => {
+      if(!isMount){
+        console.log(inputValue)
+      }      
+    }, [inputValue])
+
+    if(type === "Checkbox"){
+      return (
+        <div className="ui checkbox">
+          <input 
+            type="checkbox"
+            checked={isChecked}
+            onChange={() => setIsChecked(!isChecked)}
+          />
+          <label>Erledigt</label>
+        </div>
+      )
+    } else {
+      return (
+        <div className="ui mini action input">
+          <button className="ui button" onClick={() => console.log("+1")}>+1</button>
+          <input type="text" value={inputValue} onChange={(e) => {setInputValue(e.target.value)}}/>
+          <div className="text">/{done.steps}</div>  
+        </div>      
+      )
     }
+  }
 
+  const MyForeignObject = ({attributes, name}) => {
     if(attributes.node_id === selectedNodeId){
       if(attributes.node_id !== 0){
         return (
@@ -53,7 +87,7 @@ const TreePage = ({ match: { params } }) => {
                 <i className="add icon"></i>
               </button>
             </foreignObject>
-            <foreignObject x="-300" y="-25" width="250" height="600">
+            <foreignObject x="-300" y="-25" width="250" height="700">
               <div className="ui blue card">
                 <div className="content">
                   <div className="header">{name}</div>
@@ -65,14 +99,7 @@ const TreePage = ({ match: { params } }) => {
                 </div>
                 <div className="extra content">
                   <div className="right floated">
-                    <div className="ui checkbox">
-                      <input 
-                        type="checkbox"
-                        checked={isChecked}
-                        onChange={handleChange}
-                      />
-                      <label>Erledigt</label>
-                    </div>
+                    <RenderNodeActions type={attributes.type} done={attributes.done}/>
                   </div>
                 </div>
               </div>
