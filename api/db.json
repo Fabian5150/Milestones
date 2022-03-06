@@ -207,7 +207,7 @@
               "type": "Counter",
               "done": {
                 "steps": 123,
-                "done": 0
+                "done": "0"
               }
             },
             "children": []

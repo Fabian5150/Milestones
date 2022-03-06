@@ -56,7 +56,13 @@ const TreePage = ({ match: { params } }) => {
 
     useEffect(() => {
       if(!isMount){
-        console.log(deboundcedInputVal)
+        changeNode(node_id, treeData, treePreview.id, {
+          attributes: {
+            done: {
+              done: deboundcedInputVal
+            }
+          }
+        })
       }      
     }, [deboundcedInputVal])
 
