@@ -27,13 +27,19 @@ const TreePage = ({ match: { params } }) => {
     setShow(true)
   }
 
-  const MyForeignObject = ({node_id}) => {
-    if(node_id === selectedNodeId){
-      if(node_id !== 0){
+  const MyForeignObject = ({attributes, name}) => {
+    const [isChecked, setIsChecked] = useState(false)
+
+    const handleChange = () => {
+      setIsChecked(!isChecked)
+    }
+
+    if(attributes.node_id === selectedNodeId){
+      if(attributes.node_id !== 0){
         return (
           <>
             <foreignObject x="-35" y="-42.5" width="50" height="50">
-              <button className="small ui circular icon button" onClick={() => console.log(node_id)}>
+              <button className="small ui circular icon button" onClick={() => console.log(attributes.node_id)}>
                 <i className="edit icon"></i>
               </button>
             </foreignObject>
@@ -46,6 +52,30 @@ const TreePage = ({ match: { params } }) => {
               <button className="small ui circular icon button" onClick={() => addNode()}>
                 <i className="add icon"></i>
               </button>
+            </foreignObject>
+            <foreignObject x="-300" y="-25" width="250" height="600">
+              <div className="ui blue card">
+                <div className="content">
+                  <div className="header">{name}</div>
+                </div>
+                <div className="content">
+                  <div className="summary">
+                    {`${attributes.description ? attributes.description : "(keine Beschreibung vorhanden)"}`}
+                  </div>
+                </div>
+                <div className="extra content">
+                  <div className="right floated">
+                    <div className="ui checkbox">
+                      <input 
+                        type="checkbox"
+                        checked={isChecked}
+                        onChange={handleChange}
+                      />
+                      <label>Erledigt</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </foreignObject>
           </>        
         )
@@ -92,7 +122,7 @@ const TreePage = ({ match: { params } }) => {
         fill={nodeColor(attributes.type, attributes.done)} 
       />
       
-      <MyForeignObject node_id={attributes.node_id}/>
+      <MyForeignObject attributes={attributes} name={name}/>
       
       <text fill={`${attributes.node_id === 0 ? "#64a9c4" : "black"}`} stroke={`${attributes.node_id === 0 ? "#64a9c4" : "black"}`} strokeWidth="0.3" x="25">
         {name}
