@@ -13,7 +13,7 @@ const TreeList = ( {match: {params}} ) => {
     })
   }, [])
 
-  if(params.searchBy === "all"){
+  if(params.key === "all"){
     return <div>Alle Bäume</div>
   } else {
     return (

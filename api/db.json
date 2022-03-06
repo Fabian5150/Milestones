@@ -53,7 +53,7 @@
             "attributes": {
               "node_id": 1646525862162,
               "type": "Checkbox",
-              "done": false
+              "done": true
             },
             "children": [
               {
@@ -63,10 +63,20 @@
                   "type": "Counter",
                   "done": {
                     "steps": 12,
-                    "done": 0
+                    "done": 4
                   }
                 },
-                "children": []
+                "children": [
+                  {
+                    "name": "Huh?",
+                    "attributes": {
+                      "node_id": 1646601780362,
+                      "type": "Checkbox",
+                      "done": false
+                    },
+                    "children": []
+                  }
+                ]
               }
             ]
           },
@@ -84,9 +94,69 @@
             "attributes": {
               "node_id": 1646526080056,
               "type": "Checkbox",
-              "done": false
+              "done": true
             },
-            "children": []
+            "children": [
+              {
+                "name": "Neues Ziel",
+                "attributes": {
+                  "node_id": 1646601731001,
+                  "type": "Checkbox",
+                  "description": "Ich will es erreichen! :)",
+                  "done": false
+                },
+                "children": [
+                  {
+                    "name": "1",
+                    "attributes": {
+                      "node_id": 1646601741737,
+                      "type": "Checkbox",
+                      "done": false
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "2",
+                    "attributes": {
+                      "node_id": 1646601743607,
+                      "type": "Checkbox",
+                      "done": false
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "3",
+                    "attributes": {
+                      "node_id": 1646601746202,
+                      "type": "Checkbox",
+                      "done": false
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "4",
+                    "attributes": {
+                      "node_id": 1646601753612,
+                      "type": "Counter",
+                      "done": {
+                        "steps": 12,
+                        "done": 0
+                      }
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "5",
+                    "attributes": {
+                      "node_id": 1646601756746,
+                      "type": "Checkbox",
+                      "done": false
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
           }
         ]
       },

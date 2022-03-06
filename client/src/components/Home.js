@@ -46,7 +46,7 @@ const Home = () => {
       <h1>Willkommen zurück!</h1>
       <div className="ui green segment">
         <h3 className="ui left floated header">Daran haben sie zuletzt gearbeitet:</h3>
-        <Link to="/search/all/latestFirst" className="right floated tiny ui right labeled icon button">
+        <Link to="/search/latestFirst/all" className="right floated tiny ui right labeled icon button">
           <i className="right arrow icon" />
           Zeige alle Bäume
         </Link>
