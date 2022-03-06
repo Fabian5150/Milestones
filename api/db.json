@@ -172,7 +172,7 @@
                   "description": "Kannst auf mich zählen ;)",
                   "done": {
                     "steps": 10,
-                    "done": 0
+                    "done": "12"
                   }
                 },
                 "children": [
@@ -207,7 +207,20 @@
               "type": "Counter",
               "done": {
                 "steps": 123,
-                "done": "0"
+                "done": 13
+              }
+            },
+            "children": []
+          },
+          {
+            "name": "mal gucken",
+            "attributes": {
+              "node_id": 1646581983393,
+              "type": "Counter",
+              "description": "will einfach, dass hier n integer is man, das kann doch niocht so schwer sein :o",
+              "done": {
+                "steps": 12,
+                "done": 12
               }
             },
             "children": []

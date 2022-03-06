@@ -35,13 +35,22 @@ const TreePage = ({ match: { params } }) => {
     const [deboundcedInputVal, setDebouncedVal] = useState(inputValue)
 
     useEffect(() => {
-      const timerId = setTimeout(() => {
-        setDebouncedVal(inputValue)
-      }, 1000)
-
-      return () => {
-        clearTimeout(timerId)
+      if(!isNaN(inputValue) || inputValue.match(/^[0-9\b]+$/)){
+        if(inputValue > done.steps){
+          console.log(`Interssant, wie du von ${done.steps} Schritten ${inputValue} absolviert haben willst 🤔`)
+          return
+        }
+        const timerId = setTimeout(() => {
+          setDebouncedVal(inputValue)
+        }, 1000)
+  
+        return () => {
+          clearTimeout(timerId)
+        }
+      } else {
+        console.log("Keine Zahl!")
       }
+      
     }, [inputValue])
 
     useEffect(() => {
@@ -59,7 +68,7 @@ const TreePage = ({ match: { params } }) => {
         changeNode(node_id, treeData, treePreview.id, {
           attributes: {
             done: {
-              done: deboundcedInputVal
+              done: parseInt(deboundcedInputVal)
             }
           }
         })
