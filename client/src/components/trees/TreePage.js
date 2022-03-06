@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Tree from 'react-d3-tree';
 import _ from "lodash";
 //functions
-import { fetchTree } from "../../actions";
+import { fetchTree, changeNode } from "../../actions";
 import { useIsMount } from "../customHooks";
 //components
 import NodeCreate from "./nodes/NodeCreate";
@@ -28,7 +28,7 @@ const TreePage = ({ match: { params } }) => {
     setShow(true)
   }
 
-  const RenderNodeActions = ({type, done}) => {
+  const RenderNodeActions = ({type, done, node_id}) => {
     const isMount = useIsMount()
     const [isChecked, setIsChecked] = useState(done)
     const [inputValue, setInputValue] = useState(done.done)
@@ -46,7 +46,11 @@ const TreePage = ({ match: { params } }) => {
 
     useEffect(() => {
       if(!isMount){
-        console.log(isChecked)
+        changeNode(node_id, treeData, treePreview.id, {
+          attributes: {
+            done: isChecked
+          }
+        })
       }      
     }, [isChecked])
 
@@ -62,7 +66,9 @@ const TreePage = ({ match: { params } }) => {
           <input 
             type="checkbox"
             checked={isChecked}
-            onChange={() => setIsChecked(!isChecked)}
+            onChange={() => {
+              setIsChecked(!isChecked)
+            }}
           />
           <label>Erledigt</label>
         </div>
@@ -114,7 +120,11 @@ const TreePage = ({ match: { params } }) => {
                 </div>
                 <div className="extra content">
                   <div className="right floated">
-                    <RenderNodeActions type={attributes.type} done={attributes.done}/>
+                    <RenderNodeActions 
+                      type={attributes.type}
+                      done={attributes.done}
+                      node_id={attributes.node_id}  
+                    />
                   </div>
                 </div>
               </div>

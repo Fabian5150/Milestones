@@ -84,3 +84,27 @@ export const createNode = async (parentId, treeData, treeId, newChild) => {
   const res = await trees.patch(`/trees/${treeId}`, {data: newTree})
   return dispatch({ type: EDIT_TREE, payload: res.data })
 }
+
+export const changeNode = async (nodeId, treeData, treeId, changes) => {
+  let newTree = treeData
+  const nodePath = nestedObjPath(treeData, nodeId)
+  const currentNode = _.get(treeData, nodePath)
+
+  const changedNode = () => {
+    if(changes.attributes){
+      if(currentNode.attributes.type === "Counter"){
+        _.assign(currentNode.attributes.done, changes.attributes.done)
+        return currentNode
+      }
+      _.assign(currentNode.attributes, changes.attributes)
+      return currentNode
+    } else {
+      return _.assign(currentNode, changes)
+    }
+  }
+
+  _.set(newTree, nodePath, changedNode())
+
+  const res = await trees.patch(`/trees/${treeId}`, {data: newTree})
+  return dispatch({ type: EDIT_TREE, payload: res.data })
+}
