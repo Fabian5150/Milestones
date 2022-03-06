@@ -32,6 +32,7 @@
       "data": {
         "name": "Mein wirklich Erster",
         "attributes": {
+          "type": "root",
           "node_id": 0
         }
       },
@@ -41,12 +42,14 @@
       "data": {
         "name": "Mein zweiter Baum",
         "attributes": {
+          "type": "root",
           "node_id": 0
         },
         "children": [
           {
             "name": "Lorem",
             "attributes": {
+              "type": "Checkbox",
               "node_id": "0.0",
               "done": true
             },
@@ -54,6 +57,7 @@
               {
                 "name": "Ipsum",
                 "attributes": {
+                  "type": "Checkbox",
                   "node_id": "0.0.0",
                   "done": true
                 },
@@ -61,6 +65,7 @@
                   {
                     "name": "Dolor",
                     "attributes": {
+                      "type": "Checkbox",
                       "node_id": "0.0.0.0",
                       "done": false
                     }
@@ -70,6 +75,7 @@
               {
                 "name": "Sit",
                 "attributes": {
+                  "type": "Checkbox",
                   "node_id": "0.0.1",
                   "done": false
                 },
@@ -77,6 +83,7 @@
                   {
                     "name": "Anet",
                     "attributes": {
+                      "type": "Checkbox",
                       "node_id": "0.0.1.0"
                     }
                   },
@@ -84,11 +91,7 @@
                     "name": "Hoffe das geht",
                     "attributes": {
                       "node_id": 1646522835028,
-                      "type": {
-                        "label": "Checkbox",
-                        "value": "Checkbox",
-                        "icon": "check square"
-                      },
+                      "type": "Checkbox",
                       "description": "Wäre halt ziemlich cool",
                       "done": false
                     },
@@ -105,6 +108,19 @@
                     "children": []
                   }
                 ]
+              },
+              {
+                "name": "Zähler",
+                "attributes": {
+                  "node_id": 1646524437608,
+                  "type": "Counter",
+                  "description": "Kannst auf mich zählen ;)",
+                  "done": {
+                    "steps": "10",
+                    "done": 0
+                  }
+                },
+                "children": []
               }
             ]
           }

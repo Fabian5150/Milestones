@@ -56,24 +56,44 @@ const TreePage = ({ match: { params } }) => {
     } else return <></>
   }
 
+  const nodeColor = (type, done) => {
+    if(type === "root"){
+      return "blue"
+    } else if(type === "Counter"){
+      return "orange"
+    } else {      
+      if (done) return "green"
+      else return "red"
+    }
+  }
+
+  const done = (type, done) => {
+    if(type === "Checkbox"){
+      if (done) return "ja"
+      else return "nein"
+    } else{
+      return `${done.done}/${done.steps}`
+    }
+  }
+
   const myCustomNode = ({ nodeDatum }) => (
     <g>
       <circle 
         r={20} 
         onClick={() => {
-          setSelectedNodeId(nodeDatum.attributes?.node_id)
+          setSelectedNodeId(nodeDatum.attributes.node_id)
         }} 
-        fill={`${nodeDatum.attributes?.done ? "green" : "red"}`} 
+        fill={nodeColor(nodeDatum.attributes.type, nodeDatum.attributes.done)} 
       />
       
-      <MyForeignObject node_id={nodeDatum.attributes?.node_id}/>
+      <MyForeignObject node_id={nodeDatum.attributes.node_id}/>
       
-      <text fill={`${nodeDatum.attributes?.node_id === 0 ? "blue" : "black"}`} stroke={`${nodeDatum.attributes?.node_id === 0 ? "blue" : "black"}`} strokeWidth="0.3" x="25">
+      <text fill={`${nodeDatum.attributes.node_id === 0 ? "blue" : "black"}`} stroke={`${nodeDatum.attributes.node_id === 0 ? "blue" : "black"}`} strokeWidth="0.3" x="25">
         {nodeDatum.name}
       </text>
-      {nodeDatum.attributes?.node_id !== 0 && (
+      {nodeDatum.attributes.node_id !== 0 && (
         <text fill="black" x="25" y="25" strokeWidth="0.3">
-          Erledigt: {`${nodeDatum.attributes?.done ? "ja" : "nein"}`}
+          Erledigt: {done(nodeDatum.attributes.type, nodeDatum.attributes.done)}
         </text>
       )}
     </g>
