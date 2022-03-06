@@ -1,18 +1,12 @@
 //packages
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import _ from "lodash";
 //functions
 import { fetchTreePreviews } from "../actions";
 //components
 import TreeCreate from "./trees/TreeCreate";
 import TreePreview from "./trees/TreePreview";
-
-const myTree = {
-  title: "Mein wirklich Erster",
-  description: "Mein erster Baum, ich bin so aufgeregt :o",
-  category: "Musik",
-  id: 1
-}
 
 const Home = () => {
   const [show, setShow] = useState(false)
@@ -49,13 +43,13 @@ const Home = () => {
         <i className="plus icon"/> Neuen Baum erstellen 
       </button>
 
-      <h1>Willkomen zurück!</h1>
+      <h1>Willkommen zurück!</h1>
       <div className="ui green segment">
         <h3 className="ui left floated header">Daran haben sie zuletzt gearbeitet:</h3>
-        <button className="right floated tiny ui right labeled icon button">
+        <Link to="/search/all/latestFirst" className="right floated tiny ui right labeled icon button">
           <i className="right arrow icon" />
           Zeige alle Bäume
-        </button>
+        </Link>
 
         <div className="ui clearing hidden divider" />
 
