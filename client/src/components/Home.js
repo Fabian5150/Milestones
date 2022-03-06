@@ -32,10 +32,10 @@ const Home = () => {
 
         <div className="ui content">
           <div className="ui four cards">
-            <TreePreview treePreview={myTree} />
-            <TreePreview treePreview={myTree} />
-            <TreePreview treePreview={myTree} />
-            <TreePreview treePreview={myTree} />
+            <TreePreview treePreview={myTree}/>
+            <TreePreview treePreview={myTree}/>
+            <TreePreview treePreview={myTree}/>
+            <TreePreview treePreview={myTree}/>
           </div>
         </div>
         
