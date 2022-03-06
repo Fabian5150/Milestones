@@ -70,9 +70,13 @@ const TreePage = ({ match: { params } }) => {
     } else {
       return (
         <div className="ui mini action input">
-          <button className="ui button" onClick={() => console.log("+1")}>+1</button>
+          <button 
+            className="ui green button right pointing label" 
+            onClick={() => setInputValue(inputValue+1)}>
+            +1
+          </button>
           <input type="text" value={inputValue} onChange={(e) => {setInputValue(e.target.value)}}/>
-          <div className="text">/{done.steps}</div>  
+          /{done.steps}
         </div>      
       )
     }
@@ -98,8 +102,8 @@ const TreePage = ({ match: { params } }) => {
                 <i className="add icon"></i>
               </button>
             </foreignObject>
-            <foreignObject x="-300" y="-25" width="250" height="700">
-              <div className="ui blue card">
+            <foreignObject x="-300" y="-50" width="250" height="700">
+              <div className="ui raised card">
                 <div className="content">
                   <div className="header">{name}</div>
                 </div>
