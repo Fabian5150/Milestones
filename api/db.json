@@ -30,7 +30,7 @@
       "title": "Erster",
       "description": "Mein erster Baum, ich bin so aufgeregt :o",
       "category": "Musik",
-      "lastWorkedOn": 1646691808396,
+      "lastWorkedOn": 1646693316778,
       "id": 1
     },
     {
@@ -115,7 +115,7 @@
             "attributes": {
               "node_id": 1646526077946,
               "type": "Checkbox",
-              "done": false
+              "done": true
             },
             "children": []
           },

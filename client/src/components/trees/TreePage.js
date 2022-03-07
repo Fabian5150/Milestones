@@ -1,5 +1,6 @@
 //packages
 import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
 import Tree from 'react-d3-tree';
 import _ from "lodash";
 //functions
@@ -10,21 +11,22 @@ import NodeCreate from "./nodes/NodeCreate";
 import NodeEdit from "./nodes/NodeEdit";
 import TopMenu from "./TopMenu";
 
-const TreePage = ({ match: { params } }) => {
+const TreePage = ({ match: { params }, fetchTree, treePreview }) => {
   const [showCreateModal, setShowCreateModal] = useState(false)
   const [showEditModal, setShowEditModal] = useState(false)
-  const [treeData, setTreeData] = useState() 
-  const [treePreview, setTreePreview] = useState()
   const [selectedNodeId, setSelectedNodeId] = useState (0)
+  const [treeData, setTreeData] = useState()
 
   useEffect(() => {
     fetchTree(params.id)
-    .then(({ payload }) => {
-      setTreeData(payload.data)
-      setTreePreview(payload)
-      changeTreePreview( payload.id, { lastWorkedOn: Date.now() })
-    })
+    changeTreePreview( params.id, { lastWorkedOn: Date.now() })
   }, [])
+
+  useEffect(() => {
+    if(treePreview){
+      setTreeData(treePreview.data)
+    }
+  }, [treePreview])
 
   const addNode = () => {
     setShowCreateModal(true)
@@ -251,4 +253,11 @@ const TreePage = ({ match: { params } }) => {
   }  
 }
 
-export default TreePage;
+const mapStateToProps = state => {
+  return {
+    //treeData: state.trees.tree.data,
+    treePreview: state.trees.tree
+  }
+}
+
+export default connect(mapStateToProps, { fetchTree })(TreePage);

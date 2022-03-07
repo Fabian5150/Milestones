@@ -13,7 +13,7 @@ const Home = ({ treePreviews, fetchTreePreviewsNEW }) => {
 
   useEffect(() => {
     fetchTreePreviewsNEW()
-    console.log(treePreviews)
+    //console.log(treePreviews)
   }, [])
 
   const renderSegments = () => {
