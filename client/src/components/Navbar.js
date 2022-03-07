@@ -7,11 +7,9 @@ import Searchbar from "./SearchBar";
 import Auth from "./Auth";
 import CategoryCreate from "./categories/CategoryCreate";
 //functions
-import { fetchCategories, fetchCategoriesNEW } from "../actions";
+import { fetchCategoriesNEW } from "../actions";
 
 const Navbar = (props) => {
-  const [categories, setCategories] = useState()
-
   console.log(props.categoriesNEW)
 
   useEffect(() => {

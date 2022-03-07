@@ -9,7 +9,7 @@ export default (state = {}, { type, payload }) => {
     case FETCH_CATEGORIES:
       return {...state, categories: payload}
     case CREATE_CATEGORY:
-      return {...state, categories: payload}
+      return state
 
     default: return state
   }
