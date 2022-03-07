@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 //components
 import TreePreviewCard from "./trees/TreePreviewCard";
 
-
 const HomePreviewSegment = ({ previews, header, buttonLabel, link }) => {
   const renderCards = () => {
     if(previews.length === 0){

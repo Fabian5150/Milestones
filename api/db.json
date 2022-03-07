@@ -30,30 +30,35 @@
       "title": "Mein wirklich Erster",
       "description": "Mein erster Baum, ich bin so aufgeregt :o",
       "category": "Musik",
+      "lastWorkedOn": 1646674823789,
       "id": 1
     },
     {
       "title": "Mein zweiter Baum",
       "description": "ich bin so happy ;)",
       "category": "Musik",
+      "lastWorkedOn": 1646674700279,
       "id": 2
     },
     {
       "title": "Toller Baum",
       "description": "Kann hier jetzt mal von Anfang an die Wundervollheit dieser App genießen ;,)",
       "category": "Entspannung",
+      "lastWorkedOn": 1646674725656,
       "id": 3
     },
     {
       "title": "Neuer Baum",
       "description": "super toll",
       "category": "Sport",
+      "lastWorkedOn": 1646674699396,
       "id": 4
     },
     {
       "title": "Mein 5. Baum",
       "description": "Jetzt wird es spannend",
       "category": "Spannende Bäume",
+      "lastWorkedOn": 1646674698945,
       "id": 5
     }
   ],

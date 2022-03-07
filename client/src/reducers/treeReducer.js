@@ -1,9 +1,12 @@
+//packages
+import _ from "lodash";
 //action types
 import {
   CREATE_TREE,
   FETCH_TREE,
   EDIT_TREE,
-  FETCH_TREE_PREVIEWS
+  FETCH_TREE_PREVIEWS,
+  EDIT_TREE_PREVIEW
 } from '../actions/types'
 
 export default (state = {}, action) => {
@@ -16,6 +19,8 @@ export default (state = {}, action) => {
       return Object.assign(state, {tree: action.payload})
     case FETCH_TREE_PREVIEWS:
       return Object.assign(state, {treePreviews: action.payload})
+    case EDIT_TREE_PREVIEW:
+      return Object.assign(state, {treePreviews: _.assign(state.treePreviews, action.payload)})
 
     default: return state
   }

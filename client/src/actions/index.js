@@ -11,7 +11,8 @@ import {
   FETCH_TREE,
   CREATE_CATEGORY,
   EDIT_TREE,
-  FETCH_TREE_PREVIEWS
+  FETCH_TREE_PREVIEWS,
+  EDIT_TREE_PREVIEW
 } from './types'
 //functions
 import { nestedObjPath } from "../functions"
@@ -41,6 +42,12 @@ export const createTree = async formValues => {
   
   dispatch({ type: CREATE_TREE, payload: res.data })
   history.push(`/tree/${res.data.id}`)
+}
+
+export const changeTreePreview = async (id, changes) => {
+  const res = trees.patch(`/treePreviews/${id}`, changes)
+
+  //return dispatch({ type: EDIT_TREE_PREVIEW, payload: res.data })
 }
 
 export const fetchCategories = async () => {

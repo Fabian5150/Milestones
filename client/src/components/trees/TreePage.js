@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Tree from 'react-d3-tree';
 import _ from "lodash";
 //functions
-import { fetchTree, changeNode } from "../../actions";
+import { fetchTree, changeNode, changeTreePreview } from "../../actions";
 import { useIsMount } from "../customHooks";
 //components
 import NodeCreate from "./nodes/NodeCreate";
@@ -22,8 +22,8 @@ const TreePage = ({ match: { params } }) => {
     .then(({ payload }) => {
       setTreeData(payload.data)
       setTreePreview(payload)
+      changeTreePreview( payload.id, { lastWorkedOn: Date.now() })
     })
-
   }, [])
 
   const addNode = () => {
