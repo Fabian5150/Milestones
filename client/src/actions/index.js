@@ -56,6 +56,14 @@ export const fetchCategories = async () => {
   return dispatch({ type: FETCH_CATEGORIES, payload: res.data })
 }
 
+export const fetchCategoriesNEW = () => async dispatch => {
+  const res = await trees.get('/categories')
+
+  console.log(res.data)
+
+  dispatch({ type: FETCH_CATEGORIES, payload: res.data })
+}
+
 export const fetchTree = async id => {
   const res1 = await trees.get(`/treePreviews/${id}`)
   const res2 = await trees.get(`/trees/${id}`)

@@ -1,26 +1,26 @@
 //packages
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 //components
 import Searchbar from "./SearchBar";
 import Auth from "./Auth";
 import CategoryCreate from "./categories/CategoryCreate";
 //functions
-import { fetchCategories } from "../actions";
+import { fetchCategories, fetchCategoriesNEW } from "../actions";
 
-const Navbar = () => {
+const Navbar = (props) => {
   const [categories, setCategories] = useState()
 
+  console.log(props.categoriesNEW)
+
   useEffect(() => {
-    fetchCategories()
-    .then(({ payload }) => {
-      setCategories(payload)
-    })
+    props.fetchCategoriesNEW()
   }, [])
 
   const [show, setShow] = useState(false)
   const renderCategories = () => {
-    if(!categories){
+    if(!props.categoriesNEW){
       return <div>Loading...</div>
     } else {
       return <>
@@ -28,7 +28,7 @@ const Navbar = () => {
           <i className="add icon circular"/>
           Kategorie hinzufügen
         </div>
-        {categories.map(category => {
+        {props.categoriesNEW.map(category => {
           return(
             <Link to={`/search/category/${category.value}`} className="item" key={category.value}>
               <i className={`icon ${category.icon}`}/>
@@ -83,4 +83,10 @@ const Navbar = () => {
   )
 }
 
-export default Navbar;
+const mapStateToProps = state => {
+  return {
+    categoriesNEW: state.categories.categories
+  }
+}
+
+export default connect(mapStateToProps, { fetchCategoriesNEW })(Navbar);
