@@ -7,16 +7,16 @@ import Searchbar from "./SearchBar";
 import Auth from "./Auth";
 import CategoryCreate from "./categories/CategoryCreate";
 //functions
-import { fetchCategoriesNEW } from "../actions";
+import { fetchCategories } from "../actions";
 
-const Navbar = ({ categoriesNEW, fetchCategoriesNEW }) => {
+const Navbar = ({ categories, fetchCategories }) => {
   useEffect(() => {
-    fetchCategoriesNEW()
+    fetchCategories()
   }, [])
 
   const [show, setShow] = useState(false)
   const renderCategories = () => {
-    if(!categoriesNEW){
+    if(!categories){
       return <div>Loading...</div>
     } else {
       return <>
@@ -24,7 +24,7 @@ const Navbar = ({ categoriesNEW, fetchCategoriesNEW }) => {
           <i className="add icon circular"/>
           Kategorie hinzufügen
         </div>
-        {categoriesNEW.map(category => {
+        {categories.map(category => {
           return(
             <Link to={`/search/category/${category.value}`} className="item" key={category.value}>
               <i className={`icon ${category.icon}`}/>
@@ -81,8 +81,8 @@ const Navbar = ({ categoriesNEW, fetchCategoriesNEW }) => {
 
 const mapStateToProps = state => {
   return {
-    categoriesNEW: state.categories.categories
+    categories: state.categories.categories
   }
 }
 
-export default connect(mapStateToProps, { fetchCategoriesNEW })(Navbar);
+export default connect(mapStateToProps, { fetchCategories })(Navbar);

@@ -50,13 +50,7 @@ export const changeTreePreview = async (id, changes) => {
   //return dispatch({ type: EDIT_TREE_PREVIEW, payload: res.data })
 }
 
-export const fetchCategories = async () => {
-  const res = await trees.get('/categories')
-
-  return dispatch({ type: FETCH_CATEGORIES, payload: res.data })
-}
-
-export const fetchCategoriesNEW = () => async dispatch => {
+export const fetchCategories = () => async dispatch => {
   const res = await trees.get('/categories')
 
   dispatch({ type: FETCH_CATEGORIES, payload: res.data })

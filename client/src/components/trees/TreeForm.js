@@ -6,13 +6,13 @@ import { connect } from "react-redux";
 //components
 import Dropdown from "../Dropdown"; 
 //functions
-import { fetchCategoriesNEW } from "../../actions";
+import { fetchCategories } from "../../actions";
 //data
 import icons from "../../categoryIcons";
 
 const TreeForm = (props) => {
   useEffect(() => {
-    props.fetchCategoriesNEW()
+    props.fetchCategories()
   }, [])
 
   const renderError = ({ error, touched }) => {
@@ -40,14 +40,14 @@ const TreeForm = (props) => {
   const [disabled, setDisabled] = useState(false)
 
   const renderCategoryDropdown = () => {
-    if(!props.categoriesNEW){
+    if(!props.categories){
       return <div>Loading...</div>
     } else {
       return (
         <div className={`field ${disabled ? "disabled" : ""}`}>
           <Dropdown
             label="Kategorie: "
-            options={props.categoriesNEW}
+            options={props.categories}
             selected={selectedCategory}
             onSelectedChange={setSelectedCategory}
           />
@@ -74,7 +74,7 @@ const TreeForm = (props) => {
 
   const onSubmit = (formValues) => {
     if(selectedCategory !== "") formValues.category = selectedCategory.value
-    if(selectedIcon !== "") formValues.newCategoryIcon = selectedIcon.value
+    if(selectedIcon !== "") formValues.CategoryIcon = selectedIcon.value
     props.onSubmit(formValues);
   };
 
@@ -91,11 +91,11 @@ const TreeForm = (props) => {
           errors.title = "Titel darf nicht länger als 20 Zeichen sein."
         }
 
-        if(formValues.newCategory){
+        if(formValues.Category){
           setDisabled(true) 
           setSelectedCategory("")
-          if(formValues.newCategory.length > 20){
-            errors.newCategory = "Kategorie darf nicht länger als 20 Zeichen sein."
+          if(formValues.Category.length > 20){
+            errors.Category = "Kategorie darf nicht länger als 20 Zeichen sein."
           }
         } else{
           setSelectedIcon("")
@@ -116,10 +116,10 @@ const TreeForm = (props) => {
               <Field name="category" component={renderCategoryDropdown} />
               <div className="ui two column grid">
                 <div className="column">
-                  <Field name="newCategory" component={renderInput} label="Oder erstelle neue Kategorie:" />
+                  <Field name="Category" component={renderInput} label="Oder erstelle neue Kategorie:" />
                 </div>
                 <div className="column">
-                  <Field name="newCategoryIcon" component={renderIconDropdown} />
+                  <Field name="CategoryIcon" component={renderIconDropdown} />
                 </div>
               </div>
             </div>
@@ -132,8 +132,8 @@ const TreeForm = (props) => {
  
 const mapStateToProps = state => {
   return {
-    categoriesNEW: state.categories.categories
+    categories: state.categories.categories
   }
 }
 
-export default connect(mapStateToProps, { fetchCategoriesNEW })(TreeForm);
+export default connect(mapStateToProps, { fetchCategories })(TreeForm);
