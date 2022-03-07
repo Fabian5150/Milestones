@@ -37,6 +37,12 @@
       "description": "Kann hier jetzt mal von Anfang an die Wundervollheit dieser App genießen ;,)",
       "category": "Entspannung",
       "id": 3
+    },
+    {
+      "title": "Neuer Baum",
+      "description": "super toll",
+      "category": "Sport",
+      "id": 4
     }
   ],
   "trees": [
@@ -103,7 +109,7 @@
                   "node_id": 1646601731001,
                   "type": "Checkbox",
                   "description": "Ich will es erreichen! :)",
-                  "done": false
+                  "done": true
                 },
                 "children": [
                   {
@@ -111,18 +117,105 @@
                     "attributes": {
                       "node_id": 1646601741737,
                       "type": "Checkbox",
-                      "done": false
+                      "done": true
                     },
-                    "children": []
+                    "children": [
+                      {
+                        "name": "lorem",
+                        "attributes": {
+                          "node_id": 1646652787571,
+                          "type": "Counter",
+                          "description": "ipsum dolor sit anet",
+                          "done": {
+                            "steps": 2,
+                            "done": 0
+                          }
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "foo bar",
+                        "attributes": {
+                          "node_id": 1646652943135,
+                          "type": "Counter",
+                          "description": "baz",
+                          "done": {
+                            "steps": 3,
+                            "done": 0
+                          }
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "bar",
+                        "attributes": {
+                          "node_id": 1646652967042,
+                          "type": "Counter",
+                          "done": {
+                            "steps": 3,
+                            "done": 0
+                          }
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "sdfj",
+                        "attributes": {
+                          "node_id": 1646653138811,
+                          "type": "Checkbox",
+                          "done": false
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "ads",
+                        "attributes": {
+                          "node_id": 1646653145724,
+                          "type": "Counter",
+                          "done": {
+                            "steps": 5,
+                            "done": 0
+                          }
+                        },
+                        "children": []
+                      }
+                    ]
                   },
                   {
                     "name": "2",
                     "attributes": {
                       "node_id": 1646601743607,
                       "type": "Checkbox",
-                      "done": false
+                      "done": true
                     },
-                    "children": []
+                    "children": [
+                      {
+                        "name": "sdfasdfas",
+                        "attributes": {
+                          "node_id": 1646653229962,
+                          "type": "Counter",
+                          "description": "sdfasdf",
+                          "done": {
+                            "steps": 1,
+                            "done": 0
+                          }
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "ach wie schön",
+                        "attributes": {
+                          "node_id": 1646653309112,
+                          "type": "Counter",
+                          "description": "wär's",
+                          "done": {
+                            "steps": 12,
+                            "done": 0
+                          }
+                        },
+                        "children": []
+                      }
+                    ]
                   },
                   {
                     "name": "3",
@@ -372,6 +465,49 @@
         ]
       },
       "id": 3
+    },
+    {
+      "data": {
+        "name": "Neuer Baum",
+        "attributes": {
+          "node_id": 0,
+          "type": "root"
+        },
+        "children": [
+          {
+            "name": "Neues Ziel",
+            "attributes": {
+              "node_id": 1646637391990,
+              "type": "Checkbox",
+              "done": true
+            },
+            "children": [
+              {
+                "name": "a",
+                "attributes": {
+                  "node_id": 1646637401936,
+                  "type": "Checkbox",
+                  "done": false
+                },
+                "children": []
+              },
+              {
+                "name": "a",
+                "attributes": {
+                  "node_id": 1646637410438,
+                  "type": "Counter",
+                  "done": {
+                    "steps": 10,
+                    "done": 3
+                  }
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      "id": 4
     }
   ]
 }

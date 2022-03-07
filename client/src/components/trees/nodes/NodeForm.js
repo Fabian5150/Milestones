@@ -86,7 +86,7 @@ const NodeForm = (props) => {
           errors.title = "Titel darf nicht länger als 25 Zeichen sein."
         }
 
-        if(formValues.steps && !(formValues.steps).match(/^[0-9\b]+$/)){
+        if((formValues.steps && !(formValues.steps).match(/^[0-9\b]+$/)) || (!disabled && !formValues.steps)){
           errors.steps = "Gebe eine (natürliche) Zahl ein."
         } 
 
