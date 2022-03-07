@@ -18,8 +18,6 @@ const Home = () => {
     })
   }, [])
 
-  const first4 = _.take(treePreviews, 4)
-
   return (
     <div>
       <button onClick={() => {setShow(true)}} className="right floated ui positive icon circular button">
@@ -28,7 +26,7 @@ const Home = () => {
 
       <h1>Willkommen zurück!</h1>
       <HomePreviewSegment 
-        previews={first4}
+        previews={ _.take( _.orderBy(treePreviews, 'lastWorkedOn').reverse() , 4) }
         header="Daran haben sie zuletzt gearbeitet:"
         buttonLabel="Zeige alle Bäume"
         link="/search/latestFirst/all"
