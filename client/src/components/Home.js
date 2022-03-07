@@ -1,16 +1,15 @@
 //packages
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 import _ from "lodash";
-//functions
-import { fetchTreePreviews } from "../actions";
 //components
 import TreeCreate from "./trees/TreeCreate";
-import TreePreviewCard from "./trees/TreePreviewCard";
+import HomePreviewSegment from "./HomePreviewSegment";
+//functions
+import { fetchTreePreviews } from "../actions";
 
 const Home = () => {
   const [show, setShow] = useState(false)
-  const [treePreviews, setTreePreviews] = useState()
+  const [treePreviews, setTreePreviews] = useState({})
 
   useEffect(() => {
     fetchTreePreviews()
@@ -19,23 +18,7 @@ const Home = () => {
     })
   }, [])
 
-  const renderCards = () => {
-    if(!treePreviews){
-      return <div>Loading...</div>
-    } else {
-      if(treePreviews.length === 0){
-        return <div>Keine Bäume vorhanden</div>
-      }
-
-      const first4 = _.take(treePreviews, 4)
-
-      return <>
-        {first4.map(preview => {
-          return <TreePreviewCard treePreview={preview} key={preview.id}/>
-        })}
-      </>
-    }
-  }
+  const first4 = _.take(treePreviews, 4)
 
   return (
     <div>
@@ -44,22 +27,12 @@ const Home = () => {
       </button>
 
       <h1>Willkommen zurück!</h1>
-      <div className="ui green segment">
-        <h3 className="ui left floated header">Daran haben sie zuletzt gearbeitet:</h3>
-        <Link to="/search/latestFirst/all" className="right floated tiny ui right labeled icon button">
-          <i className="right arrow icon" />
-          Zeige alle Bäume
-        </Link>
-
-        <div className="ui clearing hidden divider" />
-
-        <div className="ui content">
-          <div className="ui four cards">
-            {renderCards()}
-          </div>
-        </div>
-        
-      </div>
+      <HomePreviewSegment 
+        previews={first4}
+        header="Daran haben sie zuletzt gearbeitet:"
+        buttonLabel="Zeige alle Bäume"
+        link="/search/latestFirst/all"
+      />
 
       <TreeCreate setShow={setShow} show={show}/>
     </div>
