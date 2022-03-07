@@ -9,16 +9,14 @@ import CategoryCreate from "./categories/CategoryCreate";
 //functions
 import { fetchCategoriesNEW } from "../actions";
 
-const Navbar = (props) => {
-  console.log(props.categoriesNEW)
-
+const Navbar = ({ categoriesNEW,fetchCategoriesNEW }) => {
   useEffect(() => {
-    props.fetchCategoriesNEW()
+    fetchCategoriesNEW()
   }, [])
 
   const [show, setShow] = useState(false)
   const renderCategories = () => {
-    if(!props.categoriesNEW){
+    if(!categoriesNEW){
       return <div>Loading...</div>
     } else {
       return <>
@@ -26,7 +24,7 @@ const Navbar = (props) => {
           <i className="add icon circular"/>
           Kategorie hinzufügen
         </div>
-        {props.categoriesNEW.map(category => {
+        {categoriesNEW.map(category => {
           return(
             <Link to={`/search/category/${category.value}`} className="item" key={category.value}>
               <i className={`icon ${category.icon}`}/>
