@@ -9,7 +9,7 @@ import { fetchTreePreviews } from "../actions";
 
 const Home = () => {
   const [show, setShow] = useState(false)
-  const [treePreviews, setTreePreviews] = useState({})
+  const [treePreviews, setTreePreviews] = useState([])
 
   useEffect(() => {
     fetchTreePreviews()
@@ -28,6 +28,12 @@ const Home = () => {
       <HomePreviewSegment 
         previews={ _.take( _.orderBy(treePreviews, 'lastWorkedOn').reverse() , 4) }
         header="Daran haben sie zuletzt gearbeitet:"
+        buttonLabel="Zeige alle Bäume"
+        link="/search/latestFirst/all"
+      />
+      <HomePreviewSegment 
+        previews={ _.take(treePreviews.reverse(), 4) }
+        header="Kürzlich erstellt: "
         buttonLabel="Zeige alle Bäume"
         link="/search/latestFirst/all"
       />
