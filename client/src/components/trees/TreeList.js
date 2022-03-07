@@ -1,30 +1,27 @@
 //packages
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 //functions
-import { fetchTreePreviews, fetchCategories } from "../../actions";
+import { fetchTreePreviews, fetchCategoriesNEW } from "../../actions";
 
-const TreeList = ( {match: {params}} ) => {
+const TreeList = ( {match: {params}, categoriesNEW, fetchCategoriesNEW } ) => {
   const [treePreviews, setTreePreviews] = useState()
-  const [categories, setCategories] = useState()
 
   useEffect(() => {
+    fetchCategoriesNEW()
+
     fetchTreePreviews()
     .then(({ payload }) => {
       setTreePreviews(payload)
-    })
-
-    fetchCategories()
-    .then(({ payload }) => {
-      setCategories(payload)
     })
   }, [])
 
   const categoryIcon = treePreview => {
     let icon = "sitemap"
 
-    if(categories) {
-      categories.forEach(category => {
+    if(categoriesNEW) {
+      categoriesNEW.forEach(category => {
         if(category.value === treePreview.category){
           icon = category.icon
         }
@@ -78,4 +75,10 @@ const TreeList = ( {match: {params}} ) => {
   }
 }
 
-export default TreeList;
+const mapStateToProps = state => {
+  return {
+    categoriesNEW: state.categories.categories
+  }
+}
+
+export default connect(mapStateToProps, { fetchCategoriesNEW })(TreeList);

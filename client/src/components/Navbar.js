@@ -9,7 +9,7 @@ import CategoryCreate from "./categories/CategoryCreate";
 //functions
 import { fetchCategoriesNEW } from "../actions";
 
-const Navbar = ({ categoriesNEW,fetchCategoriesNEW }) => {
+const Navbar = ({ categoriesNEW, fetchCategoriesNEW }) => {
   useEffect(() => {
     fetchCategoriesNEW()
   }, [])
