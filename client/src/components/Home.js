@@ -13,11 +13,32 @@ const Home = ({ treePreviews, fetchTreePreviewsNEW }) => {
 
   useEffect(() => {
     fetchTreePreviewsNEW()
+    console.log(treePreviews)
   }, [])
 
-  if(!treePreviews){
-    return <div>Loading...</div>
+  const renderSegments = () => {
+    if(!treePreviews){
+      return <div>Loading...</div>
+    } else {
+      return(
+        <>
+          <HomePreviewSegment 
+            previews={ _.take( _.orderBy(treePreviews, 'lastWorkedOn').reverse() , 4) }
+            header="Daran haben sie zuletzt gearbeitet:"
+            buttonLabel="Zeige alle Bäume"
+            link="/search/latestFirst/all"
+          />
+          <HomePreviewSegment 
+            previews={ _.take(treePreviews.reverse(), 4) }
+            header="Kürzlich erstellt: "
+            buttonLabel="Zeige alle Bäume"
+            link="/search/latestFirst/all"
+          />
+        </>
+      )
+    }
   }
+  
 
   return (
     <div>
@@ -26,18 +47,8 @@ const Home = ({ treePreviews, fetchTreePreviewsNEW }) => {
       </button>
 
       <h1>Willkommen zurück!</h1>
-      <HomePreviewSegment 
-        previews={ _.take( _.orderBy(treePreviews, 'lastWorkedOn').reverse() , 4) }
-        header="Daran haben sie zuletzt gearbeitet:"
-        buttonLabel="Zeige alle Bäume"
-        link="/search/latestFirst/all"
-      />
-      <HomePreviewSegment 
-        previews={ _.take(treePreviews.reverse(), 4) }
-        header="Kürzlich erstellt: "
-        buttonLabel="Zeige alle Bäume"
-        link="/search/latestFirst/all"
-      />
+      
+      {renderSegments()}
 
       <TreeCreate setShow={setShow} show={show}/>
     </div>

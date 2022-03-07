@@ -30,7 +30,7 @@
       "title": "Erster",
       "description": "Mein erster Baum, ich bin so aufgeregt :o",
       "category": "Musik",
-      "lastWorkedOn": 1646677824861,
+      "lastWorkedOn": 1646691808396,
       "id": 1
     },
     {
@@ -44,7 +44,7 @@
       "title": "Dritter",
       "description": "Kann hier jetzt mal von Anfang an die Wundervollheit dieser App genießen ;,)",
       "category": "Entspannung",
-      "lastWorkedOn": 1646687917217,
+      "lastWorkedOn": 1646691594686,
       "id": 3
     },
     {
@@ -58,7 +58,7 @@
       "title": "Fünfter",
       "description": "Jetzt wird es spannend",
       "category": "Spannende Bäume",
-      "lastWorkedOn": 1646689118856,
+      "lastWorkedOn": 1646691339761,
       "id": 5
     },
     {
@@ -66,7 +66,7 @@
       "description": "Mit vernünfitger Redux Store Anbindung, ich bin so aufgeregt :3",
       "category": "Spannende Bäume",
       "id": 6,
-      "lastWorkedOn": 1646689112477
+      "lastWorkedOn": 1646691341340
     }
   ],
   "trees": [
