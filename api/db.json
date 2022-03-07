@@ -17,6 +17,12 @@
       "value": "Entspannung",
       "icon": "hand spock",
       "id": 3
+    },
+    {
+      "label": "Spannende Bäume",
+      "value": "Spannende Bäume",
+      "icon": "heartbeat",
+      "id": 4
     }
   ],
   "treePreviews": [
@@ -43,6 +49,12 @@
       "description": "super toll",
       "category": "Sport",
       "id": 4
+    },
+    {
+      "title": "Mein 5. Baum",
+      "description": "Jetzt wird es spannend",
+      "category": "Spannende Bäume",
+      "id": 5
     }
   ],
   "trees": [
@@ -508,6 +520,17 @@
         ]
       },
       "id": 4
+    },
+    {
+      "data": {
+        "name": "Mein 5. Baum",
+        "attributes": {
+          "node_id": 0,
+          "type": "root"
+        },
+        "children": []
+      },
+      "id": 5
     }
   ]
 }
