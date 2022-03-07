@@ -58,8 +58,15 @@
       "title": "Fünfter",
       "description": "Jetzt wird es spannend",
       "category": "Spannende Bäume",
-      "lastWorkedOn": 1646687928565,
+      "lastWorkedOn": 1646689118856,
       "id": 5
+    },
+    {
+      "title": "Mein neuer Baum",
+      "description": "Mit vernünfitger Redux Store Anbindung, ich bin so aufgeregt :3",
+      "category": "Spannende Bäume",
+      "id": 6,
+      "lastWorkedOn": 1646689112477
     }
   ],
   "trees": [
@@ -536,6 +543,17 @@
         "children": []
       },
       "id": 5
+    },
+    {
+      "data": {
+        "name": "Mein neuer Baum",
+        "attributes": {
+          "node_id": 0,
+          "type": "root"
+        },
+        "children": []
+      },
+      "id": 6
     }
   ]
 }

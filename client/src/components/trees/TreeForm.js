@@ -2,21 +2,17 @@
 //packages
 import React, { useState, useEffect } from "react";
 import { Form, Field } from "react-final-form";
+import { connect } from "react-redux";
 //components
 import Dropdown from "../Dropdown"; 
 //functions
-import { fetchCategories } from "../../actions";
+import { fetchCategoriesNEW } from "../../actions";
 //data
 import icons from "../../categoryIcons";
 
 const TreeForm = (props) => {
-  const [categories, setCategories] = useState()
-
   useEffect(() => {
-    fetchCategories()
-    .then(({ payload }) => {
-      setCategories(payload)
-    })
+    props.fetchCategoriesNEW()
   }, [])
 
   const renderError = ({ error, touched }) => {
@@ -44,14 +40,14 @@ const TreeForm = (props) => {
   const [disabled, setDisabled] = useState(false)
 
   const renderCategoryDropdown = () => {
-    if(!categories){
+    if(!props.categoriesNEW){
       return <div>Loading...</div>
     } else {
       return (
         <div className={`field ${disabled ? "disabled" : ""}`}>
           <Dropdown
             label="Kategorie: "
-            options={categories}
+            options={props.categoriesNEW}
             selected={selectedCategory}
             onSelectedChange={setSelectedCategory}
           />
@@ -134,4 +130,10 @@ const TreeForm = (props) => {
   );
 };
  
-export default TreeForm;
+const mapStateToProps = state => {
+  return {
+    categoriesNEW: state.categories.categories
+  }
+}
+
+export default connect(mapStateToProps, { fetchCategoriesNEW })(TreeForm);
