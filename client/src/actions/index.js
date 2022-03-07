@@ -69,6 +69,12 @@ export const fetchTreePreviews = async () => {
   return dispatch({ type: FETCH_TREE_PREVIEWS, payload: res.data })
 }
 
+export const fetchTreePreviewsNEW = () =>  async dispatch => {
+  const res = await trees.get("/treePreviews")
+
+  dispatch({ type: FETCH_TREE_PREVIEWS, payload: res.data })
+}
+
 export const createCategory = async formValues => {
   const data = {
     icon: formValues.icon,

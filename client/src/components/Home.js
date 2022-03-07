@@ -1,22 +1,23 @@
 //packages
 import React, { useEffect, useState } from "react";
+import { connect } from "react-redux";
 import _ from "lodash";
 //components
 import TreeCreate from "./trees/TreeCreate";
 import HomePreviewSegment from "./HomePreviewSegment";
 //functions
-import { fetchTreePreviews } from "../actions";
+import { fetchTreePreviewsNEW } from "../actions";
 
-const Home = () => {
+const Home = ({ treePreviews, fetchTreePreviewsNEW }) => {
   const [show, setShow] = useState(false)
-  const [treePreviews, setTreePreviews] = useState([])
 
   useEffect(() => {
-    fetchTreePreviews()
-    .then(({ payload }) => {
-      setTreePreviews(payload)
-    })
+    fetchTreePreviewsNEW()
   }, [])
+
+  if(!treePreviews){
+    return <div>Loading...</div>
+  }
 
   return (
     <div>
@@ -43,4 +44,10 @@ const Home = () => {
   )
 }
 
-export default Home;
+const mapStateToProps = state => {
+  return {
+    treePreviews: state.trees.treePreviews
+  }
+}
+
+export default connect(mapStateToProps, { fetchTreePreviewsNEW })(Home);
