@@ -25,40 +25,42 @@ const TreeList = ( {match: {params}, categories, fetchCategories, treePreviews, 
     return icon
   }
 
-  const renderList = () => {
-    if(!treePreviews){
-      return <div>Loading...</div>
-    }
-
-    return treePreviews.map(preview => {
-      return (
-        <div className="item" key={preview.id}>
-          <Link to={`/tree/${preview.id}`} className="right floated ui icon button">
-            <i className="external icon"></i>
-          </Link>
-          <i className={`${categoryIcon(preview)} large middle aligned icon`}/>
-          <div className="content">
-              {preview.title} ({preview.category})
-              <div className="description">
-                {preview.description}
-              </div>
-          </div>
-        </div>
-      )
-    })
-  }
-
-  if(params.key === "all"){
+  const RenderListSegment = ({header, items}) => {
     return (
       <>
-        <h1>Alle Bäume</h1>
+        <h1>{header}</h1>
         <div className="ui green segment">
           <div className="ui celled list">
-            {renderList()}
+            {
+              items.map(preview => {
+                return (
+                  <div className="item" key={preview.id}>
+                    <Link to={`/tree/${preview.id}`} className="right floated ui icon button">
+                      <i className="external icon"></i>
+                    </Link>
+                    <i className={`${categoryIcon(preview)} large middle aligned icon`}/>
+                    <div className="content">
+                        {preview.title} ({preview.category})
+                        <div className="description">
+                          {preview.description}
+                        </div>
+                    </div>
+                  </div>
+                )
+              })
+            }
           </div>
         </div>        
       </>
     )
+  }
+
+  if(!treePreviews){
+    return <div>Loading...</div>
+  }
+
+  if(params.key === "all"){
+    return <RenderListSegment header="Alle Bäume" items={treePreviews}/>
   } else {
     return (
       <div>
