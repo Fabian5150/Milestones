@@ -222,21 +222,25 @@ const TreePage = ({ match: { params }, fetchTree, treePreview, changeTreePreview
 
     return (
       <>
-        <TopMenu 
-          title={treePreview.title} 
-          description={treePreview.description} 
-          category={treePreview.category}  
-          categoryIcon={categoryIcon}
-        />
-        <div id="treeWrapper" style={{ width: "100vw", height: "100vh" }}>
-          <Tree 
-            data={treeData} 
-            collapsible={false} 
-            zoomable={false}
-            orientation='vertical' 
-            translate={{ x: window.innerWidth / 2, y: window.innerHeight / 2 }}
-            renderCustomNodeElement={myCustomNode}          
-          />
+        <div className="ui segments">
+          <div className="ui segment">
+          <TopMenu 
+              title={treePreview.title} 
+              description={treePreview.description} 
+              category={treePreview.category}  
+              categoryIcon={categoryIcon}
+            />
+            <div className="ui green segment" id="treeWrapper" style={{ width: "100%", height: "75vh" }}>
+              <Tree 
+                data={treeData} 
+                collapsible={false} 
+                zoomable={false}
+                orientation='vertical' 
+                translate={{ x: window.innerWidth / 2, y: window.innerHeight / 2 }}
+                renderCustomNodeElement={myCustomNode}          
+              />
+            </div>
+          </div>
         </div>
         <NodeCreate 
           setShow={setShowCreateModal} 
