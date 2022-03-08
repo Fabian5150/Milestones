@@ -4,6 +4,7 @@ import _ from "lodash";
 import {
   CREATE_TREE,
   FETCH_TREE,
+  FETCH_TREE_PREVIEW,
   EDIT_TREE,
   FETCH_TREE_PREVIEWS,
   EDIT_TREE_PREVIEW
@@ -15,6 +16,8 @@ export default (state = {}, {type, payload}) => {
       return { ...state, payload }
     case FETCH_TREE:
       return { ...state, tree: payload }
+    case FETCH_TREE_PREVIEW:
+      return { ...state, treePreview: payload }
     case EDIT_TREE:
       return { ...state, tree: payload }
     case FETCH_TREE_PREVIEWS:

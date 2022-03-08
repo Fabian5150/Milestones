@@ -11,22 +11,15 @@ import NodeCreate from "./nodes/NodeCreate";
 import NodeEdit from "./nodes/NodeEdit";
 import TopMenu from "./TopMenu";
 
-const TreePage = ({ match: { params }, fetchTree, treePreview, changeTreePreview, changeNode }) => {
+const TreePage = ({ match: { params }, fetchTree, treePreview, changeTreePreview, changeNode, treeData }) => {
   const [showCreateModal, setShowCreateModal] = useState(false)
   const [showEditModal, setShowEditModal] = useState(false)
   const [selectedNodeId, setSelectedNodeId] = useState (0)
-  const [treeData, setTreeData] = useState()
 
   useEffect(() => {
     fetchTree(params.id)
     changeTreePreview( params.id, { lastWorkedOn: Date.now() })
   }, [])
-
-  useEffect(() => {
-    if(treePreview){
-      setTreeData(treePreview.data)
-    }
-  }, [treePreview])
 
   const addNode = () => {
     setShowCreateModal(true)
@@ -255,8 +248,8 @@ const TreePage = ({ match: { params }, fetchTree, treePreview, changeTreePreview
 
 const mapStateToProps = state => {
   return {
-    //treeData: state.trees.tree.data,
-    treePreview: state.trees.tree
+    treeData: state.trees.tree.data,
+    treePreview: state.trees.treePreview
   }
 }
 

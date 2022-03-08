@@ -10,6 +10,7 @@ import {
   CREATE_CATEGORY,
   EDIT_TREE,
   FETCH_TREE_PREVIEWS,
+  FETCH_TREE_PREVIEW,
   EDIT_TREE_PREVIEW
 } from './types'
 //functions
@@ -52,10 +53,11 @@ export const fetchCategories = () => async dispatch => {
 }
 
 export const fetchTree = id => async dispatch => {
-  const res1 = await trees.get(`/treePreviews/${id}`)
-  const res2 = await trees.get(`/trees/${id}`)
+  const res1 = await trees.get(`/trees/${id}`)
+  const res2 = await trees.get(`/treePreviews/${id}`)
 
-  dispatch({ type: FETCH_TREE, payload: Object.assign(res1.data, res2.data)})
+  dispatch({ type: FETCH_TREE, payload: res1.data})
+  dispatch({ type: FETCH_TREE_PREVIEW, payload: res2.data })
 }
 
 export const fetchTreePreviews = () => async dispatch => {

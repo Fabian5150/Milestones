@@ -73,7 +73,7 @@
       "description": "lorem ipsum dolor sit anet",
       "category": "Spannende Bäume",
       "id": 7,
-      "lastWorkedOn": 1646757410088
+      "lastWorkedOn": 1646758428392
     }
   ],
   "trees": [
@@ -753,7 +753,7 @@
               "node_id": 1646757168172,
               "type": "Checkbox",
               "description": "Das ist jetz doof :/",
-              "done": false
+              "done": true
             },
             "children": [
               {
@@ -790,6 +790,15 @@
                 "children": []
               }
             ]
+          },
+          {
+            "name": "huh",
+            "attributes": {
+              "node_id": 1646757670273,
+              "type": "Checkbox",
+              "done": false
+            },
+            "children": []
           }
         ]
       },
