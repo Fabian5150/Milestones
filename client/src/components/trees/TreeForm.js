@@ -36,7 +36,7 @@ const TreeForm = (props) => {
     );
   };
 
-  const [selectedCategory, setSelectedCategory] = useState("")
+  const [selectedCategory, setSelectedCategory] = useState(props.categories[0])
   const [disabled, setDisabled] = useState(false)
 
   const renderCategoryDropdown = () => {
@@ -57,7 +57,7 @@ const TreeForm = (props) => {
   }
 
 
-  const [selectedIcon, setSelectedIcon] = useState("")
+  const [selectedIcon, setSelectedIcon] = useState(icons[0])
   
   const renderIconDropdown = () => {
     return (
@@ -73,8 +73,13 @@ const TreeForm = (props) => {
   }
 
   const onSubmit = (formValues) => {
-    if(selectedCategory !== "") formValues.category = selectedCategory.value
-    if(selectedIcon !== "") formValues.CategoryIcon = selectedIcon.value
+    if(!formValues.NewCategory){
+      formValues.category = selectedCategory.value
+    } else {
+      formValues.CategoryIcon = selectedIcon.value
+    }
+    
+    console.log(formValues)
     props.onSubmit(formValues);
   };
 
@@ -91,14 +96,12 @@ const TreeForm = (props) => {
           errors.title = "Titel darf nicht länger als 20 Zeichen sein."
         }
 
-        if(formValues.Category){
+        if(formValues.NewCategory){
           setDisabled(true) 
-          setSelectedCategory("")
-          if(formValues.Category.length > 20){
+          if(formValues.NewCategory.length > 20){
             errors.Category = "Kategorie darf nicht länger als 20 Zeichen sein."
           }
         } else{
-          setSelectedIcon("")
           setDisabled(false)
         }
 
@@ -116,7 +119,7 @@ const TreeForm = (props) => {
               <Field name="category" component={renderCategoryDropdown} />
               <div className="ui two column grid">
                 <div className="column">
-                  <Field name="Category" component={renderInput} label="Oder erstelle neue Kategorie:" />
+                  <Field name="NewCategory" component={renderInput} label="Oder erstelle neue Kategorie:" />
                 </div>
                 <div className="column">
                   <Field name="CategoryIcon" component={renderIconDropdown} />

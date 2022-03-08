@@ -74,6 +74,13 @@
       "category": "Spannende Bäume",
       "id": 7,
       "lastWorkedOn": 1646772630645
+    },
+    {
+      "title": "Gymnastik",
+      "description": "Wassergymnsatik mit Seepferdchen",
+      "category": "Sport",
+      "id": 8,
+      "lastWorkedOn": 1646778286171
     }
   ],
   "trees": [
@@ -840,6 +847,17 @@
         ]
       },
       "id": 7
+    },
+    {
+      "data": {
+        "name": "Gymnastik",
+        "attributes": {
+          "node_id": 0,
+          "type": "root"
+        },
+        "children": []
+      },
+      "id": 8
     }
   ]
 }
