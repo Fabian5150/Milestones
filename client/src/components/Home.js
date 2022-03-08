@@ -18,17 +18,17 @@ const Home = ({ treePreviews, fetchTreePreviews }) => {
   const renderSegments = () => {
     if(!treePreviews){
       return <div>Loading...</div>
-    } else {
+    } else { 
       return(
         <>
           <HomePreviewSegment 
-            previews={ _.take( _.orderBy(treePreviews, 'lastWorkedOn').reverse() , 4) }
+            previews={ _.take( _.orderBy( _.cloneDeep(treePreviews), 'lastWorkedOn').reverse() , 4) }
             header="Daran haben sie zuletzt gearbeitet:"
             buttonLabel="Zeige alle Bäume"
             link="/search/latestFirst/all"
           />
           <HomePreviewSegment 
-            previews={ _.take(treePreviews.reverse(), 4) }
+            previews={ _.take(_.cloneDeep(treePreviews).reverse(), 4) }
             header="Kürzlich erstellt: "
             buttonLabel="Zeige alle Bäume"
             link="/search/latestFirst/all"
