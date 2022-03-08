@@ -62,16 +62,16 @@ const TreeList = ( {match: {params}, categories, fetchCategories, treePreviews, 
   }
 
   if(params.searchBy === "latest"){
-    return <RenderListSegment header="Alle Bäume" items={_.cloneDeep(treePreviews).reverse()} label="Neuste zuerst"/>
+    return <RenderListSegment header="Alle Bäume" items={_.cloneDeep(treePreviews).reverse()} label="Neueste zuerst"/>
   } else if(params.searchBy === "lastEdited"){
     return <RenderListSegment header="Alle Bäume" items={_.orderBy( _.cloneDeep(treePreviews), 'lastWorkedOn').reverse()} label="Zuletzt geöffnete zuerst"/>
-  } else {
-    return (
-      <div>
-        <h1>TreeList</h1>
-        <p>{`Trees filterd by ${params.searchBy}, with the key of ${params.key}.`}</p>
-      </div>
-    )
+  } else if (params.searchBy === "category") {
+    const categoryTrees = []
+    treePreviews.forEach(preview => {
+      if(preview.category === params.key) categoryTrees.push(preview)
+    })
+
+    return <RenderListSegment header={`Alle Bäume aus "${params.key}"`} items={_.cloneDeep(categoryTrees).reverse()} label="Neueste zuerst"/>
   }
 }
 
