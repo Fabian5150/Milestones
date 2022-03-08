@@ -6,13 +6,13 @@ import _ from "lodash";
 import TreeCreate from "./trees/TreeCreate";
 import HomePreviewSegment from "./HomePreviewSegment";
 //functions
-import { fetchTreePreviewsNEW } from "../actions";
+import { fetchTreePreviews } from "../actions";
 
-const Home = ({ treePreviews, fetchTreePreviewsNEW }) => {
+const Home = ({ treePreviews, fetchTreePreviews }) => {
   const [show, setShow] = useState(false)
 
   useEffect(() => {
-    fetchTreePreviewsNEW()
+    fetchTreePreviews()
   }, [])
 
   const renderSegments = () => {
@@ -60,4 +60,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { fetchTreePreviewsNEW })(Home);
+export default connect(mapStateToProps, { fetchTreePreviews })(Home);

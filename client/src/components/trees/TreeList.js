@@ -3,12 +3,12 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 //functions
-import { fetchTreePreviewsNEW, fetchCategories } from "../../actions";
+import { fetchTreePreviews, fetchCategories } from "../../actions";
 
-const TreeList = ( {match: {params}, categories, fetchCategories, treePreviews, fetchTreePreviewsNEW } ) => {
+const TreeList = ( {match: {params}, categories, fetchCategories, treePreviews, fetchTreePreviews } ) => {
   useEffect(() => {
     fetchCategories()
-    fetchTreePreviewsNEW()
+    fetchTreePreviews()
   }, [])
 
   const categoryIcon = treePreview => {
@@ -76,4 +76,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { fetchCategories, fetchTreePreviewsNEW })(TreeList);
+export default connect(mapStateToProps, { fetchCategories, fetchTreePreviews })(TreeList);

@@ -63,13 +63,7 @@ export const fetchTree = id => async dispatch => {
   dispatch({ type: FETCH_TREE, payload: Object.assign(res1.data, res2.data)})
 }
 
-export const fetchTreePreviews = async () => {
-  const res = await trees.get("/treePreviews")
-
-  return dispatch({ type: FETCH_TREE_PREVIEWS, payload: res.data })
-}
-
-export const fetchTreePreviewsNEW = () => async dispatch => {
+export const fetchTreePreviews = () => async dispatch => {
   const res = await trees.get("/treePreviews")
 
   dispatch({ type: FETCH_TREE_PREVIEWS, payload: res.data })
