@@ -69,7 +69,7 @@ export const fetchTreePreviews = () => async dispatch => {
   dispatch({ type: FETCH_TREE_PREVIEWS, payload: res.data })
 }
 
-export const createCategory = async formValues => {
+export const createCategory = formValues => async dispatch => {
   const data = {
     icon: formValues.icon,
     label: formValues.title,
@@ -78,7 +78,7 @@ export const createCategory = async formValues => {
   const res = await trees.post('/categories', data)
 
   history.push(`/search/category/${data.value}`)
-  return dispatch({ type: CREATE_CATEGORY, payload: res.data })
+  dispatch({ type: CREATE_CATEGORY, payload: res.data })
 }
 
 export const createNode = async (parentId, treeData, treeId, newChild) => {
