@@ -29,7 +29,7 @@ const CategoryForm = (props) => {
     )
   }
 
-  const [selectedIcon, setSelectedIcon] = useState("")
+  const [selectedIcon, setSelectedIcon] = useState(icons[0])
   
   const renderIconDropdown = () => {
     return (
