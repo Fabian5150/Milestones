@@ -30,7 +30,7 @@
       "title": "Erster",
       "description": "Mein erster Baum, ich bin so aufgeregt :o",
       "category": "Musik",
-      "lastWorkedOn": 1646733533683,
+      "lastWorkedOn": 1646750672947,
       "id": 1
     },
     {
@@ -58,7 +58,7 @@
       "title": "Fünfter",
       "description": "Jetzt wird es spannend",
       "category": "Spannende Bäume",
-      "lastWorkedOn": 1646691339761,
+      "lastWorkedOn": 1646750683459,
       "id": 5
     },
     {
@@ -66,7 +66,7 @@
       "description": "Mit vernünfitger Redux Store Anbindung, ich bin so aufgeregt :3",
       "category": "Spannende Bäume",
       "id": 6,
-      "lastWorkedOn": 1646691341340
+      "lastWorkedOn": 1646750686614
     }
   ],
   "trees": [
