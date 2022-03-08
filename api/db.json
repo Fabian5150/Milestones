@@ -30,7 +30,7 @@
       "title": "Erster",
       "description": "Mein erster Baum, ich bin so aufgeregt :o",
       "category": "Musik",
-      "lastWorkedOn": 1646761156107,
+      "lastWorkedOn": 1646772677499,
       "id": 1
     },
     {
@@ -44,21 +44,21 @@
       "title": "Dritter",
       "description": "Kann hier jetzt mal von Anfang an die Wundervollheit dieser App genießen ;,)",
       "category": "Entspannung",
-      "lastWorkedOn": 1646761141753,
+      "lastWorkedOn": 1646772656942,
       "id": 3
     },
     {
       "title": "Vierter",
       "description": "super toll",
       "category": "Sport",
-      "lastWorkedOn": 1646687925658,
+      "lastWorkedOn": 1646772643329,
       "id": 4
     },
     {
       "title": "Fünfter",
       "description": "Jetzt wird es spannend",
       "category": "Spannende Bäume",
-      "lastWorkedOn": 1646750904988,
+      "lastWorkedOn": 1646763628286,
       "id": 5
     },
     {
@@ -73,7 +73,7 @@
       "description": "lorem ipsum dolor sit anet",
       "category": "Spannende Bäume",
       "id": 7,
-      "lastWorkedOn": 1646761135236
+      "lastWorkedOn": 1646772630645
     }
   ],
   "trees": [
@@ -593,7 +593,7 @@
                 "attributes": {
                   "node_id": 1646637401936,
                   "type": "Checkbox",
-                  "done": false
+                  "done": true
                 },
                 "children": []
               },
@@ -604,7 +604,7 @@
                   "type": "Counter",
                   "done": {
                     "steps": 10,
-                    "done": 3
+                    "done": 10
                   }
                 },
                 "children": []
@@ -622,7 +622,30 @@
           "node_id": 0,
           "type": "root"
         },
-        "children": []
+        "children": [
+          {
+            "name": "Wild Blue",
+            "attributes": {
+              "node_id": 1646763637806,
+              "type": "Checkbox",
+              "done": true
+            },
+            "children": []
+          },
+          {
+            "name": "Porem Lipsum",
+            "attributes": {
+              "node_id": 1646763660059,
+              "type": "Counter",
+              "description": "Foo Bar Baz",
+              "done": {
+                "steps": 3,
+                "done": 1
+              }
+            },
+            "children": []
+          }
+        ]
       },
       "id": 5
     },

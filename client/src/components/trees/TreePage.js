@@ -234,7 +234,7 @@ const TreePage = ({ match: { params }, fetchTree, treePreview, changeTreePreview
               <Tree 
                 data={treeData} 
                 collapsible={false} 
-                zoomable={false}
+                zoomable={true}
                 orientation='vertical' 
                 translate={{ x: window.innerWidth / 2 - 400, y: window.innerHeight / 2 - 300 }}
                 renderCustomNodeElement={myCustomNode}          
