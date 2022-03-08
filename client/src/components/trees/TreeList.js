@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import _ from "lodash";
 //functions
 import { fetchTreePreviews, fetchCategories } from "../../actions";
 
@@ -25,10 +26,11 @@ const TreeList = ( {match: {params}, categories, fetchCategories, treePreviews, 
     return icon
   }
 
-  const RenderListSegment = ({header, items}) => {
+  const RenderListSegment = ({header, items, label}) => {
     return (
       <>
         <h1>{header}</h1>
+        <div className="tiny ui label">{label}</div>
         <div className="ui green segment">
           <div className="ui celled list">
             {
@@ -59,8 +61,10 @@ const TreeList = ( {match: {params}, categories, fetchCategories, treePreviews, 
     return <div>Loading...</div>
   }
 
-  if(params.key === "all"){
-    return <RenderListSegment header="Alle Bäume" items={treePreviews}/>
+  if(params.searchBy === "latest"){
+    return <RenderListSegment header="Alle Bäume" items={_.cloneDeep(treePreviews).reverse()} label="Neuste zuerst"/>
+  } else if(params.searchBy === "lastEdited"){
+    return <RenderListSegment header="Alle Bäume" items={_.orderBy( _.cloneDeep(treePreviews), 'lastWorkedOn').reverse()} label="Zuletzt geöffnete zuerst"/>
   } else {
     return (
       <div>

@@ -25,13 +25,13 @@ const Home = ({ treePreviews, fetchTreePreviews }) => {
             previews={ _.take( _.orderBy( _.cloneDeep(treePreviews), 'lastWorkedOn').reverse() , 4) }
             header="Daran haben sie zuletzt gearbeitet:"
             buttonLabel="Zeige alle Bäume"
-            link="/search/latestFirst/all"
+            link="/search/lastEdited/all"
           />
           <HomePreviewSegment 
             previews={ _.take(_.cloneDeep(treePreviews).reverse(), 4) }
             header="Kürzlich erstellt: "
             buttonLabel="Zeige alle Bäume"
-            link="/search/latestFirst/all"
+            link="/search/latest/all"
           />
         </>
       )
