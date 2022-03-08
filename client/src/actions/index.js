@@ -20,7 +20,7 @@ import history from '../history'
 
 const dispatch = store.dispatch
 
-export const createTree = async formValues => {
+export const createTree = formValues => async dispatch => {
   if(formValues.newCategory){
     //create new category
     const category = {}
@@ -38,16 +38,15 @@ export const createTree = async formValues => {
   await trees.post('/trees', {data: 
     {name: formValues.title, attributes: { node_id: 0, type: "root" }, children: []}
   })
-  console.log(res.data)
   
   dispatch({ type: CREATE_TREE, payload: res.data })
   history.push(`/tree/${res.data.id}`)
 }
 
-export const changeTreePreview = async (id, changes) => {
+export const changeTreePreview = (id, changes) => async dispatch => {
   const res = trees.patch(`/treePreviews/${id}`, changes)
 
-  //return dispatch({ type: EDIT_TREE_PREVIEW, payload: res.data })
+  //dispatch({ type: EDIT_TREE_PREVIEW, payload: res.data })
 }
 
 export const fetchCategories = () => async dispatch => {

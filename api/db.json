@@ -44,7 +44,7 @@
       "title": "Dritter",
       "description": "Kann hier jetzt mal von Anfang an die Wundervollheit dieser App genießen ;,)",
       "category": "Entspannung",
-      "lastWorkedOn": 1646734318501,
+      "lastWorkedOn": 1646734704412,
       "id": 3
     },
     {
@@ -67,6 +67,13 @@
       "category": "Spannende Bäume",
       "id": 6,
       "lastWorkedOn": 1646691341340
+    },
+    {
+      "title": "Lorem ipsum",
+      "description": "dolor sit anet",
+      "Category": "Lorem Ipsum",
+      "CategoryIcon": "map signs",
+      "id": 7
     }
   ],
   "trees": [
@@ -589,6 +596,17 @@
         "children": []
       },
       "id": 6
+    },
+    {
+      "data": {
+        "name": "Lorem ipsum",
+        "attributes": {
+          "node_id": 0,
+          "type": "root"
+        },
+        "children": []
+      },
+      "id": 7
     }
   ]
 }
