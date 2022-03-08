@@ -1,7 +1,5 @@
 //packages
 import _ from "lodash"
-//redux store
-import store from "../store"
 //api connection
 import trees from '../apis/trees'
 //action types
@@ -17,8 +15,6 @@ import {
 //functions
 import { nestedObjPath } from "../functions"
 import history from '../history'
-
-const dispatch = store.dispatch
 
 export const createTree = formValues => async dispatch => {
   if(formValues.newCategory){
@@ -98,7 +94,7 @@ export const createNode = (parentId, treeData, treeId, newChild) => async dispat
   dispatch({ type: EDIT_TREE, payload: res.data })
 }
 
-export const changeNode = async (nodeId, treeData, treeId, changes) => {
+export const changeNode = (nodeId, treeData, treeId, changes) => async dispatch => {
   let newTree = treeData
   const nodePath = nestedObjPath(treeData, nodeId)
   const currentNode = _.get(treeData, nodePath)
@@ -119,5 +115,5 @@ export const changeNode = async (nodeId, treeData, treeId, changes) => {
   _.set(newTree, nodePath, changedNode())
 
   const res = await trees.patch(`/trees/${treeId}`, {data: newTree})
-  return dispatch({ type: EDIT_TREE, payload: res.data })
+  dispatch({ type: EDIT_TREE, payload: res.data })
 }
