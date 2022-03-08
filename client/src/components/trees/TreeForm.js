@@ -73,13 +73,12 @@ const TreeForm = (props) => {
   }
 
   const onSubmit = (formValues) => {
-    if(!formValues.NewCategory){
+    if(!formValues.newCategory){
       formValues.category = selectedCategory.value
     } else {
-      formValues.CategoryIcon = selectedIcon.value
+      formValues.newCategoryIcon = selectedIcon.value
     }
-    
-    console.log(formValues)
+
     props.onSubmit(formValues);
   };
 
@@ -96,9 +95,9 @@ const TreeForm = (props) => {
           errors.title = "Titel darf nicht länger als 20 Zeichen sein."
         }
 
-        if(formValues.NewCategory){
+        if(formValues.newCategory){
           setDisabled(true) 
-          if(formValues.NewCategory.length > 20){
+          if(formValues.newCategory.length > 20){
             errors.Category = "Kategorie darf nicht länger als 20 Zeichen sein."
           }
         } else{
@@ -119,7 +118,7 @@ const TreeForm = (props) => {
               <Field name="category" component={renderCategoryDropdown} />
               <div className="ui two column grid">
                 <div className="column">
-                  <Field name="NewCategory" component={renderInput} label="Oder erstelle neue Kategorie:" />
+                  <Field name="newCategory" component={renderInput} label="Oder erstelle neue Kategorie:" />
                 </div>
                 <div className="column">
                   <Field name="CategoryIcon" component={renderIconDropdown} />

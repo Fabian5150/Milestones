@@ -44,7 +44,7 @@
       "title": "Dritter",
       "description": "Kann hier jetzt mal von Anfang an die Wundervollheit dieser App genießen ;,)",
       "category": "Entspannung",
-      "lastWorkedOn": 1646772656942,
+      "lastWorkedOn": 1646778804479,
       "id": 3
     },
     {
@@ -80,7 +80,7 @@
       "description": "Wassergymnsatik mit Seepferdchen",
       "category": "Sport",
       "id": 8,
-      "lastWorkedOn": 1646778286171
+      "lastWorkedOn": 1646781057274
     }
   ],
   "trees": [
@@ -855,7 +855,18 @@
           "node_id": 0,
           "type": "root"
         },
-        "children": []
+        "children": [
+          {
+            "name": "asd",
+            "attributes": {
+              "node_id": 1646781061681,
+              "type": "Checkbox",
+              "description": "asd",
+              "done": true
+            },
+            "children": []
+          }
+        ]
       },
       "id": 8
     }

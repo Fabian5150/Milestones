@@ -18,14 +18,7 @@ import { nestedObjPath } from "../functions"
 import history from '../history'
 
 export const createTree = formValues => async dispatch => {
-  if(formValues.newCategory){
-    //create new category
-    const category = {}
-    category.label = formValues.newCategory
-    category.value = formValues.newCategory
-    category.icon = `${formValues.newCategoryIcon ? formValues.newCategoryIcon : "book"}`
-  
-    await trees.post('/categories', category)
+  if(formValues.newCategory){  
     formValues.category = formValues.newCategory
     delete formValues.newCategory
     delete formValues.newCategoryIcon

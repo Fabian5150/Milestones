@@ -5,10 +5,16 @@ import { connect } from "react-redux";
 import Modal from "../Modal";
 import TreeForm from "./TreeForm";
 //functions
-import { createTree } from "../../actions";
+import { createTree, createCategory } from "../../actions";
 
-const TreeCreate = ({ show, setShow, createTree }) => {
+const TreeCreate = ({ show, setShow, createTree, createCategory }) => {
   const onSubmit = formValues => {
+    if(formValues.newCategory){
+      createCategory({
+        title: formValues.newCategory,
+        icon: formValues.newCategoryIcon
+      })
+    }
     createTree(formValues)
   }
 
@@ -40,4 +46,4 @@ const TreeCreate = ({ show, setShow, createTree }) => {
   )
 }
 
-export default connect(null, { createTree })(TreeCreate)
+export default connect(null, { createTree, createCategory })(TreeCreate)
