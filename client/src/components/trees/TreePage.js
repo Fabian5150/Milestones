@@ -11,7 +11,7 @@ import NodeCreate from "./nodes/NodeCreate";
 import NodeEdit from "./nodes/NodeEdit";
 import TopMenu from "./TopMenu";
 
-const TreePage = ({ match: { params }, fetchTree, treePreview }) => {
+const TreePage = ({ match: { params }, fetchTree, treePreview, changeTreePreview }) => {
   const [showCreateModal, setShowCreateModal] = useState(false)
   const [showEditModal, setShowEditModal] = useState(false)
   const [selectedNodeId, setSelectedNodeId] = useState (0)
@@ -260,4 +260,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { fetchTree })(TreePage);
+export default connect(mapStateToProps, { fetchTree, changeTreePreview })(TreePage);

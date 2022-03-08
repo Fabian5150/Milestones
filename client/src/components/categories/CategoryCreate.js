@@ -1,11 +1,12 @@
 //packages
 import React from "react";
+import { connect } from "react-redux";
 //components
 import CategoryForm from "./CategoryForm";
 import Modal from "../Modal";
 import { createCategory } from "../../actions";
 
-const CategoryCreate = ({ show, setShow }) => {
+const CategoryCreate = ({ show, setShow, createCategory }) => {
   const onSubmit = formValues => {
     createCategory(formValues)
     setShow(!show)
@@ -39,4 +40,4 @@ const CategoryCreate = ({ show, setShow }) => {
   )
 }
 
-export default CategoryCreate
+export default connect(null, { createCategory })(CategoryCreate)

@@ -1,12 +1,13 @@
 //packages
 import React from "react";
+import { connect } from "react-redux";
 //components
 import Modal from "../Modal";
 import TreeForm from "./TreeForm";
 //functions
 import { createTree } from "../../actions";
 
-const TreeCreate = ({ show, setShow }) => {
+const TreeCreate = ({ show, setShow, createTree }) => {
   const onSubmit = formValues => {
     createTree(formValues)
   }
@@ -39,4 +40,4 @@ const TreeCreate = ({ show, setShow }) => {
   )
 }
 
-export default TreeCreate
+export default connect(null, { createTree })(TreeCreate)

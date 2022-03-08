@@ -30,7 +30,7 @@
       "title": "Erster",
       "description": "Mein erster Baum, ich bin so aufgeregt :o",
       "category": "Musik",
-      "lastWorkedOn": 1646733205667,
+      "lastWorkedOn": 1646750672947,
       "id": 1
     },
     {
@@ -44,7 +44,7 @@
       "title": "Dritter",
       "description": "Kann hier jetzt mal von Anfang an die Wundervollheit dieser App genießen ;,)",
       "category": "Entspannung",
-      "lastWorkedOn": 1646728674253,
+      "lastWorkedOn": 1646734704412,
       "id": 3
     },
     {
@@ -58,7 +58,7 @@
       "title": "Fünfter",
       "description": "Jetzt wird es spannend",
       "category": "Spannende Bäume",
-      "lastWorkedOn": 1646691339761,
+      "lastWorkedOn": 1646750683459,
       "id": 5
     },
     {
@@ -66,7 +66,7 @@
       "description": "Mit vernünfitger Redux Store Anbindung, ich bin so aufgeregt :3",
       "category": "Spannende Bäume",
       "id": 6,
-      "lastWorkedOn": 1646691341340
+      "lastWorkedOn": 1646750686614
     }
   ],
   "trees": [
@@ -93,7 +93,7 @@
                   "type": "Counter",
                   "done": {
                     "steps": 12,
-                    "done": 4
+                    "done": 12
                   }
                 },
                 "children": [
@@ -102,7 +102,7 @@
                     "attributes": {
                       "node_id": 1646601780362,
                       "type": "Checkbox",
-                      "done": false
+                      "done": true
                     },
                     "children": []
                   }
@@ -208,7 +208,7 @@
                           "type": "Counter",
                           "done": {
                             "steps": 5,
-                            "done": 0
+                            "done": 5
                           }
                         },
                         "children": []
@@ -439,7 +439,7 @@
             "attributes": {
               "node_id": 1646525980657,
               "type": "Checkbox",
-              "done": false
+              "done": true
             },
             "children": [
               {
@@ -457,7 +457,7 @@
                       "type": "Counter",
                       "done": {
                         "steps": 123,
-                        "done": 0
+                        "done": 15
                       }
                     },
                     "children": []
@@ -491,10 +491,44 @@
               "type": "Counter",
               "done": {
                 "steps": 12,
-                "done": 0
+                "done": 12
               }
             },
-            "children": []
+            "children": [
+              {
+                "name": "Neues Ding",
+                "attributes": {
+                  "node_id": 1646734279886,
+                  "type": "Checkbox",
+                  "description": "Es ist super cool",
+                  "done": true
+                },
+                "children": [
+                  {
+                    "name": "sadfsadf",
+                    "attributes": {
+                      "node_id": 1646734329510,
+                      "type": "Counter",
+                      "description": "sdafsadf",
+                      "done": {
+                        "steps": 12,
+                        "done": 8
+                      }
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "gdsafdsdh",
+                    "attributes": {
+                      "node_id": 1646749028876,
+                      "type": "Checkbox",
+                      "done": false
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
           }
         ]
       },
@@ -561,7 +595,99 @@
           "node_id": 0,
           "type": "root"
         },
-        "children": []
+        "children": [
+          {
+            "name": "Dieses, jenes, welches",
+            "attributes": {
+              "node_id": 1646736630222,
+              "type": "Checkbox",
+              "description": "und andere Sachen",
+              "done": true
+            },
+            "children": [
+              {
+                "name": "Dieses",
+                "attributes": {
+                  "node_id": 1646736653530,
+                  "type": "Counter",
+                  "description": "Lorem",
+                  "done": {
+                    "steps": 4,
+                    "done": 0
+                  }
+                },
+                "children": []
+              },
+              {
+                "name": "Jenes",
+                "attributes": {
+                  "node_id": 1646736663539,
+                  "type": "Checkbox",
+                  "description": "Ipsum",
+                  "done": true
+                },
+                "children": []
+              },
+              {
+                "name": "Und",
+                "attributes": {
+                  "node_id": 1646736761982,
+                  "type": "Checkbox",
+                  "description": "dolor",
+                  "done": false
+                },
+                "children": []
+              },
+              {
+                "name": "Naturülich",
+                "attributes": {
+                  "node_id": 1646736775113,
+                  "type": "Checkbox",
+                  "description": "soagdud hosadf",
+                  "done": false
+                },
+                "children": []
+              },
+              {
+                "name": "welches",
+                "attributes": {
+                  "node_id": 1646736787610,
+                  "type": "Counter",
+                  "description": ":D",
+                  "done": {
+                    "steps": 1000,
+                    "done": 10
+                  }
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Sachen und so",
+            "attributes": {
+              "node_id": 1646736831706,
+              "type": "Counter",
+              "description": "Ohja",
+              "done": {
+                "steps": 2,
+                "done": 2
+              }
+            },
+            "children": [
+              {
+                "name": "huh",
+                "attributes": {
+                  "node_id": 1646736861497,
+                  "type": "Checkbox",
+                  "description": ":o",
+                  "done": false
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
       },
       "id": 6
     }
