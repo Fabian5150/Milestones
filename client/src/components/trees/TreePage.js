@@ -38,10 +38,6 @@ const TreePage = ({ match: { params }, fetchTree, treePreview, changeTreePreview
     useEffect(() => {
       if(type === "Counter"){
         if(!isNaN(inputValue) || inputValue.match(/^[0-9\b]+$/)){
-          if(inputValue > done.steps){
-            console.log(`Interssant, wie du von ${done.steps} Schritten ${inputValue} absolviert haben willst 🤔`)
-            return
-          }
           const timerId = setTimeout(() => {
             setDebouncedVal(inputValue)
           }, 1000)
@@ -68,6 +64,11 @@ const TreePage = ({ match: { params }, fetchTree, treePreview, changeTreePreview
 
     useEffect(() => {
       if(!isMount){
+        if(deboundcedInputVal > done.steps){
+          setInputValue(done.steps)
+          console.log(`Interssant, wie du von ${done.steps} Schritten ${inputValue} absolviert haben willst 🤔`)
+          return
+        }
         changeNode(node_id, treeData, treePreview.id, {
           attributes: {
             done: {

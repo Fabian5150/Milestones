@@ -73,7 +73,7 @@
       "description": "lorem ipsum dolor sit anet",
       "category": "Spannende Bäume",
       "id": 7,
-      "lastWorkedOn": 1646758428392
+      "lastWorkedOn": 1646758786058
     }
   ],
   "trees": [
@@ -745,7 +745,21 @@
               "description": "? Interssante Sache",
               "done": true
             },
-            "children": []
+            "children": [
+              {
+                "name": "hmmmm",
+                "attributes": {
+                  "node_id": 1646758652121,
+                  "type": "Counter",
+                  "description": "Das ist ein leckerer Burger",
+                  "done": {
+                    "steps": 10,
+                    "done": 10
+                  }
+                },
+                "children": []
+              }
+            ]
           },
           {
             "name": "Das weiß ich nicht",
