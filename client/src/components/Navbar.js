@@ -81,7 +81,7 @@ const Navbar = ({ categories, fetchCategories }) => {
 
 const mapStateToProps = state => {
   return {
-    categories: state.categories.categories
+    categories: Object.values(state.categories)
   }
 }
 

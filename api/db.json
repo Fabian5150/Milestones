@@ -23,6 +23,18 @@
       "value": "Spannende Bäume",
       "icon": "heartbeat",
       "id": 4
+    },
+    {
+      "icon": "industry",
+      "label": "Verzweiflung",
+      "value": "Verzweiflung",
+      "id": 5
+    },
+    {
+      "icon": "book",
+      "label": "Hoffnung",
+      "value": "Hoffnung",
+      "id": 6
     }
   ],
   "treePreviews": [
@@ -81,6 +93,13 @@
       "category": "Sport",
       "id": 8,
       "lastWorkedOn": 1646781057274
+    },
+    {
+      "title": "aye",
+      "description": "caramba",
+      "category": "Hoffnung",
+      "id": 9,
+      "lastWorkedOn": 1646783495375
     }
   ],
   "trees": [
@@ -869,6 +888,17 @@
         ]
       },
       "id": 8
+    },
+    {
+      "data": {
+        "name": "aye",
+        "attributes": {
+          "node_id": 0,
+          "type": "root"
+        },
+        "children": []
+      },
+      "id": 9
     }
   ]
 }

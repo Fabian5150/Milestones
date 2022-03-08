@@ -77,7 +77,7 @@ const TreeList = ( {match: {params}, categories, fetchCategories, treePreviews, 
 
 const mapStateToProps = state => {
   return {
-    categories: state.categories.categories,
+    categories: Object.values(state.categories),
     treePreviews: state.trees.treePreviews
   }
 }

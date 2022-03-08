@@ -265,7 +265,7 @@ const mapStateToProps = state => {
   return {
     treeData: state.trees.tree?.data,
     treePreview: state.trees.treePreview,
-    categories: state.categories.categories
+    categories: Object.values(state.categories)
   }
 }
 
