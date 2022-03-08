@@ -103,7 +103,7 @@ const TreePage = ({ match: { params }, fetchTree, treePreview, changeTreePreview
         <div className="ui mini action input">
           <button 
             className="ui green button right pointing label" 
-            onClick={() => setInputValue(inputValue+1)}>
+            onClick={() => setDebouncedVal(inputValue+1)}>
             +1
           </button>
           <input type="text" value={inputValue} onChange={(e) => {setInputValue(e.target.value)}}/>

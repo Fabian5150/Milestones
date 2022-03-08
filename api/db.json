@@ -44,7 +44,7 @@
       "title": "Dritter",
       "description": "Kann hier jetzt mal von Anfang an die Wundervollheit dieser App genießen ;,)",
       "category": "Entspannung",
-      "lastWorkedOn": 1646751128082,
+      "lastWorkedOn": 1646757249490,
       "id": 3
     },
     {
@@ -66,7 +66,14 @@
       "description": "Mit vernünfitger Redux Store Anbindung, ich bin so aufgeregt :3",
       "category": "Spannende Bäume",
       "id": 6,
-      "lastWorkedOn": 1646750828402
+      "lastWorkedOn": 1646757043259
+    },
+    {
+      "title": "Toasbrot",
+      "description": "lorem ipsum dolor sit anet",
+      "category": "Spannende Bäume",
+      "id": 7,
+      "lastWorkedOn": 1646757410088
     }
   ],
   "trees": [
@@ -721,6 +728,72 @@
         ]
       },
       "id": 6
+    },
+    {
+      "data": {
+        "name": "Toasbrot",
+        "attributes": {
+          "node_id": 0,
+          "type": "root"
+        },
+        "children": [
+          {
+            "name": "Weizenbrot",
+            "attributes": {
+              "node_id": 1646757150331,
+              "type": "Checkbox",
+              "description": "? Interssante Sache",
+              "done": true
+            },
+            "children": []
+          },
+          {
+            "name": "Das weiß ich nicht",
+            "attributes": {
+              "node_id": 1646757168172,
+              "type": "Checkbox",
+              "description": "Das ist jetz doof :/",
+              "done": false
+            },
+            "children": [
+              {
+                "name": "hmm1",
+                "attributes": {
+                  "node_id": 1646757177085,
+                  "type": "Counter",
+                  "done": {
+                    "steps": 2,
+                    "done": 1
+                  }
+                },
+                "children": []
+              },
+              {
+                "name": "huh2",
+                "attributes": {
+                  "node_id": 1646757183062,
+                  "type": "Counter",
+                  "done": {
+                    "steps": 12,
+                    "done": 1
+                  }
+                },
+                "children": []
+              },
+              {
+                "name": "cool",
+                "attributes": {
+                  "node_id": 1646757193986,
+                  "type": "Checkbox",
+                  "done": false
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      "id": 7
     }
   ]
 }
