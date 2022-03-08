@@ -1,6 +1,7 @@
 //packages
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 //components
 import Searchbar from "./SearchBar";
 import Auth from "./Auth";
@@ -8,14 +9,9 @@ import CategoryCreate from "./categories/CategoryCreate";
 //functions
 import { fetchCategories } from "../actions";
 
-const Navbar = () => {
-  const [categories, setCategories] = useState()
-
+const Navbar = ({ categories, fetchCategories }) => {
   useEffect(() => {
     fetchCategories()
-    .then(({ payload }) => {
-      setCategories(payload)
-    })
   }, [])
 
   const [show, setShow] = useState(false)
@@ -83,4 +79,10 @@ const Navbar = () => {
   )
 }
 
-export default Navbar;
+const mapStateToProps = state => {
+  return {
+    categories: state.categories.categories
+  }
+}
+
+export default connect(mapStateToProps, { fetchCategories })(Navbar);

@@ -50,23 +50,23 @@ export const changeTreePreview = async (id, changes) => {
   //return dispatch({ type: EDIT_TREE_PREVIEW, payload: res.data })
 }
 
-export const fetchCategories = async () => {
+export const fetchCategories = () => async dispatch => {
   const res = await trees.get('/categories')
 
-  return dispatch({ type: FETCH_CATEGORIES, payload: res.data })
+  dispatch({ type: FETCH_CATEGORIES, payload: res.data })
 }
 
-export const fetchTree = async id => {
+export const fetchTree = id => async dispatch => {
   const res1 = await trees.get(`/treePreviews/${id}`)
   const res2 = await trees.get(`/trees/${id}`)
 
-  return dispatch({ type: FETCH_TREE, payload: Object.assign(res1.data, res2.data)})
+  dispatch({ type: FETCH_TREE, payload: Object.assign(res1.data, res2.data)})
 }
 
-export const fetchTreePreviews = async () => {
+export const fetchTreePreviews = () => async dispatch => {
   const res = await trees.get("/treePreviews")
 
-  return dispatch({ type: FETCH_TREE_PREVIEWS, payload: res.data })
+  dispatch({ type: FETCH_TREE_PREVIEWS, payload: res.data })
 }
 
 export const createCategory = async formValues => {

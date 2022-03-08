@@ -2,6 +2,7 @@
 //packages
 import React, { useState, useEffect } from "react";
 import { Form, Field } from "react-final-form";
+import { connect } from "react-redux";
 //components
 import Dropdown from "../Dropdown"; 
 //functions
@@ -10,13 +11,8 @@ import { fetchCategories } from "../../actions";
 import icons from "../../categoryIcons";
 
 const TreeForm = (props) => {
-  const [categories, setCategories] = useState()
-
   useEffect(() => {
-    fetchCategories()
-    .then(({ payload }) => {
-      setCategories(payload)
-    })
+    props.fetchCategories()
   }, [])
 
   const renderError = ({ error, touched }) => {
@@ -44,14 +40,14 @@ const TreeForm = (props) => {
   const [disabled, setDisabled] = useState(false)
 
   const renderCategoryDropdown = () => {
-    if(!categories){
+    if(!props.categories){
       return <div>Loading...</div>
     } else {
       return (
         <div className={`field ${disabled ? "disabled" : ""}`}>
           <Dropdown
             label="Kategorie: "
-            options={categories}
+            options={props.categories}
             selected={selectedCategory}
             onSelectedChange={setSelectedCategory}
           />
@@ -78,7 +74,7 @@ const TreeForm = (props) => {
 
   const onSubmit = (formValues) => {
     if(selectedCategory !== "") formValues.category = selectedCategory.value
-    if(selectedIcon !== "") formValues.newCategoryIcon = selectedIcon.value
+    if(selectedIcon !== "") formValues.CategoryIcon = selectedIcon.value
     props.onSubmit(formValues);
   };
 
@@ -95,11 +91,11 @@ const TreeForm = (props) => {
           errors.title = "Titel darf nicht länger als 20 Zeichen sein."
         }
 
-        if(formValues.newCategory){
+        if(formValues.Category){
           setDisabled(true) 
           setSelectedCategory("")
-          if(formValues.newCategory.length > 20){
-            errors.newCategory = "Kategorie darf nicht länger als 20 Zeichen sein."
+          if(formValues.Category.length > 20){
+            errors.Category = "Kategorie darf nicht länger als 20 Zeichen sein."
           }
         } else{
           setSelectedIcon("")
@@ -120,10 +116,10 @@ const TreeForm = (props) => {
               <Field name="category" component={renderCategoryDropdown} />
               <div className="ui two column grid">
                 <div className="column">
-                  <Field name="newCategory" component={renderInput} label="Oder erstelle neue Kategorie:" />
+                  <Field name="Category" component={renderInput} label="Oder erstelle neue Kategorie:" />
                 </div>
                 <div className="column">
-                  <Field name="newCategoryIcon" component={renderIconDropdown} />
+                  <Field name="CategoryIcon" component={renderIconDropdown} />
                 </div>
               </div>
             </div>
@@ -134,4 +130,10 @@ const TreeForm = (props) => {
   );
 };
  
-export default TreeForm;
+const mapStateToProps = state => {
+  return {
+    categories: state.categories.categories
+  }
+}
+
+export default connect(mapStateToProps, { fetchCategories })(TreeForm);

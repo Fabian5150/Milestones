@@ -30,7 +30,7 @@
       "title": "Erster",
       "description": "Mein erster Baum, ich bin so aufgeregt :o",
       "category": "Musik",
-      "lastWorkedOn": 1646677824861,
+      "lastWorkedOn": 1646733205667,
       "id": 1
     },
     {
@@ -44,22 +44,29 @@
       "title": "Dritter",
       "description": "Kann hier jetzt mal von Anfang an die Wundervollheit dieser App genießen ;,)",
       "category": "Entspannung",
-      "lastWorkedOn": 1646677824228,
+      "lastWorkedOn": 1646728674253,
       "id": 3
     },
     {
       "title": "Vierter",
       "description": "super toll",
       "category": "Sport",
-      "lastWorkedOn": 1646678071618,
+      "lastWorkedOn": 1646687925658,
       "id": 4
     },
     {
       "title": "Fünfter",
       "description": "Jetzt wird es spannend",
       "category": "Spannende Bäume",
-      "lastWorkedOn": 1646678107852,
+      "lastWorkedOn": 1646691339761,
       "id": 5
+    },
+    {
+      "title": "Mein neuer Baum",
+      "description": "Mit vernünfitger Redux Store Anbindung, ich bin so aufgeregt :3",
+      "category": "Spannende Bäume",
+      "id": 6,
+      "lastWorkedOn": 1646691341340
     }
   ],
   "trees": [
@@ -108,9 +115,19 @@
             "attributes": {
               "node_id": 1646526077946,
               "type": "Checkbox",
-              "done": false
+              "done": true
             },
-            "children": []
+            "children": [
+              {
+                "name": "asdasd",
+                "attributes": {
+                  "node_id": 1646733169914,
+                  "type": "Checkbox",
+                  "done": false
+                },
+                "children": []
+              }
+            ]
           },
           {
             "name": "asd",
@@ -536,6 +553,17 @@
         "children": []
       },
       "id": 5
+    },
+    {
+      "data": {
+        "name": "Mein neuer Baum",
+        "attributes": {
+          "node_id": 0,
+          "type": "root"
+        },
+        "children": []
+      },
+      "id": 6
     }
   ]
 }

@@ -9,18 +9,18 @@ import {
   EDIT_TREE_PREVIEW
 } from '../actions/types'
 
-export default (state = {}, action) => {
-  switch(action.type){
+export default (state = {}, {type, payload}) => {
+  switch(type){
     case CREATE_TREE:
-      return Object.assign(state, action.payload)
+      return { ...state, payload }
     case FETCH_TREE:
-      return Object.assign(state, {tree: action.payload})
+      return { ...state, tree: payload }
     case EDIT_TREE:
-      return Object.assign(state, {tree: action.payload})
+      return { ...state, tree: payload }
     case FETCH_TREE_PREVIEWS:
-      return Object.assign(state, {treePreviews: action.payload})
+      return { ...state, treePreviews: payload }
     case EDIT_TREE_PREVIEW:
-      return Object.assign(state, {treePreviews: _.assign(state.treePreviews, action.payload)})
+      return { ...state,   treePreviews: _.assign(state.treePreviews, payload)}
 
     default: return state
   }

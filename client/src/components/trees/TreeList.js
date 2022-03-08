@@ -1,23 +1,14 @@
 //packages
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 //functions
 import { fetchTreePreviews, fetchCategories } from "../../actions";
 
-const TreeList = ( {match: {params}} ) => {
-  const [treePreviews, setTreePreviews] = useState()
-  const [categories, setCategories] = useState()
-
+const TreeList = ( {match: {params}, categories, fetchCategories, treePreviews, fetchTreePreviews } ) => {
   useEffect(() => {
-    fetchTreePreviews()
-    .then(({ payload }) => {
-      setTreePreviews(payload)
-    })
-
     fetchCategories()
-    .then(({ payload }) => {
-      setCategories(payload)
-    })
+    fetchTreePreviews()
   }, [])
 
   const categoryIcon = treePreview => {
@@ -78,4 +69,11 @@ const TreeList = ( {match: {params}} ) => {
   }
 }
 
-export default TreeList;
+const mapStateToProps = state => {
+  return {
+    categories: state.categories.categories,
+    treePreviews: state.trees.treePreviews
+  }
+}
+
+export default connect(mapStateToProps, { fetchCategories, fetchTreePreviews })(TreeList);
