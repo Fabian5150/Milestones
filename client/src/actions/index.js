@@ -74,7 +74,6 @@ export const createCategory = formValues => async dispatch => {
   }
   const res = await trees.post('/categories', data)
 
-  history.push(`/search/category/${data.value}`)
   dispatch({ type: CREATE_CATEGORY, payload: res.data })
 }
 
