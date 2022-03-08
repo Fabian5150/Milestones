@@ -249,7 +249,7 @@ const TreePage = ({ match: { params }, fetchTree, treePreview, changeTreePreview
 
 const mapStateToProps = state => {
   return {
-    treeData: state.trees.tree.data,
+    treeData: state.trees.tree?.data,
     treePreview: state.trees.treePreview
   }
 }
