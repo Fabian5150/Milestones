@@ -4,14 +4,14 @@ import { connect } from "react-redux";
 import Tree from 'react-d3-tree';
 import _ from "lodash";
 //functions
-import { fetchTree, changeNode, changeTreePreview } from "../../actions";
+import { fetchTree, changeNode, changeTreePreview, fetchCategories } from "../../actions";
 import { useIsMount } from "../customHooks";
 //components
 import NodeCreate from "./nodes/NodeCreate";
 import NodeEdit from "./nodes/NodeEdit";
 import TopMenu from "./TopMenu";
 
-const TreePage = ({ match: { params }, fetchTree, treePreview, changeTreePreview, changeNode, treeData }) => {
+const TreePage = ({ match: { params }, fetchTree, treePreview, changeTreePreview, changeNode, treeData, categories }) => {
   const [showCreateModal, setShowCreateModal] = useState(false)
   const [showEditModal, setShowEditModal] = useState(false)
   const [selectedNodeId, setSelectedNodeId] = useState (0)
@@ -207,16 +207,26 @@ const TreePage = ({ match: { params }, fetchTree, treePreview, changeTreePreview
       )}
     </g>
   );
-  
+
   if(!treeData || !treePreview){
     return <div>Loading...</div>
   } else {
+    let categoryIcon = "sitemap"
+    if(categories){
+      categories.forEach(category => {
+      if(category.value === treePreview.category){
+        categoryIcon = category.icon
+      }
+    })
+    }
+
     return (
       <>
         <TopMenu 
           title={treePreview.title} 
           description={treePreview.description} 
           category={treePreview.category}  
+          categoryIcon={categoryIcon}
         />
         <div id="treeWrapper" style={{ width: "100vw", height: "100vh" }}>
           <Tree 
@@ -250,8 +260,9 @@ const TreePage = ({ match: { params }, fetchTree, treePreview, changeTreePreview
 const mapStateToProps = state => {
   return {
     treeData: state.trees.tree?.data,
-    treePreview: state.trees.treePreview
+    treePreview: state.trees.treePreview,
+    categories: state.categories.categories
   }
 }
 
-export default connect(mapStateToProps, { fetchTree, changeTreePreview, changeNode })(TreePage);
+export default connect(mapStateToProps, { fetchTree, changeTreePreview, changeNode, fetchCategories })(TreePage);

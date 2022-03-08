@@ -44,7 +44,7 @@
       "title": "Dritter",
       "description": "Kann hier jetzt mal von Anfang an die Wundervollheit dieser App genießen ;,)",
       "category": "Entspannung",
-      "lastWorkedOn": 1646757249490,
+      "lastWorkedOn": 1646760355746,
       "id": 3
     },
     {
@@ -73,7 +73,7 @@
       "description": "lorem ipsum dolor sit anet",
       "category": "Spannende Bäume",
       "id": 7,
-      "lastWorkedOn": 1646759017046
+      "lastWorkedOn": 1646760508787
     }
   ],
   "trees": [
@@ -550,7 +550,7 @@
                       "description": "sdafsadf",
                       "done": {
                         "steps": 12,
-                        "done": 8
+                        "done": 9
                       }
                     },
                     "children": []
