@@ -44,7 +44,7 @@
       "title": "Dritter",
       "description": "Kann hier jetzt mal von Anfang an die Wundervollheit dieser App genießen ;,)",
       "category": "Entspannung",
-      "lastWorkedOn": 1646728674253,
+      "lastWorkedOn": 1646734318501,
       "id": 3
     },
     {
@@ -491,10 +491,35 @@
               "type": "Counter",
               "done": {
                 "steps": 12,
-                "done": 0
+                "done": 12
               }
             },
-            "children": []
+            "children": [
+              {
+                "name": "Neues Ding",
+                "attributes": {
+                  "node_id": 1646734279886,
+                  "type": "Checkbox",
+                  "description": "Es ist super cool",
+                  "done": true
+                },
+                "children": [
+                  {
+                    "name": "sadfsadf",
+                    "attributes": {
+                      "node_id": 1646734329510,
+                      "type": "Counter",
+                      "description": "sdafsadf",
+                      "done": {
+                        "steps": 12,
+                        "done": 8
+                      }
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
           }
         ]
       },

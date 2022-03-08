@@ -81,7 +81,7 @@ export const createCategory = formValues => async dispatch => {
   dispatch({ type: CREATE_CATEGORY, payload: res.data })
 }
 
-export const createNode = async (parentId, treeData, treeId, newChild) => {
+export const createNode = (parentId, treeData, treeId, newChild) => async dispatch => {
   let newTree = treeData
   if(parentId !== 0){
     const nodePath = nestedObjPath(treeData, parentId)
@@ -96,7 +96,7 @@ export const createNode = async (parentId, treeData, treeId, newChild) => {
   
 
   const res = await trees.patch(`/trees/${treeId}`, {data: newTree})
-  return dispatch({ type: EDIT_TREE, payload: res.data })
+  dispatch({ type: EDIT_TREE, payload: res.data })
 }
 
 export const changeNode = async (nodeId, treeData, treeId, changes) => {

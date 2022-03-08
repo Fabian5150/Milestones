@@ -1,14 +1,15 @@
 //packages
 import React from "react";
+import { connect } from "react-redux";
 //components
 import NodeForm from "./NodeForm";
 import Modal from "../../Modal";
 //functions
 import { createNode } from "../../../actions";
 
-const NodeCreate = ({ show, setShow, parentId, treeData, treeId }) => {
+const NodeCreate = ({ show, setShow, parentId, treeData, treeId, createNode }) => {
   const onSubmit = formValues => {
-    const newChild = {
+    const Child = {
       name: formValues.title,
       attributes: {
         node_id: Date.now(),
@@ -18,12 +19,12 @@ const NodeCreate = ({ show, setShow, parentId, treeData, treeId }) => {
       children: []
     }
     if(formValues.type.value === "Checkbox"){
-      newChild.attributes.done = false
+      Child.attributes.done = false
     } else {
-      newChild.attributes.done = { steps: formValues.steps, done: 0 }
+      Child.attributes.done = { steps: formValues.steps, done: 0 }
     }
 
-    createNode(parentId, treeData, treeId, newChild)
+    createNode(parentId, treeData, treeId, Child)
     setShow(!show)
   }
 
@@ -55,4 +56,4 @@ const NodeCreate = ({ show, setShow, parentId, treeData, treeId }) => {
   )
 }
 
-export default NodeCreate
+export default connect(null, { createNode })(NodeCreate)
