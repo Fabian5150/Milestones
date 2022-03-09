@@ -23,7 +23,7 @@ export default (state = {}, {type, payload}) => {
     case FETCH_TREE_PREVIEWS:
       return { ...state, treePreviews: payload }
     case EDIT_TREE_PREVIEW:
-      return { ...state,   treePreviews: _.assign(state.treePreviews, payload)}
+      return { ...state, treePreviews: _.assign(state.treePreviews, payload)}
 
     default: return state
   }

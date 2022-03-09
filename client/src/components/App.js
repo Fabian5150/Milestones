@@ -4,7 +4,7 @@ import { Router, Route } from 'react-router-dom';
 //components
 import Home from "./Home";
 import Navbar from "./Navbar";
-import TreePage from "./trees/TreePage/TreePage";
+import TreePage from "./trees/TreePage";
 import TreeList from "./trees/TreeList";
 import Statistics from "./Statistics";
 import history from '../history';

@@ -25,7 +25,7 @@
       "id": 4
     },
     {
-      "icon": "home",
+      "icon": "briefcase",
       "label": "Hoffnung",
       "value": "Hoffnung",
       "id": 6,
@@ -37,21 +37,21 @@
       "title": "Erster",
       "description": "Mein erster Baum, ich bin so aufgeregt :o",
       "category": "Musik",
-      "lastWorkedOn": 1646864387319,
+      "lastWorkedOn": 1646865863331,
       "id": 1
     },
     {
       "title": "Zweiter",
       "description": "ich bin so happy ;)",
       "category": "Musik",
-      "lastWorkedOn": 1646815287218,
+      "lastWorkedOn": 1646865884793,
       "id": 2
     },
     {
       "title": "Dritter",
       "description": "Kann hier jetzt mal von Anfang an die Wundervollheit dieser App genießen ;,)",
       "category": "Entspannung",
-      "lastWorkedOn": 1646828585474,
+      "lastWorkedOn": 1646865890315,
       "id": 3
     },
     {
@@ -94,7 +94,7 @@
       "description": "caramba",
       "category": "Hoffnung",
       "id": 9,
-      "lastWorkedOn": 1646864098233
+      "lastWorkedOn": 1646866519015
     }
   ],
   "trees": [
@@ -374,7 +374,7 @@
                       "type": "Counter",
                       "done": {
                         "steps": 123,
-                        "done": 18
+                        "done": 19
                       }
                     },
                     "children": [
@@ -394,7 +394,7 @@
                               "description": "njlnl",
                               "done": {
                                 "steps": 9,
-                                "done": 3
+                                "done": 6
                               }
                             },
                             "children": []
@@ -773,7 +773,20 @@
           "node_id": 0,
           "type": "root"
         },
-        "children": []
+        "children": [
+          {
+            "name": "ui",
+            "attributes": {
+              "node_id": 1646865969789,
+              "type": "Counter",
+              "done": {
+                "steps": 1,
+                "done": 1
+              }
+            },
+            "children": []
+          }
+        ]
       },
       "id": 9
     }
