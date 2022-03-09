@@ -81,8 +81,8 @@ export const fetchCategory = id => async dispatch => {
 export const deleteCategory = id => async dispatch => {
   await trees.delete(`/categories/${id}`)
 
-  dispatch({ type: DELETE_CATEGORY, payload:id })
   history.push("/")
+  dispatch({ type: DELETE_CATEGORY, payload:id })
 }
 
 export const createNode = (parentId, treeData, treeId, newChild) => async dispatch => {

@@ -1,12 +1,16 @@
 //packages
-import React, { useEffect } from "react";
+import React, { useEffect, useState} from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import _ from "lodash";
 //functions
 import { fetchTreePreviews, fetchCategory, fetchCategories  } from "../../actions";
+//components
+import CategoryDelete from "../categories/CategoryDelete";
 
 const TreeList = ( {match: {params}, category, fetchCategory, treePreviews, fetchTreePreviews, categories, fetchCategories, } ) => {
+  const [showCategoryDelete, setShowCategoryDelete] = useState(false)
+  
   useEffect(() => {
     if(params.searchBy === "category"){
       fetchCategory(params.key)
@@ -29,14 +33,14 @@ const TreeList = ( {match: {params}, category, fetchCategory, treePreviews, fetc
     return icon
   }
 
-  const RenderCrudButtons = () => {
+  const RenderButtons = () => {
     if(params.searchBy !== "category") return <></>
     return (
       <div className="right floated ui icon buttons">
         <button className="ui icon button">
           <i className="edit icon"/>
         </button>
-        <button className="ui icon button">
+        <button className="ui icon button" onClick={() => setShowCategoryDelete(true)}>
           <i className="trash icon"/>
         </button>
       </div>
@@ -46,7 +50,7 @@ const TreeList = ( {match: {params}, category, fetchCategory, treePreviews, fetc
   const RenderListSegment = ({header, items, label}) => {
     return (
       <>
-        <RenderCrudButtons />
+        <RenderButtons />
         <h1 className="floated header">{header}</h1>
         <div className="tiny ui label">{label}</div>
         <div className="ui green segment">
@@ -89,7 +93,18 @@ const TreeList = ( {match: {params}, category, fetchCategory, treePreviews, fetc
       if(preview.category === category.value) categoryTrees.push(preview)
     })
 
-    return <RenderListSegment header={`Alle Bäume aus "${category.value}"`} items={_.cloneDeep(categoryTrees).reverse()} label="Neueste zuerst"/>
+    return (
+    <>
+      <RenderListSegment header={`Alle Bäume aus "${category.value}"`} items={_.cloneDeep(categoryTrees).reverse()} label="Neueste zuerst"/>
+      <CategoryDelete 
+        show={showCategoryDelete}
+        setShow={setShowCategoryDelete}
+        category={category}
+        id={params.key}
+        treeAmount={categoryTrees.length}
+      />
+    </>
+    )
   }
 }
 
