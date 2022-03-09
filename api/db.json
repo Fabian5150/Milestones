@@ -37,7 +37,7 @@
       "title": "Erster",
       "description": "Mein erster Baum, ich bin so aufgeregt :o",
       "category": "Musik",
-      "lastWorkedOn": 1646835589381,
+      "lastWorkedOn": 1646864110399,
       "id": 1
     },
     {
@@ -94,7 +94,7 @@
       "description": "caramba",
       "category": "Hoffnung",
       "id": 9,
-      "lastWorkedOn": 1646862751095
+      "lastWorkedOn": 1646864098233
     }
   ],
   "trees": [
@@ -187,172 +187,6 @@
                 ]
               }
             ]
-          },
-          {
-            "name": "asd",
-            "attributes": {
-              "node_id": 1646526080056,
-              "type": "Checkbox",
-              "done": true
-            },
-            "children": [
-              {
-                "name": "Neues Ziel",
-                "attributes": {
-                  "node_id": 1646601731001,
-                  "type": "Checkbox",
-                  "description": "Ich will es erreichen! :)",
-                  "done": true
-                },
-                "children": [
-                  {
-                    "name": "1",
-                    "attributes": {
-                      "node_id": 1646601741737,
-                      "type": "Checkbox",
-                      "done": true
-                    },
-                    "children": [
-                      {
-                        "name": "lorem",
-                        "attributes": {
-                          "node_id": 1646652787571,
-                          "type": "Counter",
-                          "description": "ipsum dolor sit anet",
-                          "done": {
-                            "steps": 2,
-                            "done": 0
-                          }
-                        },
-                        "children": []
-                      },
-                      {
-                        "name": "foo bar",
-                        "attributes": {
-                          "node_id": 1646652943135,
-                          "type": "Counter",
-                          "description": "baz",
-                          "done": {
-                            "steps": 3,
-                            "done": 0
-                          }
-                        },
-                        "children": []
-                      },
-                      {
-                        "name": "bar",
-                        "attributes": {
-                          "node_id": 1646652967042,
-                          "type": "Counter",
-                          "done": {
-                            "steps": 3,
-                            "done": 0
-                          }
-                        },
-                        "children": []
-                      },
-                      {
-                        "name": "sdfj",
-                        "attributes": {
-                          "node_id": 1646653138811,
-                          "type": "Checkbox",
-                          "done": false
-                        },
-                        "children": []
-                      },
-                      {
-                        "name": "ads",
-                        "attributes": {
-                          "node_id": 1646653145724,
-                          "type": "Counter",
-                          "done": {
-                            "steps": 5,
-                            "done": 5
-                          }
-                        },
-                        "children": []
-                      }
-                    ]
-                  },
-                  {
-                    "name": "2",
-                    "attributes": {
-                      "node_id": 1646601743607,
-                      "type": "Checkbox",
-                      "done": true
-                    },
-                    "children": [
-                      {
-                        "name": "sdfasdfas",
-                        "attributes": {
-                          "node_id": 1646653229962,
-                          "type": "Counter",
-                          "description": "sdfasdf",
-                          "done": {
-                            "steps": 1,
-                            "done": 0
-                          }
-                        },
-                        "children": []
-                      },
-                      {
-                        "name": "ach wie schön",
-                        "attributes": {
-                          "node_id": 1646653309112,
-                          "type": "Counter",
-                          "description": "wär's",
-                          "done": {
-                            "steps": 12,
-                            "done": 0
-                          }
-                        },
-                        "children": []
-                      }
-                    ]
-                  },
-                  {
-                    "name": "3",
-                    "attributes": {
-                      "node_id": 1646601746202,
-                      "type": "Checkbox",
-                      "done": false
-                    },
-                    "children": []
-                  },
-                  {
-                    "name": "4",
-                    "attributes": {
-                      "node_id": 1646601753612,
-                      "type": "Counter",
-                      "done": {
-                        "steps": 12,
-                        "done": 0
-                      }
-                    },
-                    "children": []
-                  },
-                  {
-                    "name": "5",
-                    "attributes": {
-                      "node_id": 1646601756746,
-                      "type": "Checkbox",
-                      "done": false
-                    },
-                    "children": []
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "name": "Ich hab Beschreibung",
-            "attributes": {
-              "node_id": 1646828657732,
-              "type": "Checkbox",
-              "description": "Hat er ne Minute?",
-              "done": false
-            },
-            "children": []
           }
         ]
       },
