@@ -2,14 +2,28 @@
 import React from "react";
 
 const TopMenu = ({ title, description, category, categoryIcon }) => {
+  const RenderButtons = () => {
+    return (
+      <div className="right floated ui icon buttons">
+        <button className="ui icon button" onClick={() => console.log("Holá")}>
+          <i className="edit icon"/>
+        </button>
+        <button className="ui icon button" onClick={() => console.log("Holá")}>
+          <i className="trash icon"/>
+        </button>
+      </div>
+    )
+  }
+
   return(
     <div className="ui green segment">
-        <h2 className="ui floated header">{title}</h2>
-        <h3 className="ui right floated header">
+        <h2 className="ui floated header">{title}</h2>  
+        <RenderButtons />
+      <div className="ui clearing divider" />
+      <h3 className="ui right floated header">
           <i className={`${categoryIcon} icon`}/>
           {category}
         </h3>
-      <div className="ui clearing divider" />
       <div>Beschreibung: {description}</div>
     </div>
   )
