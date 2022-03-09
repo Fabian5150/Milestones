@@ -12,6 +12,7 @@ import { nestedObjPath } from "../../../functions";
 const NodeEdit = ({ show, setShow, nodeId, treeData, treeId, changeNode }) => {
   const onSubmit = formValues => {
     const changes = {
+      edit: true,
       name: formValues.title,
       attributes: {
         type: formValues.type.value,
@@ -19,16 +20,18 @@ const NodeEdit = ({ show, setShow, nodeId, treeData, treeId, changeNode }) => {
       }
     }
 
-    if(formValues.type === "Counter"){
+    if(formValues.description === undefined) changes.attributes.description = ""
+
+    if(formValues.type.value === "Counter"){
       changes.attributes.done = {
-        steps: formValues.steps
+        steps: formValues.steps,
+        done: 0
       }
-    } else {
+    } else if(formValues.type.value === "Checkbox") {
       changes.attributes.done = false
     }
 
     changeNode(nodeId, treeData, treeId, changes)
-
     setShow(!show)
   }
 

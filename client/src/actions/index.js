@@ -111,19 +111,24 @@ export const changeNode = (nodeId, treeData, treeId, changes) => async dispatch 
   let newTree = treeData
   const nodePath = nestedObjPath(treeData, nodeId)
   const currentNode = _.get(treeData, nodePath)
-  console.log(changes)
 
   const changedNode = () => {
-    if(changes.attributes){
+    if(changes.edit){
+      delete changes.edit
+      changes.attributes.node_id = currentNode.attributes.node_id
+      if(currentNode.attributes.type === changes.attributes.type){
+        changes.attributes.done = currentNode.attributes.done
+      }
+      return _.assign(currentNode, changes)
+    }
+    else if(changes.attributes){
       if(currentNode.attributes.type === "Counter"){
         _.assign(currentNode.attributes.done, changes.attributes.done)
         return currentNode
       }
       _.assign(currentNode.attributes, changes.attributes)
       return currentNode
-    } else {
-      return _.assign(currentNode, changes)
-    }
+    }  
   }
 
   _.set(newTree, nodePath, changedNode())
