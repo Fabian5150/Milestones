@@ -112,12 +112,19 @@ export const changeNode = (nodeId, treeData, treeId, changes) => async dispatch 
   if(changes.delete){
     const parentAndChildIndex = nestedParentPath(treeData, nodeId)
     const parentPath = parentAndChildIndex.parentPath
-    const childIndex = parentAndChildIndex.childIndex
-    const parentNode = _.get(treeData, parentPath)
+    const childIndex = parentAndChildIndex.childIndex  
+    
+    if(parentPath !== ""){
+      const parentNode = _.get(treeData, parentPath)
 
-    const changedParent = parentNode
-    changedParent.children.splice(childIndex, 1)
-    _.set(newTree, parentPath, changedParent)
+      const changedParent = parentNode
+      changedParent.children.splice(childIndex, 1)
+      _.set(newTree, parentPath, changedParent)
+    } else {
+      newTree.children.splice(childIndex, 1)
+    }
+    
+
   } else {
     const nodePath = nestedObjPath(treeData, nodeId)
     const currentNode = _.get(treeData, nodePath)

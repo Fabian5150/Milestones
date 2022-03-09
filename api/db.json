@@ -94,7 +94,7 @@
       "description": "caramba",
       "category": "Hoffnung",
       "id": 9,
-      "lastWorkedOn": 1646861842758
+      "lastWorkedOn": 1646862751095
     }
   ],
   "trees": [
@@ -939,31 +939,7 @@
           "node_id": 0,
           "type": "root"
         },
-        "children": [
-          {
-            "name": "ey",
-            "attributes": {
-              "type": "Checkbox",
-              "description": "",
-              "done": true,
-              "node_id": 1646851937379
-            },
-            "children": []
-          },
-          {
-            "name": "Es war einen Verusch wert",
-            "attributes": {
-              "node_id": 1646859959160,
-              "type": "Counter",
-              "description": "huh",
-              "done": {
-                "steps": 12,
-                "done": 0
-              }
-            },
-            "children": []
-          }
-        ]
+        "children": []
       },
       "id": 9
     }
