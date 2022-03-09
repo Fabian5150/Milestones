@@ -102,7 +102,6 @@ export const createNode = (parentId, treeData, treeId, newChild) => async dispat
   } else {
     newTree.children = _.concat(newTree.children, newChild)
   }
-  
 
   const res = await trees.patch(`/trees/${treeId}`, {data: newTree})
   dispatch({ type: EDIT_TREE, payload: res.data })
@@ -112,6 +111,7 @@ export const changeNode = (nodeId, treeData, treeId, changes) => async dispatch 
   let newTree = treeData
   const nodePath = nestedObjPath(treeData, nodeId)
   const currentNode = _.get(treeData, nodePath)
+  console.log(changes)
 
   const changedNode = () => {
     if(changes.attributes){

@@ -94,7 +94,7 @@
       "description": "caramba",
       "category": "Hoffnung",
       "id": 9,
-      "lastWorkedOn": 1646828485167
+      "lastWorkedOn": 1646852375281
     }
   ],
   "trees": [
@@ -959,7 +959,18 @@
                 "done": 9
               }
             },
-            "children": []
+            "children": [
+              {
+                "name": "fghz",
+                "attributes": {
+                  "node_id": 1646851937374,
+                  "type": "Checkbox",
+                  "description": "fgvhb",
+                  "done": false
+                },
+                "children": []
+              }
+            ]
           }
         ]
       },

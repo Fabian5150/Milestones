@@ -1,6 +1,7 @@
 //packages
 import React from "react";
 import _ from "lodash";
+import { connect } from "react-redux";
 //components
 import NodeForm from "./NodeForm";
 import Modal from "../../Modal";
@@ -8,7 +9,7 @@ import Modal from "../../Modal";
 import { changeNode } from "../../../actions";
 import { nestedObjPath } from "../../../functions";
 
-const NodeEdit = ({ show, setShow, nodeId, treeData, treeId }) => {
+const NodeEdit = ({ show, setShow, nodeId, treeData, treeId, changeNode }) => {
   const onSubmit = formValues => {
     const changes = {
       name: formValues.title,
@@ -26,8 +27,7 @@ const NodeEdit = ({ show, setShow, nodeId, treeData, treeId }) => {
       changes.attributes.done = false
     }
 
-    //changeNode(nodeId, treeData, treeId, changes)
-    console.log("Diese Funktion kommt noch :,)")
+    changeNode(nodeId, treeData, treeId, changes)
 
     setShow(!show)
   }
@@ -41,7 +41,7 @@ const NodeEdit = ({ show, setShow, nodeId, treeData, treeId }) => {
       initalValues.title = thisNode.name
       initalValues.description = thisNode.attributes.description
       initalValues.type = thisNode.attributes.type
-      initalValues.steps = String(thisNode.attributes.done?.steps)
+      if(thisNode.attributes.done.steps) initalValues.steps = String(thisNode.attributes.done.steps)
     }
 
     return (
@@ -74,4 +74,4 @@ const NodeEdit = ({ show, setShow, nodeId, treeData, treeId }) => {
   )
 }
 
-export default NodeEdit
+export default connect(null, { changeNode })(NodeEdit)
