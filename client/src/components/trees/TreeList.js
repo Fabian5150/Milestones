@@ -7,9 +7,11 @@ import _ from "lodash";
 import { fetchTreePreviews, fetchCategory, fetchCategories  } from "../../actions";
 //components
 import CategoryDelete from "../categories/CategoryDelete";
+import CategoryEdit from "../categories/CategoryEdit";
 
 const TreeList = ( {match: {params}, category, fetchCategory, treePreviews, fetchTreePreviews, categories, fetchCategories, } ) => {
   const [showCategoryDelete, setShowCategoryDelete] = useState(false)
+  const [showCategoryEdit, setShowCategoryEdit] = useState(false)
   
   useEffect(() => {
     if(params.searchBy === "category"){
@@ -37,7 +39,7 @@ const TreeList = ( {match: {params}, category, fetchCategory, treePreviews, fetc
     if(params.searchBy !== "category") return <></>
     return (
       <div className="right floated ui icon buttons">
-        <button className="ui icon button">
+        <button className="ui icon button" onClick={() => setShowCategoryEdit(true)}>
           <i className="edit icon"/>
         </button>
         <button className="ui icon button" onClick={() => setShowCategoryDelete(true)}>
@@ -93,6 +95,7 @@ const TreeList = ( {match: {params}, category, fetchCategory, treePreviews, fetc
       if(preview.category === category.value) categoryTrees.push(preview)
     })
 
+    const categoryFormValues = { title: category.value, icon: category.icon }
     return (
     <>
       <RenderListSegment header={`Alle Bäume aus "${category.value}"`} items={_.cloneDeep(categoryTrees).reverse()} label="Neueste zuerst"/>
@@ -102,6 +105,12 @@ const TreeList = ( {match: {params}, category, fetchCategory, treePreviews, fetc
         category={category}
         id={params.key}
         treeAmount={categoryTrees.length}
+      />
+      <CategoryEdit 
+        show={showCategoryEdit}
+        setShow={setShowCategoryEdit}
+        category={categoryFormValues}
+        id={params.key}
       />
     </>
     )

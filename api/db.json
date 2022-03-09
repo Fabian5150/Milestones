@@ -43,14 +43,14 @@
       "title": "Zweiter",
       "description": "ich bin so happy ;)",
       "category": "Musik",
-      "lastWorkedOn": 1646777109019,
+      "lastWorkedOn": 1646815287218,
       "id": 2
     },
     {
       "title": "Dritter",
       "description": "Kann hier jetzt mal von Anfang an die Wundervollheit dieser App genießen ;,)",
       "category": "Entspannung",
-      "lastWorkedOn": 1646778804479,
+      "lastWorkedOn": 1646812778410,
       "id": 3
     },
     {
@@ -79,7 +79,7 @@
       "description": "lorem ipsum dolor sit anet",
       "category": "Spannende Bäume",
       "id": 7,
-      "lastWorkedOn": 1646772630645
+      "lastWorkedOn": 1646816626018
     },
     {
       "title": "Gymnastik",
@@ -93,7 +93,7 @@
       "description": "caramba",
       "category": "Hoffnung",
       "id": 9,
-      "lastWorkedOn": 1646783789500
+      "lastWorkedOn": 1646815169909
     }
   ],
   "trees": [
@@ -376,8 +376,22 @@
                     "attributes": {
                       "type": "Checkbox",
                       "node_id": "0.0.0.0",
-                      "done": false
-                    }
+                      "done": true
+                    },
+                    "children": [
+                      {
+                        "name": "n",
+                        "attributes": {
+                          "node_id": 1646815301632,
+                          "type": "Counter",
+                          "done": {
+                            "steps": 2,
+                            "done": 2
+                          }
+                        },
+                        "children": []
+                      }
+                    ]
                   }
                 ]
               },
@@ -515,10 +529,34 @@
                       "type": "Counter",
                       "done": {
                         "steps": 123,
-                        "done": 15
+                        "done": 18
                       }
                     },
-                    "children": []
+                    "children": [
+                      {
+                        "name": "jlijlk",
+                        "attributes": {
+                          "node_id": 1646812793165,
+                          "type": "Checkbox",
+                          "done": true
+                        },
+                        "children": [
+                          {
+                            "name": "jlijlili",
+                            "attributes": {
+                              "node_id": 1646812812361,
+                              "type": "Counter",
+                              "description": "njlnl",
+                              "done": {
+                                "steps": 9,
+                                "done": 3
+                              }
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "name": "dass ich Rumpelstielzchen",
@@ -890,7 +928,29 @@
           "node_id": 0,
           "type": "root"
         },
-        "children": []
+        "children": [
+          {
+            "name": "a",
+            "attributes": {
+              "node_id": 1646815132073,
+              "type": "Checkbox",
+              "done": true
+            },
+            "children": []
+          },
+          {
+            "name": "b",
+            "attributes": {
+              "node_id": 1646815144403,
+              "type": "Counter",
+              "done": {
+                "steps": 9,
+                "done": 9
+              }
+            },
+            "children": []
+          }
+        ]
       },
       "id": 9
     }

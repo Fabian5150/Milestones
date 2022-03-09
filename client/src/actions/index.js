@@ -9,6 +9,7 @@ import {
   FETCH_CATEGORY,
   FETCH_TREE,
   CREATE_CATEGORY,
+  EDIT_CATEGORY,
   EDIT_TREE,
   FETCH_TREE_PREVIEWS,
   FETCH_TREE_PREVIEW,
@@ -76,6 +77,10 @@ export const fetchCategory = id => async dispatch => {
   const res = await trees.get(`/categories/${id}`)
 
   dispatch({ type: FETCH_CATEGORY, payload: res.data })
+}
+
+export const editCategory = (id, formValues) => async dispatch => {
+  const res = await trees.patch(`/categories/${id}`, formValues)
 }
 
 export const deleteCategory = id => async dispatch => {
