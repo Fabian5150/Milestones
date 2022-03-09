@@ -9,12 +9,14 @@ import { useIsMount } from "../customHooks";
 //components
 import NodeCreate from "./nodes/NodeCreate";
 import NodeEdit from "./nodes/NodeEdit";
+import NodeDelete from "./nodes/NodeDelete";
 import TopMenu from "./TopMenu";
 import LoadingSpinner from "../LoadingSpinner";
 
 const TreePage = ({ match: { params }, fetchTree, treePreview, changeTreePreview, changeNode, treeData, categories }) => {
   const [showCreateModal, setShowCreateModal] = useState(false)
   const [showEditModal, setShowEditModal] = useState(false)
+  const [showDeleteModal, setShowDeleteModal] = useState(false)
   const [selectedNodeId, setSelectedNodeId] = useState (0)
 
   useEffect(() => {
@@ -28,6 +30,10 @@ const TreePage = ({ match: { params }, fetchTree, treePreview, changeTreePreview
 
   const editNode = () => {
     setShowEditModal(true)
+  }
+
+  const deleteNode = () => {
+    setShowDeleteModal(true)
   }
 
   const RenderNodeActions = ({type, done, node_id}) => {
@@ -115,7 +121,7 @@ const TreePage = ({ match: { params }, fetchTree, treePreview, changeTreePreview
               </button>
             </foreignObject>
             <foreignObject x="-35" y="-15" width="50" height="50">
-              <button className="small ui circular icon button" onClick={() => console.log("Holá!")}>
+              <button className="small ui circular icon button" onClick={() => deleteNode()}>
                 <i className="trash icon"></i>
               </button>
             </foreignObject>
@@ -249,6 +255,13 @@ const TreePage = ({ match: { params }, fetchTree, treePreview, changeTreePreview
         <NodeEdit 
           show={showEditModal}
           setShow={setShowEditModal}
+          nodeId={selectedNodeId}
+          treeData={treeData}
+          treeId={params.id}
+        />
+        <NodeDelete 
+          show={showDeleteModal}
+          setShow={setShowDeleteModal}
           nodeId={selectedNodeId}
           treeData={treeData}
           treeId={params.id}

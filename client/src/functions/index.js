@@ -27,3 +27,17 @@ export const nestedObjPath = (tree, id) => {
     return path.substring(1)
   } catch{}
 }
+
+export const nestedParentPath = (tree, childId) => {
+  try {
+    let all = findNestedObjById(tree, childId)
+    const childIndex = all.pop()
+    const indices = all 
+    let path = ""
+    indices.forEach(index => {
+      path = path + `.children[${index}]`
+    })
+
+    return { parentPath: path.substring(1), childIndex}
+  } catch{}
+}

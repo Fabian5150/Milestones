@@ -94,7 +94,7 @@
       "description": "caramba",
       "category": "Hoffnung",
       "id": 9,
-      "lastWorkedOn": 1646857769832
+      "lastWorkedOn": 1646861842758
     }
   ],
   "trees": [
@@ -951,28 +951,17 @@
             "children": []
           },
           {
-            "name": "behindert",
+            "name": "Es war einen Verusch wert",
             "attributes": {
-              "node_id": 1646851937370,
+              "node_id": 1646859959160,
               "type": "Counter",
-              "description": "react ist behindert",
+              "description": "huh",
               "done": {
-                "steps": 9,
+                "steps": 12,
                 "done": 0
               }
             },
-            "children": [
-              {
-                "name": "fghz",
-                "attributes": {
-                  "node_id": 1646851937374,
-                  "type": "Checkbox",
-                  "description": "fgvhb",
-                  "done": false
-                },
-                "children": []
-              }
-            ]
+            "children": []
           }
         ]
       },

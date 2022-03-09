@@ -17,7 +17,7 @@ import {
   DELETE_CATEGORY
 } from './types'
 //functions
-import { nestedObjPath } from "../functions"
+import { nestedObjPath, nestedParentPath } from "../functions"
 import history from '../history'
 
 export const createTree = formValues => async dispatch => {
@@ -109,29 +109,39 @@ export const createNode = (parentId, treeData, treeId, newChild) => async dispat
 
 export const changeNode = (nodeId, treeData, treeId, changes) => async dispatch => {
   let newTree = treeData
-  const nodePath = nestedObjPath(treeData, nodeId)
-  const currentNode = _.get(treeData, nodePath)
+  if(changes.delete){
+    const parentAndChildIndex = nestedParentPath(treeData, nodeId)
+    const parentPath = parentAndChildIndex.parentPath
+    const childIndex = parentAndChildIndex.childIndex
+    const parentNode = _.get(treeData, parentPath)
 
-  const changedNode = () => {
-    if(changes.edit){
-      delete changes.edit
-      changes.attributes.node_id = currentNode.attributes.node_id
-      if(currentNode.attributes.type === changes.attributes.type){
-        changes.attributes.done = currentNode.attributes.done
-      }
-      return _.assign(currentNode, changes)
-    }
-    else if(changes.attributes){
-      if(currentNode.attributes.type === "Counter"){
-        _.assign(currentNode.attributes.done, changes.attributes.done)
+    const changedParent = parentNode
+    changedParent.children.splice(childIndex, 1)
+    _.set(newTree, parentPath, changedParent)
+  } else {
+    const nodePath = nestedObjPath(treeData, nodeId)
+    const currentNode = _.get(treeData, nodePath)
+
+    const changedNode = () => {
+      if(changes.edit){
+        delete changes.edit
+        changes.attributes.node_id = currentNode.attributes.node_id
+        if(currentNode.attributes.type === changes.attributes.type){
+          changes.attributes.done = currentNode.attributes.done
+        }
+        return _.assign(currentNode, changes)
+      } else if(changes.attributes){
+        if(currentNode.attributes.type === "Counter"){
+          _.assign(currentNode.attributes.done, changes.attributes.done)
+          return currentNode
+        }
+        _.assign(currentNode.attributes, changes.attributes)
         return currentNode
-      }
-      _.assign(currentNode.attributes, changes.attributes)
-      return currentNode
-    }  
-  }
+      } 
+    }
 
-  _.set(newTree, nodePath, changedNode())
+    _.set(newTree, nodePath, changedNode())
+  }
 
   const res = await trees.patch(`/trees/${treeId}`, {data: newTree})
   dispatch({ type: EDIT_TREE, payload: res.data })
