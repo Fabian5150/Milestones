@@ -1,6 +1,6 @@
 //Quelle: Grider, streams/components/streams/StreamForm (modifiziert)
 //packages
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Form, Field } from "react-final-form";
 //components
 import Dropdown from "../Dropdown"; 
@@ -30,6 +30,12 @@ const CategoryForm = (props) => {
   }
 
   const [selectedIcon, setSelectedIcon] = useState(icons[0])
+  useEffect(() => {
+    if(props.initialValues){
+      const mappedIcon = { label: "", value: props.initialValues.icon, icon:props.initialValues.icon }
+      setSelectedIcon(mappedIcon)
+    }
+  }, [])
   
   const renderIconDropdown = () => {
     return (

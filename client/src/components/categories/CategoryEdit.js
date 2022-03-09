@@ -15,7 +15,7 @@ const CategoryEdit = ({ show, setShow, category, id, editCategory }) => {
   }
 
   const modalContent = () => {
-    return <CategoryForm onSubmit={onSubmit} initialValues={_.pick(category, "title")} />
+    return <CategoryForm onSubmit={onSubmit} initialValues={category} />
   }
 
   const modalActions = () => {
