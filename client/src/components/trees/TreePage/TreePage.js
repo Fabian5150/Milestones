@@ -9,7 +9,7 @@ import { fetchTree, changeNode, changeTreePreview, fetchCategories } from "../..
 import NodeCreate from "../nodes/NodeCreate";
 import NodeEdit from "../nodes/NodeEdit";
 import NodeDelete from "../nodes/NodeDelete";
-import TopMenu from "../TopMenu";
+import TopMenu from "./TopMenu";
 import LoadingSpinner from "../../LoadingSpinner";
 import MyForeignObject from "./MyForeignObject";
 
