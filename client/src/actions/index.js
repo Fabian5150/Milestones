@@ -6,12 +6,14 @@ import trees from '../apis/trees'
 import {
   CREATE_TREE,
   FETCH_CATEGORIES,
+  FETCH_CATEGORY,
   FETCH_TREE,
   CREATE_CATEGORY,
   EDIT_TREE,
   FETCH_TREE_PREVIEWS,
   FETCH_TREE_PREVIEW,
-  EDIT_TREE_PREVIEW
+  EDIT_TREE_PREVIEW,
+  DELETE_CATEGORY
 } from './types'
 //functions
 import { nestedObjPath } from "../functions"
@@ -39,12 +41,6 @@ export const changeTreePreview = (id, changes) => async dispatch => {
   //dispatch({ type: EDIT_TREE_PREVIEW, payload: res.data })
 }
 
-export const fetchCategories = () => async dispatch => {
-  const res = await trees.get('/categories')
-
-  dispatch({ type: FETCH_CATEGORIES, payload: res.data })
-}
-
 export const fetchTree = id => async dispatch => {
   const res1 = await trees.get(`/trees/${id}`)
   const res2 = await trees.get(`/treePreviews/${id}`)
@@ -68,6 +64,25 @@ export const createCategory = formValues => async dispatch => {
   const res = await trees.post('/categories', data)
 
   dispatch({ type: CREATE_CATEGORY, payload: res.data })
+}
+
+export const fetchCategories = () => async dispatch => {
+  const res = await trees.get('/categories')
+
+  dispatch({ type: FETCH_CATEGORIES, payload: res.data })
+}
+
+export const fetchCategory = id => async dispatch => {
+  const res = await trees.get(`/categories/${id}`)
+
+  dispatch({ type: FETCH_CATEGORY, payload: res.data })
+}
+
+export const deleteCategory = id => async dispatch => {
+  await trees.delete(`/categories/${id}`)
+
+  dispatch({ type: DELETE_CATEGORY, payload:id })
+  history.push("/")
 }
 
 export const createNode = (parentId, treeData, treeId, newChild) => async dispatch => {

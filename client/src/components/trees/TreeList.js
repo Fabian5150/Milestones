@@ -4,10 +4,13 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import _ from "lodash";
 //functions
-import { fetchTreePreviews, fetchCategories } from "../../actions";
+import { fetchTreePreviews, fetchCategory, fetchCategories  } from "../../actions";
 
-const TreeList = ( {match: {params}, categories, fetchCategories, treePreviews, fetchTreePreviews } ) => {
+const TreeList = ( {match: {params}, category, fetchCategory, treePreviews, fetchTreePreviews, categories, fetchCategories, } ) => {
   useEffect(() => {
+    if(params.searchBy === "category"){
+      fetchCategory(params.key)
+    }
     fetchCategories()
     fetchTreePreviews()
   }, [])
@@ -26,10 +29,25 @@ const TreeList = ( {match: {params}, categories, fetchCategories, treePreviews, 
     return icon
   }
 
+  const RenderCrudButtons = () => {
+    if(params.searchBy !== "category") return <></>
+    return (
+      <div className="right floated ui icon buttons">
+        <button className="ui icon button">
+          <i className="edit icon"/>
+        </button>
+        <button className="ui icon button">
+          <i className="trash icon"/>
+        </button>
+      </div>
+    )
+  }
+
   const RenderListSegment = ({header, items, label}) => {
     return (
       <>
-        <h1>{header}</h1>
+        <RenderCrudButtons />
+        <h1 className="floated header">{header}</h1>
         <div className="tiny ui label">{label}</div>
         <div className="ui green segment">
           <div className="ui celled list">
@@ -68,18 +86,26 @@ const TreeList = ( {match: {params}, categories, fetchCategories, treePreviews, 
   } else if (params.searchBy === "category") {
     const categoryTrees = []
     treePreviews.forEach(preview => {
-      if(preview.category === params.key) categoryTrees.push(preview)
+      if(preview.category === category.value) categoryTrees.push(preview)
     })
 
-    return <RenderListSegment header={`Alle Bäume aus "${params.key}"`} items={_.cloneDeep(categoryTrees).reverse()} label="Neueste zuerst"/>
+    return <RenderListSegment header={`Alle Bäume aus "${category.value}"`} items={_.cloneDeep(categoryTrees).reverse()} label="Neueste zuerst"/>
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    categories: Object.values(state.categories),
-    treePreviews: state.trees.treePreviews
+const mapStateToProps = (state, ownProps) => {
+  if(ownProps.match.params.searchBy !== "category"){
+    return {
+      categories: Object.values(state.categories),
+      treePreviews: state.trees.treePreviews
+    }
+  } else {
+    return {
+      categories: Object.values(state.categories),
+      category: state.categories[ownProps.match.params.key],
+      treePreviews: state.trees.treePreviews
+    }
   }
 }
 
-export default connect(mapStateToProps, { fetchCategories, fetchTreePreviews })(TreeList);
+export default connect(mapStateToProps, { fetchCategory, fetchTreePreviews, fetchCategories })(TreeList);

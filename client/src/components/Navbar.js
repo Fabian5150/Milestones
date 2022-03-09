@@ -24,9 +24,10 @@ const Navbar = ({ categories, fetchCategories }) => {
           <i className="add icon circular"/>
           Kategorie hinzufügen
         </div>
-        {categories.map(category => {
+        {categories.map((category, index) => {
+          const id = index + 1
           return(
-            <Link to={`/search/category/${category.value}`} className="item" key={category.value}>
+            <Link to={`/search/category/${category.id}`} className="item" key={category.value}>
               <i className={`icon ${category.icon}`}/>
               {category.value}
             </Link>
