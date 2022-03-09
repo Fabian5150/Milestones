@@ -10,6 +10,8 @@ import { editCategory } from "../../actions";
 
 const CategoryEdit = ({ show, setShow, category, id, editCategory }) => {
   const onSubmit = formValues => {
+    formValues.value = formValues.title
+    formValues.label = formValues.title
     editCategory(id, formValues)
     setShow(!show)
   }
