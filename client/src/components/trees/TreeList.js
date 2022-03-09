@@ -89,6 +89,25 @@ const TreeList = ( {match: {params}, category, fetchCategory, treePreviews, fetc
     return <RenderListSegment header="Alle Bäume" items={_.cloneDeep(treePreviews).reverse()} label="Neueste zuerst"/>
   } else if(params.searchBy === "lastEdited"){
     return <RenderListSegment header="Alle Bäume" items={_.orderBy( _.cloneDeep(treePreviews), 'lastWorkedOn').reverse()} label="Zuletzt geöffnete zuerst"/>
+  } else if(params.searchBy === "term"){
+    const termTrees = []
+    treePreviews.forEach(preview => {
+      const title = preview.title
+      const description = preview.description
+      const category = preview.category
+      const term = params.key.toLowerCase()
+      if(title.toLowerCase().includes(term) || description.toLowerCase().includes(term) || category.toLowerCase().includes(term)){
+        termTrees.push(preview)
+      }
+    })
+
+    return (
+      <RenderListSegment 
+        header={`Suche nach "${params.key}"`} 
+        items={_.cloneDeep(termTrees).reverse()} 
+        label="Neueste zuerst"
+      />
+    )
   } else if (params.searchBy === "category") {
     const categoryTrees = []
     treePreviews.forEach(preview => {
@@ -98,7 +117,11 @@ const TreeList = ( {match: {params}, category, fetchCategory, treePreviews, fetc
     const categoryFormValues = { title: category.value, icon: category.icon }
     return (
     <>
-      <RenderListSegment header={`Alle Bäume aus "${category.value}"`} items={_.cloneDeep(categoryTrees).reverse()} label="Neueste zuerst"/>
+      <RenderListSegment 
+        header={`Alle Bäume aus "${category.value}"`} 
+        items={_.cloneDeep(categoryTrees).reverse()} 
+        label="Neueste zuerst"
+      />
       <CategoryDelete 
         show={showCategoryDelete}
         setShow={setShowCategoryDelete}
@@ -114,7 +137,7 @@ const TreeList = ( {match: {params}, category, fetchCategory, treePreviews, fetc
       />
     </>
     )
-  }
+  } 
 }
 
 const mapStateToProps = (state, ownProps) => {
