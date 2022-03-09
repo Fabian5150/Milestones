@@ -37,7 +37,7 @@
       "title": "Erster",
       "description": "Mein erster Baum, ich bin so aufgeregt :o",
       "category": "Musik",
-      "lastWorkedOn": 1646772677499,
+      "lastWorkedOn": 1646835589381,
       "id": 1
     },
     {
@@ -51,7 +51,7 @@
       "title": "Dritter",
       "description": "Kann hier jetzt mal von Anfang an die Wundervollheit dieser App genießen ;,)",
       "category": "Entspannung",
-      "lastWorkedOn": 1646826536127,
+      "lastWorkedOn": 1646828585474,
       "id": 3
     },
     {
@@ -94,7 +94,7 @@
       "description": "caramba",
       "category": "Hoffnung",
       "id": 9,
-      "lastWorkedOn": 1646826631385
+      "lastWorkedOn": 1646828485167
     }
   ],
   "trees": [
@@ -343,6 +343,16 @@
                 ]
               }
             ]
+          },
+          {
+            "name": "Ich hab Beschreibung",
+            "attributes": {
+              "node_id": 1646828657732,
+              "type": "Checkbox",
+              "description": "Hat er ne Minute?",
+              "done": false
+            },
+            "children": []
           }
         ]
       },

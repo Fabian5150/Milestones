@@ -46,6 +46,13 @@ const NodeForm = (props) => {
 
 
   const [selectedType, setSelectedType] = useState(options[0])
+  useEffect(() => {
+    if(props.initalValues){
+      if(props.initalValues.type === "Counter"){
+        setSelectedType(options[1])
+      }
+    }
+  }, [])
   const [disabled, setDisabled] = useState(true)
 
   useEffect(() => {
@@ -56,7 +63,7 @@ const NodeForm = (props) => {
   
   const renderTypeDropdown = () => {
     return (
-      <div className={`field`}>
+      <div className="field">
         <Dropdown 
           label="Typ: "
           options={options}
@@ -67,15 +74,15 @@ const NodeForm = (props) => {
     )
   }
 
-  const onSubmit = (formValues) => {
+  const onSubmit = formValues => {
     formValues.steps = parseInt(formValues.steps)
     formValues.type = selectedType
     props.onSubmit(formValues);
-  };
+  }
 
   return (
     <Form
-      initialValues={props.initialValues}
+      initialValues={props.initalValues}
       onSubmit={onSubmit}
       validate={(formValues) => {
         const errors = {};

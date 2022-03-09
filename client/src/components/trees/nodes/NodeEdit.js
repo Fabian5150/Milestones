@@ -39,7 +39,9 @@ const NodeEdit = ({ show, setShow, nodeId, treeData, treeId }) => {
 
     if(thisNode){
       initalValues.title = thisNode.name
-      if(thisNode.attributes.description) initalValues.description = thisNode.attributes.description
+      initalValues.description = thisNode.attributes.description
+      initalValues.type = thisNode.attributes.type
+      initalValues.steps = String(thisNode.attributes.done?.steps)
     }
 
     return (
