@@ -10,6 +10,7 @@ import { useIsMount } from "../customHooks";
 import NodeCreate from "./nodes/NodeCreate";
 import NodeEdit from "./nodes/NodeEdit";
 import TopMenu from "./TopMenu";
+import LoadingSpinner from "../LoadingSpinner";
 
 const TreePage = ({ match: { params }, fetchTree, treePreview, changeTreePreview, changeNode, treeData, categories }) => {
   const [showCreateModal, setShowCreateModal] = useState(false)
@@ -45,10 +46,7 @@ const TreePage = ({ match: { params }, fetchTree, treePreview, changeTreePreview
           return () => {
             clearTimeout(timerId)
           }
-        } else {
-          console.log("Keine Zahl!")
-        }
-        
+        } 
       }  
     }, [inputValue])
 
@@ -66,7 +64,6 @@ const TreePage = ({ match: { params }, fetchTree, treePreview, changeTreePreview
       if(!isMount){
         if(deboundcedInputVal > done.steps){
           setInputValue(done.steps)
-          console.log(`Interssant, wie du von ${done.steps} Schritten ${inputValue} absolviert haben willst 🤔`)
           return
         }
         changeNode(node_id, treeData, treePreview.id, {
@@ -209,7 +206,7 @@ const TreePage = ({ match: { params }, fetchTree, treePreview, changeTreePreview
   );
 
   if(!treeData || !treePreview){
-    return <div>Loading...</div>
+    return <LoadingSpinner />
   } else {
     let categoryIcon = "sitemap"
     if(categories){

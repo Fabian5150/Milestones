@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import Searchbar from "./SearchBar";
 import Auth from "./Auth";
 import CategoryCreate from "./categories/CategoryCreate";
+import LoadingSpinner from "./LoadingSpinner";
 //functions
 import { fetchCategories } from "../actions";
 
@@ -17,7 +18,7 @@ const Navbar = ({ categories, fetchCategories }) => {
   const [show, setShow] = useState(false)
   const renderCategories = () => {
     if(!categories){
-      return <div>Loading...</div>
+      return <LoadingSpinner />
     } else {
       return <>
         <div className="item" onClick={() => setShow(true)}>

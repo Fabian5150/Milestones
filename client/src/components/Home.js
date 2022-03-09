@@ -5,6 +5,7 @@ import _ from "lodash";
 //components
 import TreeCreate from "./trees/TreeCreate";
 import HomePreviewSegment from "./HomePreviewSegment";
+import LoadingSpinner from "./LoadingSpinner";
 //functions
 import { fetchTreePreviews } from "../actions";
 
@@ -17,7 +18,7 @@ const Home = ({ treePreviews, fetchTreePreviews }) => {
 
   const renderSegments = () => {
     if(!treePreviews){
-      return <div>Loading...</div>
+      return <LoadingSpinner />
     } else { 
       return(
         <>

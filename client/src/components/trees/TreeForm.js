@@ -5,6 +5,7 @@ import { Form, Field } from "react-final-form";
 import { connect } from "react-redux";
 //components
 import Dropdown from "../Dropdown"; 
+import LoadingSpinner from "../LoadingSpinner";
 //functions
 import { fetchCategories } from "../../actions";
 //data
@@ -41,7 +42,7 @@ const TreeForm = (props) => {
 
   const renderCategoryDropdown = () => {
     if(!props.categories){
-      return <div>Loading...</div>
+      return <LoadingSpinner />
     } else {
       return (
         <div className={`field ${disabled ? "disabled" : ""}`}>
