@@ -271,6 +271,7 @@ const TreePage = ({ match: { params }, fetchTree, treePreview, changeTreePreview
           show={showTreeEdit}
           setShow={setShowTreeEdit}
           treeId={params.id}
+          treeData={treeData}
           initialValues={{
             title: treePreview.title, 
             description: treePreview.description, 

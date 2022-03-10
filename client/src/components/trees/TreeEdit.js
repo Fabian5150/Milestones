@@ -8,7 +8,7 @@ import TreeForm from "./TreeForm";
 //functions
 import { createCategory, changeTree, changeTreePreview } from "../../actions";
 
-const TreeEdit = ({ show, setShow, createCategory, initialValues, treeId, changeTree, changeTreePreview }) => {
+const TreeEdit = ({ show, setShow, createCategory, initialValues, treeId, changeTree, changeTreePreview, treeData }) => {
   const onSubmit = formValues => {
     if(formValues.newCategory){
       createCategory({
@@ -20,9 +20,9 @@ const TreeEdit = ({ show, setShow, createCategory, initialValues, treeId, change
 
     changeTreePreview(treeId, _.pick(formValues, ["title", "description", "category"]))
 
-    /* if(formValues.title !== initialValues.title){
-      changeTree(treeId, { data: { name: formValues.title } })
-    } */
+    if(formValues.title !== initialValues.title){
+      changeTree(treeId, formValues.title, treeData)
+    }
 
     setShow(!show)
   }

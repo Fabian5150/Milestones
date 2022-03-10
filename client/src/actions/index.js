@@ -42,9 +42,12 @@ export const changeTreePreview = (id, changes) => async dispatch => {
   //dispatch({ type: EDIT_TREE_PREVIEW, payload: res.data })
 }
 
-export const changeTree = (id, changes) => async dispatch => {
-  const res = trees.patch(`/trees/${id}`, changes)
-  console.log(res)
+export const changeTree = (id, name, treeData) => async dispatch => {
+  let newTree = treeData
+  newTree.name = name
+
+  const res = trees.patch(`/trees/${id}`, {data: newTree})
+  //dispatch({ type: EDIT_TREE, payload: res.data })
 }
 
 export const fetchTree = id => async dispatch => {

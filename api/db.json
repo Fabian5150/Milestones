@@ -42,10 +42,10 @@
   ],
   "treePreviews": [
     {
-      "title": "Veränderter Baum",
+      "title": "Anderer Baum",
       "description": "Er ist anders :o",
       "category": "Geile Bäume",
-      "lastWorkedOn": 1646914330469,
+      "lastWorkedOn": 1646915976235,
       "id": 1
     },
     {
@@ -88,7 +88,7 @@
       "description": "lorem ipsum dolor sit anet",
       "category": "Geile Bäume",
       "id": 7,
-      "lastWorkedOn": 1646816626018
+      "lastWorkedOn": 1646916038419
     },
     {
       "title": "Gymnastik",
@@ -115,7 +115,7 @@
   "trees": [
     {
       "data": {
-        "name": "Mein wirklich Erster",
+        "name": "Anderer Baum",
         "attributes": {
           "type": "root",
           "node_id": 0
