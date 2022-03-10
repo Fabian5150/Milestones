@@ -45,35 +45,35 @@
       "title": "Anderer Baum",
       "description": "Er ist anders :o",
       "category": "Geile Bäume",
-      "lastWorkedOn": 1646915976235,
+      "lastWorkedOn": 1646916308688,
       "id": 1
     },
     {
       "title": "Zweiter",
       "description": "ich bin so happy ;)",
       "category": "Musik",
-      "lastWorkedOn": 1646865884793,
+      "lastWorkedOn": 1646916309977,
       "id": 2
     },
     {
       "title": "Dritter",
       "description": "Kann hier jetzt mal von Anfang an die Wundervollheit dieser App genießen ;,)",
       "category": "Entspannung",
-      "lastWorkedOn": 1646901069810,
+      "lastWorkedOn": 1646916311084,
       "id": 3
     },
     {
       "title": "Vierter",
       "description": "super toll",
       "category": "Bäume",
-      "lastWorkedOn": 1646772643329,
+      "lastWorkedOn": 1646916311859,
       "id": 4
     },
     {
       "title": "Fünfter",
       "description": "Jetzt wird es spannend",
       "category": "Bäume",
-      "lastWorkedOn": 1646777101771,
+      "lastWorkedOn": 1646916591266,
       "id": 5
     },
     {
@@ -81,35 +81,35 @@
       "description": "Mit vernünfitger Redux Store Anbindung, ich bin so aufgeregt :3",
       "category": "Geile Bäume",
       "id": 6,
-      "lastWorkedOn": 1646906944959
+      "lastWorkedOn": 1646916313660
     },
     {
       "title": "Toasbrot",
       "description": "lorem ipsum dolor sit anet",
       "category": "Geile Bäume",
       "id": 7,
-      "lastWorkedOn": 1646916038419
+      "lastWorkedOn": 1646916314735
     },
     {
       "title": "Gymnastik",
       "description": "Wassergymnsatik mit Seepferdchen",
       "category": "Sport",
       "id": 8,
-      "lastWorkedOn": 1646905650303
+      "lastWorkedOn": 1646916315944
     },
     {
       "title": "aye",
       "description": "caramba",
       "category": "Kochen",
       "id": 9,
-      "lastWorkedOn": 1646899297158
+      "lastWorkedOn": 1646916317025
     },
     {
       "title": "Kochen lernen",
-      "description": "Jaja will essen machen und so",
+      "description": "Dann kann ich mir selber etwas leckers zu Essen machen",
       "category": "Kochen",
       "id": 10,
-      "lastWorkedOn": 1646902342191
+      "lastWorkedOn": 1646916734280
     }
   ],
   "trees": [
@@ -383,14 +383,15 @@
                 },
                 "children": [
                   {
-                    "name": "dass niemand weiß",
+                    "name": "dass niemand ",
                     "attributes": {
-                      "node_id": 1646526011226,
                       "type": "Counter",
+                      "description": "",
                       "done": {
                         "steps": 123,
                         "done": 19
-                      }
+                      },
+                      "node_id": 1646526011226
                     },
                     "children": [
                       {
@@ -419,22 +420,46 @@
                     ]
                   },
                   {
-                    "name": "dass ich Rumpelstielzchen",
+                    "name": "weiß",
                     "attributes": {
-                      "node_id": 1646526027071,
                       "type": "Checkbox",
-                      "done": false
+                      "description": "",
+                      "done": false,
+                      "node_id": 1646526027071
                     },
                     "children": []
                   },
                   {
-                    "name": "heiß",
+                    "name": "das",
                     "attributes": {
-                      "node_id": 1646526031095,
+                      "type": "Checkbox",
+                      "description": "",
+                      "done": false,
+                      "node_id": 1646526031095
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "ich",
+                    "attributes": {
+                      "node_id": 1646916380792,
                       "type": "Checkbox",
                       "done": false
                     },
-                    "children": []
+                    "children": [
+                      {
+                        "name": "Rumpelstielzchen heiß",
+                        "attributes": {
+                          "node_id": 1646916409393,
+                          "type": "Counter",
+                          "done": {
+                            "steps": 10,
+                            "done": 1
+                          }
+                        },
+                        "children": []
+                      }
+                    ]
                   }
                 ]
               }
@@ -623,9 +648,19 @@
                   "node_id": 1646736775113,
                   "type": "Checkbox",
                   "description": "soagdud hosadf",
-                  "done": false
+                  "done": true
                 },
-                "children": []
+                "children": [
+                  {
+                    "name": "welches",
+                    "attributes": {
+                      "node_id": 1646916454440,
+                      "type": "Checkbox",
+                      "done": false
+                    },
+                    "children": []
+                  }
+                ]
               }
             ]
           },
@@ -813,7 +848,7 @@
                 "attributes": {
                   "node_id": 1646899820009,
                   "type": "Checkbox",
-                  "done": false
+                  "done": true
                 },
                 "children": [
                   {
@@ -822,7 +857,7 @@
                       "node_id": 1646900087926,
                       "type": "Checkbox",
                       "description": "(Du weißt dann halt wie)",
-                      "done": false
+                      "done": true
                     },
                     "children": []
                   }
@@ -929,7 +964,7 @@
               "description": "Musst jedem den du kennst (2 Leute) sagen, dass du jetzt kochen lernst",
               "done": {
                 "steps": 2,
-                "done": 0
+                "done": 1
               }
             },
             "children": []
