@@ -37,8 +37,18 @@ const TreeForm = (props) => {
     );
   };
 
-  const [selectedCategory, setSelectedCategory] = useState(props.categories[0])
   const [disabled, setDisabled] = useState(false)
+  const [selectedCategory, setSelectedCategory] = useState(props.categories[0])
+  useEffect(() => {
+    if(props.initialValues){
+      console.log(props.initialValues)
+      setSelectedCategory({
+        label: props.initialValues.category,
+        value: props.initialValues.category,
+        icon: props.initialValues.categoryIcon
+      })
+    }
+  }, [])
 
   const renderCategoryDropdown = () => {
     if(!props.categories){
@@ -59,7 +69,7 @@ const TreeForm = (props) => {
 
 
   const [selectedIcon, setSelectedIcon] = useState(icons[0])
-  
+
   const renderIconDropdown = () => {
     return (
       <div className={`field ${!disabled ? "disabled" : ""}`}>
