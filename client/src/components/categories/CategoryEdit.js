@@ -21,10 +21,10 @@ const CategoryEdit = ({ show, setShow, category, id, editCategory, fetchTreePrev
     if(treePreviews){
       treePreviews.forEach((preview, index) => {
         if(preview.category === category.title){
-          changeTreePreview(index, { category: formValues.value })
+          changeTreePreview(index + 1, { category: formValues.value })
         }
       })
-    }
+    }  
     setShow(!show)
   }
 

@@ -19,17 +19,11 @@
       "id": 3
     },
     {
-      "label": "Spannende Bäume",
-      "value": "Spannende Bäume",
+      "label": "Bäume",
+      "value": "Bäume",
       "icon": "heartbeat",
-      "id": 4
-    },
-    {
-      "icon": "briefcase",
-      "label": "Hoffnung",
-      "value": "Hoffnung",
-      "id": 6,
-      "title": "Hoffnung"
+      "id": 4,
+      "title": "Bäume"
     },
     {
       "icon": "leaf",
@@ -37,14 +31,21 @@
       "value": "Kochen",
       "id": 7,
       "title": "Kochen"
+    },
+    {
+      "icon": "users",
+      "label": "Geile Bäume",
+      "value": "Geile Bäume",
+      "id": 8,
+      "title": "Geile Bäume"
     }
   ],
   "treePreviews": [
     {
-      "title": "Erster",
-      "description": "Mein erster Baum, ich bin so aufgeregt :o",
-      "category": "Musik",
-      "lastWorkedOn": 1646865863331,
+      "title": "Veränderter Baum",
+      "description": "Er ist anders :o",
+      "category": "Geile Bäume",
+      "lastWorkedOn": 1646914330469,
       "id": 1
     },
     {
@@ -64,28 +65,28 @@
     {
       "title": "Vierter",
       "description": "super toll",
-      "category": "Sport",
+      "category": "Bäume",
       "lastWorkedOn": 1646772643329,
       "id": 4
     },
     {
       "title": "Fünfter",
       "description": "Jetzt wird es spannend",
-      "category": "Spannende Bäume",
+      "category": "Bäume",
       "lastWorkedOn": 1646777101771,
       "id": 5
     },
     {
       "title": "Mein neuer Baum",
       "description": "Mit vernünfitger Redux Store Anbindung, ich bin so aufgeregt :3",
-      "category": "Spannende Bäume",
+      "category": "Geile Bäume",
       "id": 6,
-      "lastWorkedOn": 1646899403778
+      "lastWorkedOn": 1646906944959
     },
     {
       "title": "Toasbrot",
       "description": "lorem ipsum dolor sit anet",
-      "category": "Spannende Bäume",
+      "category": "Geile Bäume",
       "id": 7,
       "lastWorkedOn": 1646816626018
     },
@@ -94,12 +95,12 @@
       "description": "Wassergymnsatik mit Seepferdchen",
       "category": "Sport",
       "id": 8,
-      "lastWorkedOn": 1646902772853
+      "lastWorkedOn": 1646905650303
     },
     {
       "title": "aye",
       "description": "caramba",
-      "category": "Kochen ja",
+      "category": "Kochen",
       "id": 9,
       "lastWorkedOn": 1646899297158
     },

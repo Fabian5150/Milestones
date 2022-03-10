@@ -1,14 +1,14 @@
 //packages
 import React from "react";
 
-const TopMenu = ({ title, description, category, categoryIcon }) => {
+const TopMenu = ({ title, description, category, categoryIcon, treeChange, treeDelete }) => {
   const RenderButtons = () => {
     return (
       <div className="right floated ui icon buttons">
-        <button className="ui icon button" onClick={() => console.log("Holá")}>
+        <button className="ui icon button" onClick={() => treeChange()}>
           <i className="edit icon"/>
         </button>
-        <button className="ui icon button" onClick={() => console.log("Holá")}>
+        <button className="ui icon button" onClick={() => treeDelete()}>
           <i className="trash icon"/>
         </button>
       </div>

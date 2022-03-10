@@ -10,6 +10,8 @@ import { useIsMount } from "../customHooks";
 import NodeCreate from "./nodes/NodeCreate";
 import NodeEdit from "./nodes/NodeEdit";
 import NodeDelete from "./nodes/NodeDelete";
+import TreeEdit from "./TreeEdit";
+import TreeDelete from "./TreeDelete";
 import TopMenu from "./TopMenu";
 import LoadingSpinner from "../LoadingSpinner";
 
@@ -17,6 +19,8 @@ const TreePage = ({ match: { params }, fetchTree, treePreview, changeTreePreview
   const [showCreateModal, setShowCreateModal] = useState(false)
   const [showEditModal, setShowEditModal] = useState(false)
   const [showDeleteModal, setShowDeleteModal] = useState(false)
+  const [showTreeEdit, setShowTreeEdit] = useState(false)
+  const [showTreeDelete, setShowTreeDelete] = useState(false)
   const [selectedNodeId, setSelectedNodeId] = useState (0)
 
   useEffect(() => {
@@ -24,17 +28,9 @@ const TreePage = ({ match: { params }, fetchTree, treePreview, changeTreePreview
     changeTreePreview( params.id, { lastWorkedOn: Date.now() })
   }, [])
 
-  const addNode = () => {
-    setShowCreateModal(true)
-  }
-
-  const editNode = () => {
-    setShowEditModal(true)
-  }
-
-  const deleteNode = () => {
-    setShowDeleteModal(true)
-  }
+  const addNode = () => setShowCreateModal(true)
+  const editNode = () => setShowEditModal(true)
+  const deleteNode = () => setShowDeleteModal(true)
 
   const RenderNodeActions = ({type, done, node_id}) => {
     const isMount = useIsMount()
@@ -223,6 +219,9 @@ const TreePage = ({ match: { params }, fetchTree, treePreview, changeTreePreview
     })
     }
 
+    const treeChange = () => setShowTreeEdit(true)
+    const treeDelete = () => setShowTreeDelete(true)
+
     return (
       <>
         <div className="ui segments">
@@ -232,6 +231,8 @@ const TreePage = ({ match: { params }, fetchTree, treePreview, changeTreePreview
               description={treePreview.description} 
               category={treePreview.category}  
               categoryIcon={categoryIcon}
+              treeChange={treeChange}
+              treeDelete={treeDelete}
             />
             <div className="ui green segment" id="treeWrapper" style={{ width: "100%", height: "75vh" }}>
               <Tree 
@@ -265,6 +266,17 @@ const TreePage = ({ match: { params }, fetchTree, treePreview, changeTreePreview
           nodeId={selectedNodeId}
           treeData={treeData}
           treeId={params.id}
+        />
+        <TreeEdit 
+          show={showTreeEdit}
+          setShow={setShowTreeEdit}
+          treeId={params.id}
+          initialValues={{
+            title: treePreview.title, 
+            description: treePreview.description, 
+            category: treePreview.category,
+            categoryIcon
+          }}
         />
       </>
     )
