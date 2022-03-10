@@ -3,7 +3,7 @@
 Open /api and /client seperatley and run
 #### `npm i` and `npm start`
 
-## The App idea
+## The app idea
 I had the idea of making a productivity App, where you can create different tree structures to plan progressing in different skills, which is exactly
 what you can do with this App. You can create categories and create trees in those categories, where you can have multiple steps (simple checkbox or
 counter) in a tree structure. The app displays all your trees in different ways. (You can search for a tree via searchbar or can scroll through them in
