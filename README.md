@@ -4,7 +4,7 @@ Open /api and /client seperatley and run
 #### `npm i` and `npm start`
 
 ## The App idea
-I had the idea of making a productivity App, where you can create different Tree structures to plan progressing in different skills, which is exactly
+I had the idea of making a productivity App, where you can create different tree structures to plan progressing in different skills, which is exactly
 what you can do with this App. You can create categories and create trees in those categories, where you can have multiple steps (simple checkbox or
 counter) in a tree structure. The app displays all your trees in different ways. (You can search for a tree via searchbar or can scroll through them in
 different kinds of sorted lists.
@@ -23,4 +23,4 @@ to take in order to finish on time. Especially Redux turned out to be a huge Pit
 But hey, after all I learned a lot and I like it, even though it's a bit ugly here and there.
 
 There are a lot of features I would've liked to implemented like user authetication or creating a custom backend with nodejs. Probably not going to add those, 
-as fixing the Apps' sometimes really horribly structures would be a lot of tedious work, but I'm look forward to implemend those and other ideas in future projects.
+as fixing the Apps' sometimes really horribly structures would be a lot of tedious work, but I'm looking forward to implemend those and other ideas in future projects.
