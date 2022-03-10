@@ -8,6 +8,7 @@ import { fetchTreePreviews, fetchCategory, fetchCategories  } from "../../action
 //components
 import CategoryDelete from "../categories/CategoryDelete";
 import CategoryEdit from "../categories/CategoryEdit";
+import LoadingSpinner from "../LoadingSpinner";
 
 const TreeList = ( {match: {params}, category, fetchCategory, treePreviews, fetchTreePreviews, categories, fetchCategories, } ) => {
   const [showCategoryDelete, setShowCategoryDelete] = useState(false)
@@ -82,7 +83,7 @@ const TreeList = ( {match: {params}, category, fetchCategory, treePreviews, fetc
   }
 
   if(!treePreviews){
-    return <div>Loading...</div>
+    return <LoadingSpinner />
   }
 
   if(params.searchBy === "latest"){

@@ -1,18 +1,30 @@
 //package
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux"
 import _ from "lodash";
 //components
 import CategoryForm from "./CategoryForm"
 import Modal from "../Modal";
 //functions
-import { editCategory } from "../../actions";
+import { editCategory, fetchTreePreviews, changeTreePreview } from "../../actions";
 
-const CategoryEdit = ({ show, setShow, category, id, editCategory }) => {
+const CategoryEdit = ({ show, setShow, category, id, editCategory, fetchTreePreviews, treePreviews, changeTreePreview }) => {
+  useEffect(() => {
+    fetchTreePreviews()
+  }, [])
+
   const onSubmit = formValues => {
     formValues.value = formValues.title
     formValues.label = formValues.title
     editCategory(id, formValues)
+    
+    if(treePreviews){
+      treePreviews.forEach((preview, index) => {
+        if(preview.category === category.title){
+          changeTreePreview(index, { category: formValues.value })
+        }
+      })
+    }
     setShow(!show)
   }
 
@@ -42,4 +54,8 @@ const CategoryEdit = ({ show, setShow, category, id, editCategory }) => {
   )
 }
 
-export default connect(null, { editCategory })(CategoryEdit)
+const mapStateToProps = state => {
+  return {treePreviews: state.trees.treePreviews}
+}
+
+export default connect(mapStateToProps, { editCategory, fetchTreePreviews, changeTreePreview })(CategoryEdit)

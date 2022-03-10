@@ -30,6 +30,13 @@
       "value": "Hoffnung",
       "id": 6,
       "title": "Hoffnung"
+    },
+    {
+      "icon": "leaf",
+      "label": "Kochen",
+      "value": "Kochen",
+      "id": 7,
+      "title": "Kochen"
     }
   ],
   "treePreviews": [
@@ -51,7 +58,7 @@
       "title": "Dritter",
       "description": "Kann hier jetzt mal von Anfang an die Wundervollheit dieser App genießen ;,)",
       "category": "Entspannung",
-      "lastWorkedOn": 1646865890315,
+      "lastWorkedOn": 1646901069810,
       "id": 3
     },
     {
@@ -73,7 +80,7 @@
       "description": "Mit vernünfitger Redux Store Anbindung, ich bin so aufgeregt :3",
       "category": "Spannende Bäume",
       "id": 6,
-      "lastWorkedOn": 1646761137872
+      "lastWorkedOn": 1646899403778
     },
     {
       "title": "Toasbrot",
@@ -87,14 +94,21 @@
       "description": "Wassergymnsatik mit Seepferdchen",
       "category": "Sport",
       "id": 8,
-      "lastWorkedOn": 1646788658917
+      "lastWorkedOn": 1646902772853
     },
     {
       "title": "aye",
       "description": "caramba",
-      "category": "Hoffnung",
+      "category": "Kochen ja",
       "id": 9,
-      "lastWorkedOn": 1646866519015
+      "lastWorkedOn": 1646899297158
+    },
+    {
+      "title": "Kochen lernen",
+      "description": "Jaja will essen machen und so",
+      "category": "Kochen",
+      "id": 10,
+      "lastWorkedOn": 1646902342191
     }
   ],
   "trees": [
@@ -611,19 +625,6 @@
                   "done": false
                 },
                 "children": []
-              },
-              {
-                "name": "welches",
-                "attributes": {
-                  "node_id": 1646736787610,
-                  "type": "Counter",
-                  "description": ":D",
-                  "done": {
-                    "steps": 1000,
-                    "done": 10
-                  }
-                },
-                "children": []
               }
             ]
           },
@@ -650,6 +651,18 @@
                 "children": []
               }
             ]
+          },
+          {
+            "name": "uii",
+            "attributes": {
+              "node_id": 1646899418576,
+              "type": "Counter",
+              "done": {
+                "steps": 9,
+                "done": 9
+              }
+            },
+            "children": []
           }
         ]
       },
@@ -773,22 +786,156 @@
           "node_id": 0,
           "type": "root"
         },
+        "children": []
+      },
+      "id": 9
+    },
+    {
+      "data": {
+        "name": "Kochen lernen",
+        "attributes": {
+          "node_id": 0,
+          "type": "root"
+        },
         "children": [
           {
-            "name": "ui",
+            "name": "Herd kaufen",
             "attributes": {
-              "node_id": 1646865969789,
+              "node_id": 1646899631862,
+              "type": "Checkbox",
+              "description": "Braucht man glaub ich fürs Kochen",
+              "done": true
+            },
+            "children": [
+              {
+                "name": "Herd verstehen",
+                "attributes": {
+                  "node_id": 1646899820009,
+                  "type": "Checkbox",
+                  "done": false
+                },
+                "children": [
+                  {
+                    "name": "Herd anmachen",
+                    "attributes": {
+                      "node_id": 1646900087926,
+                      "type": "Checkbox",
+                      "description": "(Du weißt dann halt wie)",
+                      "done": false
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "Frau anschaffen?",
+                "attributes": {
+                  "node_id": 1646899843297,
+                  "type": "Checkbox",
+                  "description": "Habe gehört, die können kochen",
+                  "done": false
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "lesen lernen",
+            "attributes": {
+              "node_id": 1646899647009,
+              "type": "Checkbox",
+              "description": "Braucht man dann später",
+              "done": true
+            },
+            "children": [
+              {
+                "name": "Kochbuch kaufen",
+                "attributes": {
+                  "node_id": 1646899674869,
+                  "type": "Checkbox",
+                  "description": "Da steht glaub ich was von Kochen drin",
+                  "done": true
+                },
+                "children": [
+                  {
+                    "name": "Alle Rezepte nachkochen",
+                    "attributes": {
+                      "node_id": 1646899700753,
+                      "type": "Counter",
+                      "description": "ALLE!!!!",
+                      "done": {
+                        "steps": 201,
+                        "done": 56
+                      }
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "(Bildung nachholen)",
+                "attributes": {
+                  "node_id": 1646900446680,
+                  "type": "Checkbox",
+                  "description": "Wenn du dann eh schon lesen gelernt hast, kannst du eigentlich auch deine fehlende Bildung nachholen",
+                  "done": false
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Über Kochen reden",
+            "attributes": {
+              "node_id": 1646899746381,
               "type": "Counter",
+              "description": "Mit 10 Leuten, vielleicht kennen die ja Tipps und so",
               "done": {
-                "steps": 1,
-                "done": 1
+                "steps": 10,
+                "done": 2
+              }
+            },
+            "children": [
+              {
+                "name": "Erfahrungen sammeln",
+                "attributes": {
+                  "node_id": 1646900156183,
+                  "type": "Counter",
+                  "description": "69 Stück",
+                  "done": {
+                    "steps": 69,
+                    "done": 0
+                  }
+                },
+                "children": []
+              },
+              {
+                "name": "Jaja so ist das",
+                "attributes": {
+                  "node_id": 1646900310373,
+                  "type": "Checkbox",
+                  "done": false
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Angeben",
+            "attributes": {
+              "node_id": 1646900546836,
+              "type": "Counter",
+              "description": "Musst jedem den du kennst (2 Leute) sagen, dass du jetzt kochen lernst",
+              "done": {
+                "steps": 2,
+                "done": 0
               }
             },
             "children": []
           }
         ]
       },
-      "id": 9
+      "id": 10
     }
   ]
 }
