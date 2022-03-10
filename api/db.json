@@ -42,10 +42,10 @@
   ],
   "treePreviews": [
     {
-      "title": "Erster",
-      "description": "Mein erster Baum, ich bin so aufgeregt :o",
-      "category": "Musik",
-      "lastWorkedOn": 1646865863331,
+      "title": "Veränderter Baum",
+      "description": "Er ist anders :o",
+      "category": "Geile Bäume",
+      "lastWorkedOn": 1646914330469,
       "id": 1
     },
     {
@@ -81,7 +81,7 @@
       "description": "Mit vernünfitger Redux Store Anbindung, ich bin so aufgeregt :3",
       "category": "Geile Bäume",
       "id": 6,
-      "lastWorkedOn": 1646909943152
+      "lastWorkedOn": 1646906944959
     },
     {
       "title": "Toasbrot",

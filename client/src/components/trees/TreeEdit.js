@@ -8,20 +8,23 @@ import TreeForm from "./TreeForm";
 //functions
 import { createCategory, changeTree, changeTreePreview } from "../../actions";
 
-const TreeEdit = ({ show, setShow, createCategory, initialValues, treeId }) => {
+const TreeEdit = ({ show, setShow, createCategory, initialValues, treeId, changeTree, changeTreePreview }) => {
   const onSubmit = formValues => {
     if(formValues.newCategory){
       createCategory({
         title: formValues.newCategory,
         icon: formValues.newCategoryIcon
       })
+      formValues.category = formValues.newCategory
     }
 
     changeTreePreview(treeId, _.pick(formValues, ["title", "description", "category"]))
 
-    if(formValues.title !== initialValues.title){
+    /* if(formValues.title !== initialValues.title){
       changeTree(treeId, { data: { name: formValues.title } })
-    }
+    } */
+
+    setShow(!show)
   }
 
   const modalContent = () => {

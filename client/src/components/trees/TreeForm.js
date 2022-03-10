@@ -41,7 +41,6 @@ const TreeForm = (props) => {
   const [selectedCategory, setSelectedCategory] = useState(props.categories[0])
   useEffect(() => {
     if(props.initialValues){
-      console.log(props.initialValues)
       setSelectedCategory({
         label: props.initialValues.category,
         value: props.initialValues.category,
