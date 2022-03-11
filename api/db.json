@@ -13,780 +13,30 @@
       "id": 2
     },
     {
-      "label": "Entspannung",
-      "value": "Entspannung",
-      "icon": "hand spock",
-      "id": 3
-    },
-    {
-      "label": "Bäume",
-      "value": "Bäume",
-      "icon": "heartbeat",
-      "id": 4,
-      "title": "Bäume"
-    },
-    {
       "icon": "leaf",
       "label": "Kochen",
       "value": "Kochen",
       "id": 7,
       "title": "Kochen"
-    },
-    {
-      "icon": "users",
-      "label": "Geile Bäume",
-      "value": "Geile Bäume",
-      "id": 8,
-      "title": "Geile Bäume"
     }
   ],
   "treePreviews": [
     {
-      "title": "Anderer Baum",
-      "description": "Er ist anders :o",
-      "category": "Geile Bäume",
-      "lastWorkedOn": 1646916308688,
-      "id": 1
-    },
-    {
-      "title": "Zweiter",
-      "description": "ich bin so happy ;)",
-      "category": "Musik",
-      "lastWorkedOn": 1646956305054,
-      "id": 2
-    },
-    {
-      "title": "Dritter",
-      "description": "Kann hier jetzt mal von Anfang an die Wundervollheit dieser App genießen ;,)",
-      "category": "Entspannung",
-      "lastWorkedOn": 1646916311084,
-      "id": 3
-    },
-    {
-      "title": "Vierter",
-      "description": "super toll",
-      "category": "Bäume",
-      "lastWorkedOn": 1646916311859,
-      "id": 4
-    },
-    {
-      "title": "Fünfter",
-      "description": "Jetzt wird es spannend",
-      "category": "Bäume",
-      "lastWorkedOn": 1646956381890,
-      "id": 5
-    },
-    {
-      "title": "Mein neuer Baum",
-      "description": "Mit vernünfitger Redux Store Anbindung, ich bin so aufgeregt :3",
-      "category": "Geile Bäume",
-      "id": 6,
-      "lastWorkedOn": 1646916313660
-    },
-    {
-      "title": "Toasbrot",
-      "description": "lorem ipsum dolor sit anet",
-      "category": "Geile Bäume",
-      "id": 7,
-      "lastWorkedOn": 1646916314735
-    },
-    {
-      "title": "Gymnastik",
-      "description": "Wassergymnsatik mit Seepferdchen",
-      "category": "Sport",
-      "id": 8,
-      "lastWorkedOn": 1646916315944
-    },
-    {
       "title": "Kochen lernen",
-      "description": "Dann kann ich mir selber etwas leckers zu Essen machen",
+      "description": "Dann kann ich mir selber etwas leckeres zu Essen machen",
       "category": "Kochen",
       "id": 10,
-      "lastWorkedOn": 1646948996571
+      "lastWorkedOn": 1646988530722
+    },
+    {
+      "title": "Gitarre lernen",
+      "description": "Ich will das 6 saitige Zupfinstrument erlenen",
+      "category": "Musik",
+      "id": 11,
+      "lastWorkedOn": 1646988909755
     }
   ],
   "trees": [
-    {
-      "data": {
-        "name": "Anderer Baum",
-        "attributes": {
-          "type": "root",
-          "node_id": 0
-        },
-        "children": [
-          {
-            "name": "asd",
-            "attributes": {
-              "node_id": 1646525862162,
-              "type": "Checkbox",
-              "done": true
-            },
-            "children": [
-              {
-                "name": "asd",
-                "attributes": {
-                  "node_id": 1646526073009,
-                  "type": "Counter",
-                  "done": {
-                    "steps": 12,
-                    "done": 12
-                  }
-                },
-                "children": [
-                  {
-                    "name": "Huh?",
-                    "attributes": {
-                      "node_id": 1646601780362,
-                      "type": "Checkbox",
-                      "done": false
-                    },
-                    "children": []
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "name": "asd",
-            "attributes": {
-              "node_id": 1646526077946,
-              "type": "Checkbox",
-              "done": true
-            },
-            "children": [
-              {
-                "name": "asdasd",
-                "attributes": {
-                  "node_id": 1646733169914,
-                  "type": "Checkbox",
-                  "done": true
-                },
-                "children": [
-                  {
-                    "name": "Sorem Lispum",
-                    "attributes": {
-                      "node_id": 1646751161939,
-                      "type": "Checkbox",
-                      "done": false
-                    },
-                    "children": []
-                  },
-                  {
-                    "name": "sases pissum",
-                    "attributes": {
-                      "node_id": 1646751172724,
-                      "type": "Checkbox",
-                      "done": false
-                    },
-                    "children": []
-                  },
-                  {
-                    "name": "corem dictum",
-                    "attributes": {
-                      "node_id": 1646751186356,
-                      "type": "Counter",
-                      "done": {
-                        "steps": 45,
-                        "done": 0
-                      }
-                    },
-                    "children": []
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      "id": 1
-    },
-    {
-      "data": {
-        "name": "Mein zweiter Baum",
-        "attributes": {
-          "type": "root",
-          "node_id": 0
-        },
-        "children": [
-          {
-            "name": "Lorem",
-            "attributes": {
-              "type": "Checkbox",
-              "node_id": "0.0",
-              "done": true
-            },
-            "children": [
-              {
-                "name": "Ipsum",
-                "attributes": {
-                  "type": "Checkbox",
-                  "node_id": "0.0.0",
-                  "done": true
-                },
-                "children": [
-                  {
-                    "name": "Dolor",
-                    "attributes": {
-                      "type": "Checkbox",
-                      "node_id": "0.0.0.0",
-                      "done": true
-                    },
-                    "children": [
-                      {
-                        "name": "n",
-                        "attributes": {
-                          "node_id": 1646815301632,
-                          "type": "Counter",
-                          "done": {
-                            "steps": 2,
-                            "done": 0
-                          }
-                        },
-                        "children": []
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "name": "Sit",
-                "attributes": {
-                  "type": "Checkbox",
-                  "node_id": "0.0.1",
-                  "done": true
-                },
-                "children": [
-                  {
-                    "name": "Anet",
-                    "attributes": {
-                      "type": "Checkbox",
-                      "node_id": "0.0.1.0",
-                      "done": false
-                    }
-                  },
-                  {
-                    "name": "Hoffe das geht",
-                    "attributes": {
-                      "node_id": 1646522835028,
-                      "type": "Checkbox",
-                      "description": "Wäre halt ziemlich cool",
-                      "done": false
-                    },
-                    "children": []
-                  },
-                  {
-                    "name": "Das ist voll cool",
-                    "attributes": {
-                      "node_id": 1646523119266,
-                      "type": "Checkbox",
-                      "description": "liebe es ngl",
-                      "done": false
-                    },
-                    "children": []
-                  }
-                ]
-              },
-              {
-                "name": "Zähler",
-                "attributes": {
-                  "node_id": 1646524437608,
-                  "type": "Counter",
-                  "description": "Kannst auf mich zählen ;)",
-                  "done": {
-                    "steps": 10,
-                    "done": 10
-                  }
-                },
-                "children": []
-              }
-            ]
-          },
-          {
-            "name": "Lorem2",
-            "attributes": {
-              "node_id": 1646525749134,
-              "type": "Counter",
-              "done": {
-                "steps": 123,
-                "done": 14
-              }
-            },
-            "children": []
-          },
-          {
-            "name": "mal gucken",
-            "attributes": {
-              "node_id": 1646581983393,
-              "type": "Counter",
-              "description": "will einfach, dass hier n integer is man, das kann doch niocht so schwer sein :o",
-              "done": {
-                "steps": 12,
-                "done": 11
-              }
-            },
-            "children": []
-          }
-        ]
-      },
-      "id": 2
-    },
-    {
-      "data": {
-        "name": "Toller Baum",
-        "attributes": {
-          "node_id": 0,
-          "type": "root"
-        },
-        "children": [
-          {
-            "name": "dsf",
-            "attributes": {
-              "node_id": 1646525980657,
-              "type": "Checkbox",
-              "done": true
-            },
-            "children": [
-              {
-                "name": "ach wie schön",
-                "attributes": {
-                  "node_id": 1646525998218,
-                  "type": "Checkbox",
-                  "done": false
-                },
-                "children": [
-                  {
-                    "name": "dass niemand ",
-                    "attributes": {
-                      "type": "Counter",
-                      "description": "",
-                      "done": {
-                        "steps": 123,
-                        "done": 19
-                      },
-                      "node_id": 1646526011226
-                    },
-                    "children": [
-                      {
-                        "name": "jlijlk",
-                        "attributes": {
-                          "node_id": 1646812793165,
-                          "type": "Checkbox",
-                          "done": true
-                        },
-                        "children": [
-                          {
-                            "name": "jlijlili",
-                            "attributes": {
-                              "node_id": 1646812812361,
-                              "type": "Counter",
-                              "description": "njlnl",
-                              "done": {
-                                "steps": 9,
-                                "done": 6
-                              }
-                            },
-                            "children": []
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "name": "weiß",
-                    "attributes": {
-                      "type": "Checkbox",
-                      "description": "",
-                      "done": false,
-                      "node_id": 1646526027071
-                    },
-                    "children": []
-                  },
-                  {
-                    "name": "das",
-                    "attributes": {
-                      "type": "Checkbox",
-                      "description": "",
-                      "done": false,
-                      "node_id": 1646526031095
-                    },
-                    "children": []
-                  },
-                  {
-                    "name": "ich",
-                    "attributes": {
-                      "node_id": 1646916380792,
-                      "type": "Checkbox",
-                      "done": false
-                    },
-                    "children": [
-                      {
-                        "name": "Rumpelstielzchen heiß",
-                        "attributes": {
-                          "node_id": 1646916409393,
-                          "type": "Counter",
-                          "done": {
-                            "steps": 10,
-                            "done": 1
-                          }
-                        },
-                        "children": []
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "name": "ja",
-            "attributes": {
-              "node_id": 1646525987285,
-              "type": "Counter",
-              "done": {
-                "steps": 12,
-                "done": 12
-              }
-            },
-            "children": [
-              {
-                "name": "Neues Ding",
-                "attributes": {
-                  "node_id": 1646734279886,
-                  "type": "Checkbox",
-                  "description": "Es ist super cool",
-                  "done": true
-                },
-                "children": [
-                  {
-                    "name": "sadfsadf",
-                    "attributes": {
-                      "node_id": 1646734329510,
-                      "type": "Counter",
-                      "description": "sdafsadf",
-                      "done": {
-                        "steps": 12,
-                        "done": 9
-                      }
-                    },
-                    "children": []
-                  },
-                  {
-                    "name": "gdsafdsdh",
-                    "attributes": {
-                      "node_id": 1646749028876,
-                      "type": "Checkbox",
-                      "done": true
-                    },
-                    "children": []
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      "id": 3
-    },
-    {
-      "data": {
-        "name": "Neuer Baum",
-        "attributes": {
-          "node_id": 0,
-          "type": "root"
-        },
-        "children": [
-          {
-            "name": "Neues Ziel",
-            "attributes": {
-              "node_id": 1646637391990,
-              "type": "Checkbox",
-              "done": true
-            },
-            "children": [
-              {
-                "name": "a",
-                "attributes": {
-                  "node_id": 1646637401936,
-                  "type": "Checkbox",
-                  "done": true
-                },
-                "children": []
-              },
-              {
-                "name": "a",
-                "attributes": {
-                  "node_id": 1646637410438,
-                  "type": "Counter",
-                  "done": {
-                    "steps": 10,
-                    "done": 10
-                  }
-                },
-                "children": []
-              }
-            ]
-          }
-        ]
-      },
-      "id": 4
-    },
-    {
-      "data": {
-        "name": "Mein 5. Baum",
-        "attributes": {
-          "node_id": 0,
-          "type": "root"
-        },
-        "children": [
-          {
-            "name": "Wild Blue",
-            "attributes": {
-              "node_id": 1646763637806,
-              "type": "Checkbox",
-              "done": true
-            },
-            "children": []
-          },
-          {
-            "name": "Porem Lipsum",
-            "attributes": {
-              "node_id": 1646763660059,
-              "type": "Counter",
-              "description": "Foo Bar Baz",
-              "done": {
-                "steps": 3,
-                "done": 1
-              }
-            },
-            "children": []
-          }
-        ]
-      },
-      "id": 5
-    },
-    {
-      "data": {
-        "name": "Mein neuer Baum",
-        "attributes": {
-          "node_id": 0,
-          "type": "root"
-        },
-        "children": [
-          {
-            "name": "Dieses, jenes, welches",
-            "attributes": {
-              "node_id": 1646736630222,
-              "type": "Checkbox",
-              "description": "und andere Sachen",
-              "done": true
-            },
-            "children": [
-              {
-                "name": "Dieses",
-                "attributes": {
-                  "node_id": 1646736653530,
-                  "type": "Counter",
-                  "description": "Lorem",
-                  "done": {
-                    "steps": 4,
-                    "done": 0
-                  }
-                },
-                "children": []
-              },
-              {
-                "name": "Jenes",
-                "attributes": {
-                  "node_id": 1646736663539,
-                  "type": "Checkbox",
-                  "description": "Ipsum",
-                  "done": true
-                },
-                "children": []
-              },
-              {
-                "name": "Und",
-                "attributes": {
-                  "node_id": 1646736761982,
-                  "type": "Checkbox",
-                  "description": "dolor",
-                  "done": false
-                },
-                "children": []
-              },
-              {
-                "name": "Naturülich",
-                "attributes": {
-                  "node_id": 1646736775113,
-                  "type": "Checkbox",
-                  "description": "soagdud hosadf",
-                  "done": true
-                },
-                "children": [
-                  {
-                    "name": "welches",
-                    "attributes": {
-                      "node_id": 1646916454440,
-                      "type": "Checkbox",
-                      "done": false
-                    },
-                    "children": []
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "name": "Sachen und so",
-            "attributes": {
-              "node_id": 1646736831706,
-              "type": "Counter",
-              "description": "Ohja",
-              "done": {
-                "steps": 2,
-                "done": 2
-              }
-            },
-            "children": [
-              {
-                "name": "huh",
-                "attributes": {
-                  "node_id": 1646736861497,
-                  "type": "Checkbox",
-                  "description": ":o",
-                  "done": false
-                },
-                "children": []
-              }
-            ]
-          },
-          {
-            "name": "uii",
-            "attributes": {
-              "node_id": 1646899418576,
-              "type": "Counter",
-              "done": {
-                "steps": 9,
-                "done": 9
-              }
-            },
-            "children": []
-          }
-        ]
-      },
-      "id": 6
-    },
-    {
-      "data": {
-        "name": "Toasbrot",
-        "attributes": {
-          "node_id": 0,
-          "type": "root"
-        },
-        "children": [
-          {
-            "name": "Weizenbrot",
-            "attributes": {
-              "node_id": 1646757150331,
-              "type": "Checkbox",
-              "description": "? Interssante Sache",
-              "done": true
-            },
-            "children": [
-              {
-                "name": "hmmmm",
-                "attributes": {
-                  "node_id": 1646758652121,
-                  "type": "Counter",
-                  "description": "Das ist ein leckerer Burger",
-                  "done": {
-                    "steps": 10,
-                    "done": 10
-                  }
-                },
-                "children": []
-              }
-            ]
-          },
-          {
-            "name": "Das weiß ich nicht",
-            "attributes": {
-              "node_id": 1646757168172,
-              "type": "Checkbox",
-              "description": "Das ist jetz doof :/",
-              "done": true
-            },
-            "children": [
-              {
-                "name": "hmm1",
-                "attributes": {
-                  "node_id": 1646757177085,
-                  "type": "Counter",
-                  "done": {
-                    "steps": 2,
-                    "done": 1
-                  }
-                },
-                "children": []
-              },
-              {
-                "name": "huh2",
-                "attributes": {
-                  "node_id": 1646757183062,
-                  "type": "Counter",
-                  "done": {
-                    "steps": 12,
-                    "done": 1
-                  }
-                },
-                "children": []
-              },
-              {
-                "name": "cool",
-                "attributes": {
-                  "node_id": 1646757193986,
-                  "type": "Checkbox",
-                  "done": false
-                },
-                "children": []
-              }
-            ]
-          },
-          {
-            "name": "huh",
-            "attributes": {
-              "node_id": 1646757670273,
-              "type": "Checkbox",
-              "done": false
-            },
-            "children": []
-          }
-        ]
-      },
-      "id": 7
-    },
-    {
-      "data": {
-        "name": "Gymnastik",
-        "attributes": {
-          "node_id": 0,
-          "type": "root"
-        },
-        "children": [
-          {
-            "name": "asd",
-            "attributes": {
-              "node_id": 1646781061681,
-              "type": "Checkbox",
-              "description": "asd",
-              "done": true
-            },
-            "children": []
-          }
-        ]
-      },
-      "id": 8
-    },
     {
       "data": {
         "name": "Kochen lernen",
@@ -818,7 +68,7 @@
                       "node_id": 1646900087926,
                       "type": "Checkbox",
                       "description": "(Du weißt dann halt wie)",
-                      "done": true
+                      "done": false
                     },
                     "children": []
                   }
@@ -933,6 +183,192 @@
         ]
       },
       "id": 10
+    },
+    {
+      "data": {
+        "name": "Gitarre lernen",
+        "attributes": {
+          "node_id": 0,
+          "type": "root"
+        },
+        "children": [
+          {
+            "name": "Gitarre kaufen",
+            "attributes": {
+              "node_id": 1646988951710,
+              "type": "Checkbox",
+              "description": "Vielleicht eine rote oder blaue 🤔",
+              "done": true
+            },
+            "children": [
+              {
+                "name": "Unterricht nehmen",
+                "attributes": {
+                  "node_id": 1646989042807,
+                  "type": "Counter",
+                  "description": "Ein Jahr lang wöchentlich mal Unterricht ausprobieren",
+                  "done": {
+                    "steps": 52,
+                    "done": 24
+                  }
+                },
+                "children": []
+              },
+              {
+                "name": "Basics erlernen",
+                "attributes": {
+                  "type": "Checkbox",
+                  "description": "Akkorde und einfache Schlagmuster",
+                  "done": true,
+                  "node_id": 1646989092701
+                },
+                "children": [
+                  {
+                    "name": "Tabulatur lernen",
+                    "attributes": {
+                      "node_id": 1646989248260,
+                      "type": "Checkbox",
+                      "description": "Gitarrentabulatur lesen lernen",
+                      "done": true
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "10 Lieder lernen",
+                    "attributes": {
+                      "node_id": 1646989291079,
+                      "type": "Counter",
+                      "description": "Die ersten zehn Lieder :)",
+                      "done": {
+                        "steps": 10,
+                        "done": 3
+                      }
+                    },
+                    "children": [
+                      {
+                        "name": "Genre: Pop",
+                        "attributes": {
+                          "node_id": 1646989451109,
+                          "type": "Counter",
+                          "description": "10 Pop Songs lernen",
+                          "done": {
+                            "steps": 10,
+                            "done": 10
+                          }
+                        },
+                        "children": [
+                          {
+                            "name": "Pop Song schreiben",
+                            "attributes": {
+                              "node_id": 1646989913989,
+                              "type": "Checkbox",
+                              "done": true
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Genre: Rock",
+                        "attributes": {
+                          "node_id": 1646989649148,
+                          "type": "Counter",
+                          "description": "10 Songs lernen",
+                          "done": {
+                            "steps": 10,
+                            "done": 10
+                          }
+                        },
+                        "children": [
+                          {
+                            "name": "Rocksong schreiben",
+                            "attributes": {
+                              "node_id": 1646989928696,
+                              "type": "Checkbox",
+                              "done": false
+                            },
+                            "children": []
+                          }
+                        ]
+                      },
+                      {
+                        "name": "Genre: Blues",
+                        "attributes": {
+                          "node_id": 1646989672329,
+                          "type": "Counter",
+                          "description": "10 Blues Songs lernen",
+                          "done": {
+                            "steps": 10,
+                            "done": 4
+                          }
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Genre: Jazz",
+                        "attributes": {
+                          "node_id": 1646989690652,
+                          "type": "Counter",
+                          "description": "10 Jazz Songs lernen",
+                          "done": {
+                            "steps": 10,
+                            "done": 4
+                          }
+                        },
+                        "children": []
+                      },
+                      {
+                        "name": "Genre: Funk",
+                        "attributes": {
+                          "node_id": 1646989949927,
+                          "type": "Counter",
+                          "description": "10 Funk Songs lernen",
+                          "done": {
+                            "steps": 10,
+                            "done": 0
+                          }
+                        },
+                        "children": []
+                      }
+                    ]
+                  },
+                  {
+                    "name": "Musiktheorie",
+                    "attributes": {
+                      "node_id": 1646989373289,
+                      "type": "Checkbox",
+                      "description": "Die Basics davon lernen",
+                      "done": true
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "Eigenen Song",
+                    "attributes": {
+                      "node_id": 1646989826968,
+                      "type": "Checkbox",
+                      "description": "Erstes eigenens Lied komponieren 😊",
+                      "done": true
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Zubehör kaufen",
+            "attributes": {
+              "node_id": 1646988989931,
+              "type": "Checkbox",
+              "description": "Glaube man brauch extra Saiten und sowas",
+              "done": true
+            },
+            "children": []
+          }
+        ]
+      },
+      "id": 11
     }
   ]
 }
