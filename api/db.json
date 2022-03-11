@@ -13,51 +13,737 @@
       "id": 2
     },
     {
+      "label": "Entspannung",
+      "value": "Entspannung",
+      "icon": "hand spock",
+      "id": 3
+    },
+    {
+      "label": "Bäume",
+      "value": "Bäume",
+      "icon": "heartbeat",
+      "id": 4,
+      "title": "Bäume"
+    },
+    {
       "icon": "leaf",
       "label": "Kochen",
       "value": "Kochen",
       "id": 7,
       "title": "Kochen"
+    },
+    {
+      "icon": "circle",
+      "label": "Lorem ipsum",
+      "value": "Lorem ipsum",
+      "id": 8
     }
   ],
   "treePreviews": [
+    {
+      "title": "Zweiter",
+      "description": "ich bin so happy ;)",
+      "category": "Lorem ipsum",
+      "lastWorkedOn": 1647009595723,
+      "id": 2
+    },
+    {
+      "title": "Dritter",
+      "description": "Kann hier jetzt mal von Anfang an die Wundervollheit dieser App genießen ;,)",
+      "category": "Entspannung",
+      "lastWorkedOn": 1647009515510,
+      "id": 3
+    },
+    {
+      "title": "Vierter",
+      "description": "super toll",
+      "category": "Bäume",
+      "lastWorkedOn": 1647009516204,
+      "id": 4
+    },
+    {
+      "title": "Fünfter",
+      "description": "Jetzt wird es spannend",
+      "category": "Bäume",
+      "lastWorkedOn": 1647009516688,
+      "id": 5
+    },
+    {
+      "title": "Mein neuer Baum",
+      "description": "Mit vernünfitger Redux Store Anbindung, ich bin so aufgeregt :3",
+      "category": "Geile Bäume",
+      "id": 6,
+      "lastWorkedOn": 1647009516822
+    },
+    {
+      "title": "Toasbrot",
+      "description": "lorem ipsum dolor sit anet",
+      "category": "Geile Bäume",
+      "id": 7,
+      "lastWorkedOn": 1647009517641
+    },
+    {
+      "title": "Gymnastik",
+      "description": "Wassergymnsatik mit Seepferdchen",
+      "category": "Sport",
+      "id": 8,
+      "lastWorkedOn": 1647009518054
+    },
     {
       "title": "Kochen lernen",
       "description": "Dann kann ich mir selber etwas leckeres zu Essen machen",
       "category": "Kochen",
       "id": 10,
-      "lastWorkedOn": 1647001656415
+      "lastWorkedOn": 1647009518392
     },
     {
       "title": "Gitarre lernen",
       "description": "Ich will das 6 saitige Zupfinstrument erlenen",
       "category": "Musik",
       "id": 11,
-      "lastWorkedOn": 1647002880253
+      "lastWorkedOn": 1647009637305
     },
     {
       "title": "Klavier lernen",
       "description": "Das klangvolle Tasteninsturment erlernen ",
       "category": "Musik",
       "id": 12,
-      "lastWorkedOn": 1647001742090
+      "lastWorkedOn": 1647009632256
     },
     {
       "title": "Fitness",
       "description": "Fitnessplan für das kommende Jahr",
       "category": "Sport",
       "id": 13,
-      "lastWorkedOn": 1647002201877
+      "lastWorkedOn": 1647009620534
     },
     {
       "title": "Projekt: Konzert",
       "description": "Für unser Konzert in der Royal Albert Hall 31. Februar",
       "category": "Musik",
       "id": 14,
-      "lastWorkedOn": 1647003039744
+      "lastWorkedOn": 1647009634135
+    },
+    {
+      "title": "Lorem ipsum",
+      "description": "dolor sit amet, consetetur sadipscing elitr",
+      "category": "Lorem ipsum",
+      "id": 15,
+      "lastWorkedOn": 1647009520137
+    },
+    {
+      "title": "sanctus est",
+      "description": "no sea takimata",
+      "category": "Lorem ipsum",
+      "id": 16,
+      "lastWorkedOn": 1647009520427
     }
   ],
   "trees": [
+    {
+      "data": {
+        "name": "Mein zweiter Baum",
+        "attributes": {
+          "type": "root",
+          "node_id": 0
+        },
+        "children": [
+          {
+            "name": "Lorem",
+            "attributes": {
+              "type": "Checkbox",
+              "node_id": "0.0",
+              "done": true
+            },
+            "children": [
+              {
+                "name": "Ipsum",
+                "attributes": {
+                  "type": "Checkbox",
+                  "node_id": "0.0.0",
+                  "done": true
+                },
+                "children": [
+                  {
+                    "name": "Dolor",
+                    "attributes": {
+                      "type": "Checkbox",
+                      "node_id": "0.0.0.0",
+                      "done": true
+                    },
+                    "children": [
+                      {
+                        "name": "n",
+                        "attributes": {
+                          "node_id": 1646815301632,
+                          "type": "Counter",
+                          "done": {
+                            "steps": 2,
+                            "done": 0
+                          }
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Sit",
+                "attributes": {
+                  "type": "Checkbox",
+                  "node_id": "0.0.1",
+                  "done": true
+                },
+                "children": [
+                  {
+                    "name": "Anet",
+                    "attributes": {
+                      "type": "Checkbox",
+                      "node_id": "0.0.1.0",
+                      "done": false
+                    }
+                  },
+                  {
+                    "name": "Hoffe das geht",
+                    "attributes": {
+                      "node_id": 1646522835028,
+                      "type": "Checkbox",
+                      "description": "Wäre halt ziemlich cool",
+                      "done": false
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "Das ist voll cool",
+                    "attributes": {
+                      "node_id": 1646523119266,
+                      "type": "Checkbox",
+                      "description": "liebe es ngl",
+                      "done": false
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "name": "Zähler",
+                "attributes": {
+                  "node_id": 1646524437608,
+                  "type": "Counter",
+                  "description": "Kannst auf mich zählen ;)",
+                  "done": {
+                    "steps": 10,
+                    "done": 10
+                  }
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Lorem2",
+            "attributes": {
+              "node_id": 1646525749134,
+              "type": "Counter",
+              "done": {
+                "steps": 123,
+                "done": 14
+              }
+            },
+            "children": []
+          },
+          {
+            "name": "mal gucken",
+            "attributes": {
+              "node_id": 1646581983393,
+              "type": "Counter",
+              "description": "will einfach, dass hier n integer is man, das kann doch niocht so schwer sein :o",
+              "done": {
+                "steps": 12,
+                "done": 11
+              }
+            },
+            "children": []
+          }
+        ]
+      },
+      "id": 2
+    },
+    {
+      "data": {
+        "name": "Toller Baum",
+        "attributes": {
+          "node_id": 0,
+          "type": "root"
+        },
+        "children": [
+          {
+            "name": "dsf",
+            "attributes": {
+              "node_id": 1646525980657,
+              "type": "Checkbox",
+              "done": true
+            },
+            "children": [
+              {
+                "name": "ach wie schön",
+                "attributes": {
+                  "node_id": 1646525998218,
+                  "type": "Checkbox",
+                  "done": false
+                },
+                "children": [
+                  {
+                    "name": "dass niemand ",
+                    "attributes": {
+                      "type": "Counter",
+                      "description": "",
+                      "done": {
+                        "steps": 123,
+                        "done": 19
+                      },
+                      "node_id": 1646526011226
+                    },
+                    "children": [
+                      {
+                        "name": "jlijlk",
+                        "attributes": {
+                          "node_id": 1646812793165,
+                          "type": "Checkbox",
+                          "done": true
+                        },
+                        "children": [
+                          {
+                            "name": "jlijlili",
+                            "attributes": {
+                              "node_id": 1646812812361,
+                              "type": "Counter",
+                              "description": "njlnl",
+                              "done": {
+                                "steps": 9,
+                                "done": 6
+                              }
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "name": "weiß",
+                    "attributes": {
+                      "type": "Checkbox",
+                      "description": "",
+                      "done": false,
+                      "node_id": 1646526027071
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "das",
+                    "attributes": {
+                      "type": "Checkbox",
+                      "description": "",
+                      "done": false,
+                      "node_id": 1646526031095
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "ich",
+                    "attributes": {
+                      "node_id": 1646916380792,
+                      "type": "Checkbox",
+                      "done": false
+                    },
+                    "children": [
+                      {
+                        "name": "Rumpelstielzchen heiß",
+                        "attributes": {
+                          "node_id": 1646916409393,
+                          "type": "Counter",
+                          "done": {
+                            "steps": 10,
+                            "done": 1
+                          }
+                        },
+                        "children": []
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "ja",
+            "attributes": {
+              "node_id": 1646525987285,
+              "type": "Counter",
+              "done": {
+                "steps": 12,
+                "done": 12
+              }
+            },
+            "children": [
+              {
+                "name": "Neues Ding",
+                "attributes": {
+                  "node_id": 1646734279886,
+                  "type": "Checkbox",
+                  "description": "Es ist super cool",
+                  "done": true
+                },
+                "children": [
+                  {
+                    "name": "sadfsadf",
+                    "attributes": {
+                      "node_id": 1646734329510,
+                      "type": "Counter",
+                      "description": "sdafsadf",
+                      "done": {
+                        "steps": 12,
+                        "done": 9
+                      }
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "gdsafdsdh",
+                    "attributes": {
+                      "node_id": 1646749028876,
+                      "type": "Checkbox",
+                      "done": true
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "id": 3
+    },
+    {
+      "data": {
+        "name": "Neuer Baum",
+        "attributes": {
+          "node_id": 0,
+          "type": "root"
+        },
+        "children": [
+          {
+            "name": "Neues Ziel",
+            "attributes": {
+              "node_id": 1646637391990,
+              "type": "Checkbox",
+              "done": true
+            },
+            "children": [
+              {
+                "name": "a",
+                "attributes": {
+                  "node_id": 1646637401936,
+                  "type": "Checkbox",
+                  "done": true
+                },
+                "children": []
+              },
+              {
+                "name": "a",
+                "attributes": {
+                  "node_id": 1646637410438,
+                  "type": "Counter",
+                  "done": {
+                    "steps": 10,
+                    "done": 10
+                  }
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      "id": 4
+    },
+    {
+      "data": {
+        "name": "Mein 5. Baum",
+        "attributes": {
+          "node_id": 0,
+          "type": "root"
+        },
+        "children": [
+          {
+            "name": "Forem Dipsum",
+            "attributes": {
+              "type": "Counter",
+              "description": "",
+              "done": {
+                "steps": 69,
+                "done": 0
+              },
+              "node_id": 1646763637806
+            },
+            "children": [
+              {
+                "name": "Dorem Mixum",
+                "attributes": {
+                  "node_id": 1647009563892,
+                  "type": "Counter",
+                  "done": {
+                    "steps": 187,
+                    "done": 0
+                  }
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Porem Lipsum",
+            "attributes": {
+              "node_id": 1646763660059,
+              "type": "Counter",
+              "description": "Foo Bar Baz",
+              "done": {
+                "steps": 3,
+                "done": 1
+              }
+            },
+            "children": []
+          }
+        ]
+      },
+      "id": 5
+    },
+    {
+      "data": {
+        "name": "Mein neuer Baum",
+        "attributes": {
+          "node_id": 0,
+          "type": "root"
+        },
+        "children": [
+          {
+            "name": "Dieses, jenes, welches",
+            "attributes": {
+              "node_id": 1646736630222,
+              "type": "Checkbox",
+              "description": "und andere Sachen",
+              "done": true
+            },
+            "children": [
+              {
+                "name": "Dieses",
+                "attributes": {
+                  "node_id": 1646736653530,
+                  "type": "Counter",
+                  "description": "Lorem",
+                  "done": {
+                    "steps": 4,
+                    "done": 0
+                  }
+                },
+                "children": []
+              },
+              {
+                "name": "Jenes",
+                "attributes": {
+                  "node_id": 1646736663539,
+                  "type": "Checkbox",
+                  "description": "Ipsum",
+                  "done": true
+                },
+                "children": []
+              },
+              {
+                "name": "Und",
+                "attributes": {
+                  "node_id": 1646736761982,
+                  "type": "Checkbox",
+                  "description": "dolor",
+                  "done": false
+                },
+                "children": []
+              },
+              {
+                "name": "Naturülich",
+                "attributes": {
+                  "node_id": 1646736775113,
+                  "type": "Checkbox",
+                  "description": "soagdud hosadf",
+                  "done": true
+                },
+                "children": [
+                  {
+                    "name": "welches",
+                    "attributes": {
+                      "node_id": 1646916454440,
+                      "type": "Checkbox",
+                      "done": false
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Sachen und so",
+            "attributes": {
+              "node_id": 1646736831706,
+              "type": "Counter",
+              "description": "Ohja",
+              "done": {
+                "steps": 2,
+                "done": 2
+              }
+            },
+            "children": [
+              {
+                "name": "huh",
+                "attributes": {
+                  "node_id": 1646736861497,
+                  "type": "Checkbox",
+                  "description": ":o",
+                  "done": false
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "uii",
+            "attributes": {
+              "node_id": 1646899418576,
+              "type": "Counter",
+              "done": {
+                "steps": 9,
+                "done": 9
+              }
+            },
+            "children": []
+          }
+        ]
+      },
+      "id": 6
+    },
+    {
+      "data": {
+        "name": "Toasbrot",
+        "attributes": {
+          "node_id": 0,
+          "type": "root"
+        },
+        "children": [
+          {
+            "name": "Weizenbrot",
+            "attributes": {
+              "node_id": 1646757150331,
+              "type": "Checkbox",
+              "description": "? Interssante Sache",
+              "done": true
+            },
+            "children": [
+              {
+                "name": "hmmmm",
+                "attributes": {
+                  "node_id": 1646758652121,
+                  "type": "Counter",
+                  "description": "Das ist ein leckerer Burger",
+                  "done": {
+                    "steps": 10,
+                    "done": 10
+                  }
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Das weiß ich nicht",
+            "attributes": {
+              "node_id": 1646757168172,
+              "type": "Checkbox",
+              "description": "Das ist jetz doof :/",
+              "done": true
+            },
+            "children": [
+              {
+                "name": "hmm1",
+                "attributes": {
+                  "node_id": 1646757177085,
+                  "type": "Counter",
+                  "done": {
+                    "steps": 2,
+                    "done": 1
+                  }
+                },
+                "children": []
+              },
+              {
+                "name": "huh2",
+                "attributes": {
+                  "node_id": 1646757183062,
+                  "type": "Counter",
+                  "done": {
+                    "steps": 12,
+                    "done": 1
+                  }
+                },
+                "children": []
+              },
+              {
+                "name": "cool",
+                "attributes": {
+                  "node_id": 1646757193986,
+                  "type": "Checkbox",
+                  "done": false
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "huh",
+            "attributes": {
+              "node_id": 1646757670273,
+              "type": "Checkbox",
+              "done": false
+            },
+            "children": []
+          }
+        ]
+      },
+      "id": 7
+    },
+    {
+      "data": {
+        "name": "Gymnastik",
+        "attributes": {
+          "node_id": 0,
+          "type": "root"
+        },
+        "children": [
+          {
+            "name": "asd",
+            "attributes": {
+              "node_id": 1646781061681,
+              "type": "Checkbox",
+              "description": "asd",
+              "done": true
+            },
+            "children": []
+          }
+        ]
+      },
+      "id": 8
+    },
     {
       "data": {
         "name": "Kochen lernen",
@@ -863,6 +1549,192 @@
         ]
       },
       "id": 14
+    },
+    {
+      "data": {
+        "name": "Lorem ipsum",
+        "attributes": {
+          "node_id": 0,
+          "type": "root"
+        },
+        "children": [
+          {
+            "name": "sed diam",
+            "attributes": {
+              "node_id": 1647008998580,
+              "type": "Checkbox",
+              "description": "nonumy eirmod tempor",
+              "done": true
+            },
+            "children": [
+              {
+                "name": "invidunt ut labore",
+                "attributes": {
+                  "node_id": 1647009018230,
+                  "type": "Counter",
+                  "description": "et dolore",
+                  "done": {
+                    "steps": 23,
+                    "done": 10
+                  }
+                },
+                "children": []
+              },
+              {
+                "name": "At vero eos",
+                "attributes": {
+                  "node_id": 1647009032891,
+                  "type": "Checkbox",
+                  "description": "magna aliquyam erat, sed diam voluptua.",
+                  "done": false
+                },
+                "children": []
+              },
+              {
+                "name": "et accusam",
+                "attributes": {
+                  "node_id": 1647009046113,
+                  "type": "Checkbox",
+                  "description": "et justo duo dolores",
+                  "done": true
+                },
+                "children": [
+                  {
+                    "name": "sed diam",
+                    "attributes": {
+                      "node_id": 1647009144297,
+                      "type": "Checkbox",
+                      "description": "nonumy eirmod tempor invidunt",
+                      "done": false
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "ut labore",
+                    "attributes": {
+                      "node_id": 1647009157232,
+                      "type": "Checkbox",
+                      "description": "et dolore magna aliquyam erat",
+                      "done": true
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "sed diam voluptua",
+                    "attributes": {
+                      "node_id": 1647009173000,
+                      "type": "Counter",
+                      "description": "At vero eos et accusam et",
+                      "done": {
+                        "steps": 2,
+                        "done": 1
+                      }
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "justo duo dolores",
+                    "attributes": {
+                      "node_id": 1647009182455,
+                      "type": "Checkbox",
+                      "description": "justo duo dolores",
+                      "done": true
+                    },
+                    "children": [
+                      {
+                        "name": "et ea rebum.",
+                        "attributes": {
+                          "node_id": 1647009194038,
+                          "type": "Counter",
+                          "description": "et ea rebum.",
+                          "done": {
+                            "steps": 5,
+                            "done": 3
+                          }
+                        },
+                        "children": [
+                          {
+                            "name": "Stet clita kasd gubergren",
+                            "attributes": {
+                              "node_id": 1647009204859,
+                              "type": "Counter",
+                              "description": "Stet clita kasd gubergren",
+                              "done": {
+                                "steps": 6,
+                                "done": 0
+                              }
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "et ea rebum.",
+            "attributes": {
+              "node_id": 1647009065040,
+              "type": "Counter",
+              "description": "Stet clita kasd gubergren",
+              "done": {
+                "steps": 3,
+                "done": 3
+              }
+            },
+            "children": [
+              {
+                "name": "Lorem ipsum",
+                "attributes": {
+                  "node_id": 1647009098988,
+                  "type": "Checkbox",
+                  "description": "dolor sit amet.",
+                  "done": true
+                },
+                "children": []
+              },
+              {
+                "name": "dolor sit amet",
+                "attributes": {
+                  "node_id": 1647009117380,
+                  "type": "Counter",
+                  "description": "consetetur sadipscing elitr",
+                  "done": {
+                    "steps": 90,
+                    "done": 54
+                  }
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "no sea takimata",
+            "attributes": {
+              "node_id": 1647009081747,
+              "type": "Checkbox",
+              "description": "sanctus est Lorem ipsum",
+              "done": false
+            },
+            "children": []
+          }
+        ]
+      },
+      "id": 15
+    },
+    {
+      "data": {
+        "name": "sanctus est",
+        "attributes": {
+          "node_id": 0,
+          "type": "root"
+        },
+        "children": []
+      },
+      "id": 16
     }
   ]
 }
