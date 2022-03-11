@@ -26,14 +26,35 @@
       "description": "Dann kann ich mir selber etwas leckeres zu Essen machen",
       "category": "Kochen",
       "id": 10,
-      "lastWorkedOn": 1646988530722
+      "lastWorkedOn": 1647001656415
     },
     {
       "title": "Gitarre lernen",
       "description": "Ich will das 6 saitige Zupfinstrument erlenen",
       "category": "Musik",
       "id": 11,
-      "lastWorkedOn": 1646988909755
+      "lastWorkedOn": 1647002880253
+    },
+    {
+      "title": "Klavier lernen",
+      "description": "Das klangvolle Tasteninsturment erlernen ",
+      "category": "Musik",
+      "id": 12,
+      "lastWorkedOn": 1647001742090
+    },
+    {
+      "title": "Fitness",
+      "description": "Fitnessplan für das kommende Jahr",
+      "category": "Sport",
+      "id": 13,
+      "lastWorkedOn": 1647002201877
+    },
+    {
+      "title": "Projekt: Konzert",
+      "description": "Für unser Konzert in der Royal Albert Hall 31. Februar",
+      "category": "Musik",
+      "id": 14,
+      "lastWorkedOn": 1647003039744
     }
   ],
   "trees": [
@@ -231,7 +252,18 @@
                       "description": "Gitarrentabulatur lesen lernen",
                       "done": true
                     },
-                    "children": []
+                    "children": [
+                      {
+                        "name": "Partituren lernen",
+                        "attributes": {
+                          "node_id": 1647001492067,
+                          "type": "Checkbox",
+                          "description": "Nach Noten spielen lernen",
+                          "done": false
+                        },
+                        "children": []
+                      }
+                    ]
                   },
                   {
                     "name": "10 Lieder lernen",
@@ -285,7 +317,7 @@
                             "attributes": {
                               "node_id": 1646989928696,
                               "type": "Checkbox",
-                              "done": false
+                              "done": true
                             },
                             "children": []
                           }
@@ -302,7 +334,41 @@
                             "done": 4
                           }
                         },
-                        "children": []
+                        "children": [
+                          {
+                            "name": "Bluessong schreiben",
+                            "attributes": {
+                              "node_id": 1647001154318,
+                              "type": "Checkbox",
+                              "done": false
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "Tonleitern",
+                            "attributes": {
+                              "node_id": 1647001283977,
+                              "type": "Checkbox",
+                              "description": "Bluestonleiter lernen",
+                              "done": true
+                            },
+                            "children": [
+                              {
+                                "name": "Improvisation üben",
+                                "attributes": {
+                                  "node_id": 1647001334797,
+                                  "type": "Counter",
+                                  "description": "täglich ein Jahr über einen Blues improvisieren üben",
+                                  "done": {
+                                    "steps": 356,
+                                    "done": 59
+                                  }
+                                },
+                                "children": []
+                              }
+                            ]
+                          }
+                        ]
                       },
                       {
                         "name": "Genre: Jazz",
@@ -312,10 +378,30 @@
                           "description": "10 Jazz Songs lernen",
                           "done": {
                             "steps": 10,
-                            "done": 4
+                            "done": 5
                           }
                         },
-                        "children": []
+                        "children": [
+                          {
+                            "name": "Jazzsong schreiben",
+                            "attributes": {
+                              "node_id": 1647001162691,
+                              "type": "Checkbox",
+                              "done": true
+                            },
+                            "children": []
+                          },
+                          {
+                            "name": "Jazzharmonik lernen",
+                            "attributes": {
+                              "node_id": 1647001236850,
+                              "type": "Checkbox",
+                              "description": "Das soll verdammt cool sein hab ich mal gehört",
+                              "done": false
+                            },
+                            "children": []
+                          }
+                        ]
                       },
                       {
                         "name": "Genre: Funk",
@@ -325,10 +411,20 @@
                           "description": "10 Funk Songs lernen",
                           "done": {
                             "steps": 10,
-                            "done": 0
+                            "done": 1
                           }
                         },
-                        "children": []
+                        "children": [
+                          {
+                            "name": "Funksongschreiben",
+                            "attributes": {
+                              "node_id": 1647001174216,
+                              "type": "Checkbox",
+                              "done": false
+                            },
+                            "children": []
+                          }
+                        ]
                       }
                     ]
                   },
@@ -340,7 +436,21 @@
                       "description": "Die Basics davon lernen",
                       "done": true
                     },
-                    "children": []
+                    "children": [
+                      {
+                        "name": "Kirchentonleitern",
+                        "attributes": {
+                          "node_id": 1647001551737,
+                          "type": "Counter",
+                          "description": "Alle 7 Modes ausführlich lernen, wo sie auf dem Griffbrett zu finden sind, wie man sie benutzt etc.",
+                          "done": {
+                            "steps": 7,
+                            "done": 2
+                          }
+                        },
+                        "children": []
+                      }
+                    ]
                   },
                   {
                     "name": "Eigenen Song",
@@ -350,9 +460,36 @@
                       "description": "Erstes eigenens Lied komponieren 😊",
                       "done": true
                     },
-                    "children": []
+                    "children": [
+                      {
+                        "name": "Eigenes Album",
+                        "attributes": {
+                          "node_id": 1647001589915,
+                          "type": "Counter",
+                          "description": "Erstes eigenes Album mit 10 Songs",
+                          "done": {
+                            "steps": 10,
+                            "done": 3
+                          }
+                        },
+                        "children": []
+                      }
+                    ]
                   }
                 ]
+              },
+              {
+                "name": "Noch mehr Gitarren kaufen",
+                "attributes": {
+                  "node_id": 1647001432147,
+                  "type": "Counter",
+                  "description": "Habe gehört, man kann nie genug davon haben 😀",
+                  "done": {
+                    "steps": 1000000,
+                    "done": 3
+                  }
+                },
+                "children": []
               }
             ]
           },
@@ -369,6 +506,363 @@
         ]
       },
       "id": 11
+    },
+    {
+      "data": {
+        "name": "Klavier lernen",
+        "attributes": {
+          "node_id": 0,
+          "type": "root"
+        },
+        "children": [
+          {
+            "name": "Töne lernen",
+            "attributes": {
+              "node_id": 1647001816753,
+              "type": "Checkbox",
+              "description": "Töne den Tasten zuordnen können jaja",
+              "done": true
+            },
+            "children": [
+              {
+                "name": "Tonleitern lernen",
+                "attributes": {
+                  "node_id": 1647001852934,
+                  "type": "Counter",
+                  "done": {
+                    "steps": 7,
+                    "done": 0
+                  }
+                },
+                "children": []
+              },
+              {
+                "name": "Fingersätze lernen",
+                "attributes": {
+                  "node_id": 1647001884673,
+                  "type": "Counter",
+                  "done": {
+                    "steps": 12,
+                    "done": 2
+                  }
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Real Book kaufen",
+            "attributes": {
+              "node_id": 1647001908512,
+              "type": "Checkbox",
+              "done": true
+            },
+            "children": [
+              {
+                "name": "Jazz Standards lernen",
+                "attributes": {
+                  "node_id": 1647001950145,
+                  "type": "Counter",
+                  "description": "Alles aus dem ersten Real Book",
+                  "done": {
+                    "steps": 279,
+                    "done": 23
+                  }
+                },
+                "children": [
+                  {
+                    "name": "Optionstöne",
+                    "attributes": {
+                      "type": "Checkbox",
+                      "description": "Das erweitern von Vierklängen und das interpretieren von Standards erlernen",
+                      "done": false,
+                      "node_id": 1647001971501
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Partituren",
+            "attributes": {
+              "node_id": 1647002036167,
+              "type": "Checkbox",
+              "description": "Noten lesen und danach spielen lernen",
+              "done": false
+            },
+            "children": [
+              {
+                "name": "10 Songs lernen",
+                "attributes": {
+                  "node_id": 1647002152622,
+                  "type": "Counter",
+                  "description": "Mit Noten spielen lernen",
+                  "done": {
+                    "steps": 10,
+                    "done": 0
+                  }
+                },
+                "children": []
+              }
+            ]
+          },
+          {
+            "name": "Intervalle raushören",
+            "attributes": {
+              "node_id": 1647002093483,
+              "type": "Counter",
+              "description": "Das Gehör trainieren, alle Intervalle (erstmals alle bis zur Oktave) zu erkennen",
+              "done": {
+                "steps": 12,
+                "done": 12
+              }
+            },
+            "children": []
+          }
+        ]
+      },
+      "id": 12
+    },
+    {
+      "data": {
+        "name": "Fitness",
+        "attributes": {
+          "node_id": 0,
+          "type": "root"
+        },
+        "children": [
+          {
+            "name": "4x Laufen pro Woche",
+            "attributes": {
+              "node_id": 1647002312138,
+              "type": "Counter",
+              "description": "Wöchentlich für ein halbes Jahr",
+              "done": {
+                "steps": 24,
+                "done": 3
+              }
+            },
+            "children": []
+          },
+          {
+            "name": "Ernährungsplan",
+            "attributes": {
+              "type": "Checkbox",
+              "description": "Persönlichen Ernährungsplan fürs Krafttraining",
+              "done": true,
+              "node_id": 1647002407860
+            },
+            "children": [
+              {
+                "name": "Kochbuch kaufen",
+                "attributes": {
+                  "node_id": 1647002757148,
+                  "type": "Checkbox",
+                  "done": false
+                },
+                "children": [
+                  {
+                    "name": "Rezepte nachkochen",
+                    "attributes": {
+                      "node_id": 1647002786237,
+                      "type": "Counter",
+                      "description": "ALLE",
+                      "done": {
+                        "steps": 103,
+                        "done": 0
+                      }
+                    },
+                    "children": []
+                  },
+                  {
+                    "name": "Gemeinsam kochen",
+                    "attributes": {
+                      "node_id": 1647002805751,
+                      "type": "Checkbox",
+                      "description": "mit irgendwem, das bindet jaja",
+                      "done": false
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Dehnen",
+            "attributes": {
+              "type": "Counter",
+              "description": "tägl. 10 Minuten dehnen, morgens und abends",
+              "done": {
+                "steps": 365,
+                "done": 15
+              },
+              "node_id": 1647002469315
+            },
+            "children": []
+          },
+          {
+            "name": "Buch kaufen",
+            "attributes": {
+              "node_id": 1647002554443,
+              "type": "Checkbox",
+              "description": "\"Fit ohne Geräte\" Krafttrainingsbuch",
+              "done": true
+            },
+            "children": [
+              {
+                "name": "Fit ohne Geräte 1",
+                "attributes": {
+                  "node_id": 1647002626304,
+                  "type": "Counter",
+                  "description": "10 Wochen erstes Trainingsprogramm",
+                  "done": {
+                    "steps": 10,
+                    "done": 2
+                  }
+                },
+                "children": [
+                  {
+                    "name": "Fit ohne Geräte 2",
+                    "attributes": {
+                      "type": "Counter",
+                      "description": "10 Wochen zweites Trainingsprogramm",
+                      "done": {
+                        "steps": 10,
+                        "done": 0
+                      },
+                      "node_id": 1647002642030
+                    },
+                    "children": [
+                      {
+                        "name": "Fit ohne Geräte 3",
+                        "attributes": {
+                          "type": "Counter",
+                          "description": "10 Wochen drittes Trainingsprogramm",
+                          "done": {
+                            "steps": 10,
+                            "done": 0
+                          },
+                          "node_id": 1647002682837
+                        },
+                        "children": [
+                          {
+                            "name": "Fit ohne Geräte 4",
+                            "attributes": {
+                              "node_id": 1647002718069,
+                              "type": "Counter",
+                              "description": "10 Wochen viertes Trainingsprogramm",
+                              "done": {
+                                "steps": 10,
+                                "done": 0
+                              }
+                            },
+                            "children": []
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "id": 13
+    },
+    {
+      "data": {
+        "name": "Projekt: Konzert",
+        "attributes": {
+          "node_id": 0,
+          "type": "root"
+        },
+        "children": [
+          {
+            "name": "Songliste erstellen",
+            "attributes": {
+              "node_id": 1647003060504,
+              "type": "Checkbox",
+              "description": "Mit der Band besprechen",
+              "done": true
+            },
+            "children": [
+              {
+                "name": "Songs lernen",
+                "attributes": {
+                  "type": "Counter",
+                  "description": "Erst selber üben, überlegen, wie ich ich die Stücke interpretieren will",
+                  "done": {
+                    "steps": 14,
+                    "done": 0
+                  },
+                  "node_id": 1647003118614
+                },
+                "children": [
+                  {
+                    "name": "Proben",
+                    "attributes": {
+                      "node_id": 1647003400243,
+                      "type": "Counter",
+                      "description": "Oft",
+                      "done": {
+                        "steps": 12,
+                        "done": 0
+                      }
+                    },
+                    "children": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Koks besorgen",
+            "attributes": {
+              "node_id": 1647003191688,
+              "type": "Checkbox",
+              "description": "Mind. 2 Kilogramm Koks für die Band anschaffen",
+              "done": false
+            },
+            "children": []
+          },
+          {
+            "name": "Veranstaltung eintragen",
+            "attributes": {
+              "node_id": 1647003233025,
+              "type": "Checkbox",
+              "description": "(am 31. Februar dieses Jahr)",
+              "done": false
+            },
+            "children": [
+              {
+                "name": "Technik besprechen",
+                "attributes": {
+                  "node_id": 1647003281284,
+                  "type": "Checkbox",
+                  "description": "Nötiges Equipment mit der Band besprechen und dem Veranstalter melden",
+                  "done": false
+                },
+                "children": []
+              },
+              {
+                "name": "Tour organisieren",
+                "attributes": {
+                  "node_id": 1647003368353,
+                  "type": "Checkbox",
+                  "description": "Mit Tourmanager besprechen",
+                  "done": false
+                },
+                "children": []
+              }
+            ]
+          }
+        ]
+      },
+      "id": 14
     }
   ]
 }
