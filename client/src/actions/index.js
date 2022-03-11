@@ -14,7 +14,8 @@ import {
   FETCH_TREE_PREVIEWS,
   FETCH_TREE_PREVIEW,
   EDIT_TREE_PREVIEW,
-  DELETE_CATEGORY
+  DELETE_CATEGORY,
+  DELETE_TREE
 } from './types'
 //functions
 import { nestedObjPath, nestedParentPath } from "../functions"
@@ -40,6 +41,13 @@ export const changeTreePreview = (id, changes) => async dispatch => {
   const res = trees.patch(`/treePreviews/${id}`, changes)
 
   //dispatch({ type: EDIT_TREE_PREVIEW, payload: res.data })
+}
+
+export const deleteTree = id => async dispatch => {
+  await trees.delete(`/trees/${id}`)
+  await trees.delete(`/treePreviews/${id}`)
+
+  history.push("/")
 }
 
 export const changeTree = (id, name, treeData) => async dispatch => {

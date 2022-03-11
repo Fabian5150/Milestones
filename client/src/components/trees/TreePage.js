@@ -279,6 +279,12 @@ const TreePage = ({ match: { params }, fetchTree, treePreview, changeTreePreview
             categoryIcon
           }}
         />
+        <TreeDelete 
+          show={showTreeDelete}
+          setShow={setShowTreeDelete}
+          id={params.id}
+          treeTitle={treePreview.title}
+        />
       </>
     )
   }  

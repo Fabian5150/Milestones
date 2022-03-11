@@ -52,7 +52,7 @@
       "title": "Zweiter",
       "description": "ich bin so happy ;)",
       "category": "Musik",
-      "lastWorkedOn": 1646916309977,
+      "lastWorkedOn": 1646956305054,
       "id": 2
     },
     {
@@ -73,7 +73,7 @@
       "title": "Fünfter",
       "description": "Jetzt wird es spannend",
       "category": "Bäume",
-      "lastWorkedOn": 1646916591266,
+      "lastWorkedOn": 1646956381890,
       "id": 5
     },
     {
@@ -102,14 +102,14 @@
       "description": "caramba",
       "category": "Kochen",
       "id": 9,
-      "lastWorkedOn": 1646916317025
+      "lastWorkedOn": 1646957444276
     },
     {
       "title": "Kochen lernen",
       "description": "Dann kann ich mir selber etwas leckers zu Essen machen",
       "category": "Kochen",
       "id": 10,
-      "lastWorkedOn": 1646916734280
+      "lastWorkedOn": 1646948996571
     }
   ],
   "trees": [
@@ -246,7 +246,7 @@
                           "type": "Counter",
                           "done": {
                             "steps": 2,
-                            "done": 2
+                            "done": 0
                           }
                         },
                         "children": []
@@ -304,28 +304,7 @@
                     "done": 10
                   }
                 },
-                "children": [
-                  {
-                    "name": "geht?",
-                    "attributes": {
-                      "node_id": 1646525735222,
-                      "type": "Checkbox",
-                      "description": "hoffe mal",
-                      "done": true
-                    },
-                    "children": [
-                      {
-                        "name": "neun",
-                        "attributes": {
-                          "node_id": 1646577771307,
-                          "type": "Checkbox",
-                          "done": false
-                        },
-                        "children": []
-                      }
-                    ]
-                  }
-                ]
+                "children": []
               }
             ]
           },
