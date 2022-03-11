@@ -98,13 +98,6 @@
       "lastWorkedOn": 1646916315944
     },
     {
-      "title": "aye",
-      "description": "caramba",
-      "category": "Kochen",
-      "id": 9,
-      "lastWorkedOn": 1646957444276
-    },
-    {
       "title": "Kochen lernen",
       "description": "Dann kann ich mir selber etwas leckers zu Essen machen",
       "category": "Kochen",
@@ -793,17 +786,6 @@
         ]
       },
       "id": 8
-    },
-    {
-      "data": {
-        "name": "aye",
-        "attributes": {
-          "node_id": 0,
-          "type": "root"
-        },
-        "children": []
-      },
-      "id": 9
     },
     {
       "data": {

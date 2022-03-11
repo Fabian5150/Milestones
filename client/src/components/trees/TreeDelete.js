@@ -1,11 +1,12 @@
 //packages
 import React from "react";
+import { connect } from "react-redux";
 //components
 import Modal from "../Modal"
 //functions
 import { deleteTree } from "../../actions"
 
-const TreeDelete = ({ show, setShow, id, treeTitle }) => {
+const TreeDelete = ({ show, setShow, id, treeTitle, deleteTree }) => {
   const modalContent = () => {
     return `Bist du sicher, dass du "${treeTitle}" löschen willst?`
   }
@@ -27,10 +28,10 @@ const TreeDelete = ({ show, setShow, id, treeTitle }) => {
       setShow={setShow}
       header="Baum löschen"
       content={modalContent()}
-      acitons={modalActions()}
+      actions={modalActions()}
       onDismiss={() => setShow(!show)}
     />
   )
 }
 
-export default TreeDelete
+export default connect(null, { deleteTree })(TreeDelete)
