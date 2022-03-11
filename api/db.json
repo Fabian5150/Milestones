@@ -19,11 +19,11 @@
       "id": 3
     },
     {
-      "label": "Bäume",
-      "value": "Bäume",
+      "label": "Tolle Bäume",
+      "value": "Tolle Bäume",
       "icon": "heartbeat",
       "id": 4,
-      "title": "Bäume"
+      "title": "Tolle Bäume"
     },
     {
       "icon": "leaf",
@@ -50,37 +50,37 @@
     {
       "title": "Dritter",
       "description": "Kann hier jetzt mal von Anfang an die Wundervollheit dieser App genießen ;,)",
-      "category": "Entspannung",
+      "category": "Tolle Bäume",
       "lastWorkedOn": 1647009515510,
       "id": 3
     },
     {
       "title": "Vierter",
       "description": "super toll",
-      "category": "Bäume",
+      "category": "Tolle Bäume",
       "lastWorkedOn": 1647009516204,
       "id": 4
     },
     {
       "title": "Fünfter",
       "description": "Jetzt wird es spannend",
-      "category": "Bäume",
+      "category": "Tolle Bäume",
       "lastWorkedOn": 1647009516688,
       "id": 5
     },
     {
       "title": "Mein neuer Baum",
       "description": "Mit vernünfitger Redux Store Anbindung, ich bin so aufgeregt :3",
-      "category": "Geile Bäume",
+      "category": "Tolle Bäume",
       "id": 6,
-      "lastWorkedOn": 1647009516822
+      "lastWorkedOn": 1647014611350
     },
     {
       "title": "Toasbrot",
       "description": "lorem ipsum dolor sit anet",
-      "category": "Geile Bäume",
+      "category": "Bäume",
       "id": 7,
-      "lastWorkedOn": 1647009517641
+      "lastWorkedOn": 1647014596831
     },
     {
       "title": "Gymnastik",
